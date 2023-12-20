@@ -1,15 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import logoGDM from "../assets/img/logo-gdm-white.svg";
-import { getCollection } from "astro:content";
 
-const allPosts = await getCollection("articles");
+
 ---
 
 <footer class="footer" transition:persist>
 	<div class="mainfooter">
 		<div class="id-contact">
-			<Image src={logoGDM} alt="logo GDM" />
+			
 			<div class="icon-info">
 				<svg
 					width="12"
@@ -125,29 +123,7 @@ const allPosts = await getCollection("articles");
 			</nav>
 		</div>
 		<div class="blogpostfooter">
-			<h4>Articles récents</h4>
-			<div class="footerblogdisplay">
-				{
-					allPosts.slice(0, 2).map((post) => (
-						<a
-							class="blogpost"
-							href={`/articles/${post.data.category}/${post.slug}`}>
-							<img
-								src={post.data.image}
-								alt={post.data.title}
-								width="190"
-								height="96"
-								loading="lazy"
-							/>
-
-							<div class="postmetawraper">
-								<span class="date">{post.data.date}</span>
-								<span class="h3">{post.data.title}</span>
-							</div>
-						</a>
-					))
-				}
-			</div>
+			
 		</div>
 	</div>
 	<div class="bottomfooter">
