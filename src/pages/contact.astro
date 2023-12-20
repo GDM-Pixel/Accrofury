@@ -1,0 +1,218 @@
+---
+import { Image } from "astro:assets";
+import ContactImage from "../assets/img/contact-img.png";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import PixelSeparator from "../components/PixelSeparator.astro";
+import Footer from "../components/Footer.astro";
+import * as animations from "../components/animations.js";
+---
+
+<Layout
+	title="Bienvenue à bord, capitaine."
+	description="Ceci est la meta description">
+	<Header />
+	<section class="herobox medium">
+		<div class="container" transition:animate={animations.myFadeSlide}>
+			<h1>Nous contacter</h1>
+			<p class="baseline">Demande de RDV / prise de contact</p>
+			<p class="intro">
+				Laissez-nous un message, posez votre question à notre IA ou prenez un
+				rendez-vous en ligne
+			</p>
+			<div class="cta_container">
+				<a href="#" class="cta red">Demander un RDV en ligne</a>
+				<a href="#" class="cta blue">Poser une question à Nova</a>
+			</div>
+		</div>
+	</section>
+
+	<main class="-mt-16">
+		<div class="container mx-auto max-w-6xl">
+			<div class="grid grid-cols-12 gap-6 p-12 shadow-2xl bg-white rounded-lg">
+				<div class="col1 col-span-5 flex flex-col justify-center">
+					<Image src={ContactImage} alt="Contactez-nous" />
+				</div>
+				<div class="col2 col-span-7">
+					<div class="section-header left">
+						<span
+							class="h6 text-dustyred-400 uppercase font-semibold mb-6 block"
+							>Formulaire de contact</span
+						>
+						<h2 class="section-title">Demande de renseignements</h2>
+						<PixelSeparator />
+					</div>
+					<form id="contact-form" class="grid grid-cols-2 gap-6" method="POST">
+						<input type="hidden" name="contactNumber" />
+						<input type="text" name="userName" placeholder="Nom" />
+						<input type="email" name="userEmail" placeholder="E-mail" />
+						<input type="text" name="userPhone" placeholder="Téléphone" />
+						<input type="text" name="demande" placeholder="Objet" />
+						<textarea
+							name="message"
+							placeholder="Votre message"
+							class="col-span-2"></textarea>
+						<input
+							type="submit"
+							value="Envoyer votre demande"
+							class="col-span-2"
+						/> 
+						<div class="error-message" style="color: red;"></div>
+
+					</form>
+				</div>
+
+				<div id="success-message">
+					<img
+						src="https://media0.giphy.com/media/E8rJEUMGs9cyWEtNXT/giphy.gif?cid=ecf05e47sb2icuh3cndpy6sdvvo5p27ff3o34zulu8hb8djn&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+						width="300"
+						height="300"
+						loading="lazy"
+					/><p class="mt-6">
+						Merci, nous avons reçu votre demande et vous répondrons sous peu.
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+<script>
+	import { gsap } from "gsap";
+	//@ts-ignore
+	function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+	function initializeForm() {
+
+
+		//@ts-ignore
+	const form = document.getElementById("contact-form");
+	//@ts-ignore
+    const emailInput = form.querySelector('input[name="userEmail"]');
+	//@ts-ignore
+    const messageTextarea = form.querySelector('textarea[name="message"]');
+    //@ts-ignore
+	let errorDiv = form.querySelector('.error-message'); // Ajout d'une classe pour le div d'erreur
+    if (!errorDiv) {
+      errorDiv = document.createElement('div');
+      errorDiv.className = 'error-message'; // Ajout d'une classe pour le div d'erreur
+      //@ts-ignore
+	  errorDiv.style.color = 'red';
+	  //@ts-ignore
+      form.appendChild(errorDiv);
+    }
+//@ts-ignore
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Empêche l'envoi du formulaire de manière traditionnelle
+
+      //@ts-ignore
+      errorDiv.textContent = ''; // Réinitialiser le message d'erreur
+	  //@ts-ignore
+      if (!emailInput.value || !validateEmail(emailInput.value)) {
+	  //@ts-ignore
+        errorDiv.textContent = 'Veuillez fournir un email valide.';
+        return; // Arrête la fonction si l'email n'est pas valide
+      }
+	  //@ts-ignore
+      if (!messageTextarea.value) {
+	  //@ts-ignore
+        errorDiv.textContent = 'Veuillez écrire un message.';
+        return; // Arrête la fonction si le message est vide
+      }
+				const target = event.target as typeof event.target & {
+					userName: { value: string };
+					userEmail: { value: string };
+					userPhone: { value: string };
+					demande: { value: string };
+					message: { value: string };
+				};
+
+				const data = {
+					userName: target["userName"].value,
+					userEmail: target["userEmail"].value,
+					userPhone: target["userPhone"].value,
+					demande: target["demande"].value,
+					message: target["message"].value,
+				};
+
+				fetch("/.netlify/functions/triggerContactEmail", {
+					method: "POST",
+					body: JSON.stringify({
+						userName: data.userName,
+						userEmail: data.userEmail,
+						AdminEmail: "charles@gdm-pixel.fr",
+						userPhone: data.userPhone,
+						demande: data.demande,
+						message: data.message,
+					}),
+				})
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data);
+						gsap.to("#success-message", {
+							autoAlpha: 1,
+							y: 200,
+							duration: 0.5,
+						});
+						setTimeout(() => {
+							gsap.to("#success-message", {
+								autoAlpha: 0,
+								y: -30,
+								duration: 0.5,
+							});
+						}, 4000); 
+					})
+					.catch((error) => {
+						console.error("Error:", error);
+						// Gérez les erreurs ici également
+					});
+			});
+	}
+	initializeForm();
+	document.addEventListener("astro:page-load", initializeForm);
+</script>
+<style lang="scss">
+	main {
+		padding: 1rem 1rem 4rem 1rem;
+	}
+	#success-message {
+		@apply fixed bg-prussian-700 text-center text-white p-8 rounded-md border-solid border-2 border-white flex flex-col items-center w-[300px] mx-auto transform -translate-x-1/2 -translate-y-full left-1/2 -top-28 z-20;
+		svg {
+			@apply fill-white w-12 h-12 mb-6;
+		}
+	}
+
+	.herobox.medium {
+		background: url("/img/contact-hero-bck.webp") no-repeat center center;
+		@apply bg-cover bg-center flex flex-col justify-center items-center text-white h-[485px] -mt-10 z-0;
+		h1 {
+			@apply text-base font-bold uppercase text-moonstone-400 mb-4;
+		}
+		.baseline {
+			@apply text-xxxxl font-extrabold leading-[66px] uppercase text-white mb-0;
+		}
+		.intro {
+			@apply max-w-md text-md;
+		}
+		.cta_container {
+			@apply mt-6 gap-4 flex;
+			.cta {
+				@apply text-base;
+			}
+		}
+	}
+	#contact-form {
+		input,
+		textarea {
+			@apply px-4 py-3 rounded-md border border-solid border-prussian-100 border-opacity-20;
+		}
+		textarea {
+			@apply min-h-[120px];
+		}
+		input[type="submit"] {
+			@apply bg-dustyred-400 text-white font-bold text-base px-4 py-3 rounded-md cursor-pointer normal-case hover:bg-moonstone-500 transition-all;
+		}
+	}
+</style>

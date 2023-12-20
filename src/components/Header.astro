@@ -1,0 +1,519 @@
+---
+import { Image } from "astro:assets";
+import logoGDM from "../assets/img/logo-gdm-white.svg";
+interface Props {
+	//title: string;
+	//body: string;
+	//href: string;
+}
+
+import { Breadcrumbs } from "astro-breadcrumbs";
+
+import "astro-breadcrumbs/breadcrumbs.css";
+---
+
+<div class="topbar">
+	<div class="inner_container_lg">
+		<div class="left">
+			<a href="tel:+33977216680" class="mr-2">
+				<i class="fa-sharp fa-solid fa-phone"></i>+33-9-7721-6680</a
+			>| <a href="mailto:contact@gdm-pixel.fr"
+				><i class="fa-sharp fa-solid fa-envelope"></i> contact@gdm-pixel.fr</a
+			>
+		</div>
+		<div class="right">
+			<span
+				class="gogdm"
+				data-goto="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2dkbXBpeGVsLw==">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="1em"
+					viewBox="0 0 448 512"
+					><path
+						d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
+					></path></svg
+				>
+			</span>
+			<span class="gogdm" data-goto="aHR0cHM6Ly90d2l0dGVyLmNvbS9nZG1fcGl4ZWw=">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="1em"
+					viewBox="0 0 512 512"
+					><path
+						d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+					></path></svg
+				>
+			</span>
+			<span
+				class="gogdm"
+				data-goto="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2NoYXJsZXMtYW5ub25pLThhNjQ1NjU2Lw==">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="1em"
+					viewBox="0 0 448 512"
+					><path
+						d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+					></path></svg
+				>
+			</span>
+			<span
+				class="gogdm"
+				data-goto="aHR0cHM6Ly93d3cueW91dHViZS5jb20vYy9HRE1QaXhlbA==">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="1em"
+					viewBox="0 0 576 512"
+					><path
+						d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+					></path></svg
+				></span
+			>
+		</div>
+	</div>
+</div>
+<div class="header" transition:persist>
+	<div class="container">
+		<a href="/" data-image-src="/img/hero-home-bck.webp"
+			><Image class="logo" src={logoGDM} alt="logo GDM-Pixel" /></a
+		>
+		<nav class="desktop-nav">
+			<ul>
+				<li>
+					<a href="/" data-image-src="/img/hero-home-bck.webp"
+						><svg
+							xmlns="http://www.w3.org/2000/svg"
+							height="1em"
+							viewBox="0 0 576 512"
+							><path
+								d="M576 287.6H511.8l1 224.4H472 456 352V352H224V512H120 104 64.1V474.8c-.1-.9-.1-1.8-.1-2.8V360c0-.9 0-1.9 .1-2.8V287.6H0V240L288.4 0 416 106.5V32h96V186.6L576 240v47.6z"
+							></path></svg
+						></a
+					>
+				</li>
+				<li>
+					<a href="/creation-site/" data-image-src="/img/HeroBoxCreasite.webp"
+						>Création de site</a>
+				</li>
+				<li>
+					<a
+						href="/creation-site/creer-ecommerce/"
+						data-image-src="/img/HeroEcommerce.webp">E-commerce</a>
+				</li>
+				<li>
+					<a href="/referencement/" data-image-src="/img/SEOHero.webp"
+						>Référencement</a>
+				</li>
+				<li><a href="/webmarketing/">Webmarketing</a></li>
+				<li>
+					<a href="/contact/" data-image-src="/img/contact-hero-bck.webp"
+						>Contact</a>
+				</li>
+			</ul>
+		</nav>
+
+		<button
+			id="hambBtn"
+			class="transition-transform duration-300 ease-in-out block lg:hidden"
+			data-visible="false">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				height="1em"
+				viewBox="0 0 448 512"
+				fill="#ffffff"
+				><path d="M0 64H448v64H0V64zM0 224H448v64H0V224zM448 384v64H0V384H448z"
+				></path></svg
+			>
+		</button>
+	</div>
+</div>
+<div class="mobile-menu-overlay"></div>
+<div id="mobile-nav" class="gdm-nav gdm-nav-1">
+	<div class="gdm-nav gdm-nav-2">
+		<div class="gdm-nav gdm-nav-3">
+			<button class="gdm-nav-btn gdm-close-btn"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="1em"
+					viewBox="0 0 512 512"
+					><path
+						d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm97.9-320L320 158.1l-17 17-47 47-47-47-17-17L158.1 192l17 17 47 47-47 47-17 17L192 353.9l17-17 47-47 47 47 17 17L353.9 320l-17-17-47-47 47-47 17-17z"
+					></path></svg
+				></button
+			>
+			<div class="flex flex-col justify-center items-center">
+				<svg
+					width="88"
+					height="73"
+					viewBox="0 0 88 73"
+					xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_531_360)">
+						<path
+							d="M35.2954 0H58.6665L23.6895 35.0591L39.2701 51.548L27.9822 62.914L0 35.5392L35.2954 0Z"
+							fill="#00A7C6"></path>
+						<path
+							d="M60.4957 8.96521L48.4922 21.0516L65.1062 37.4608L29.334 73H53.023L88.0005 37.3008L60.4957 8.96521Z"
+							fill="#00A7C6"></path>
+						<path
+							d="M39.7019 9.76115L19.6934 40.2227L49.9458 60.3694L69.9544 29.9079L39.7019 9.76115Z"
+							fill="white"></path>
+					</g>
+					<defs>
+						<clipPath id="clip0_531_360">
+							<rect width="88" height="73" fill="white"></rect>
+						</clipPath>
+					</defs>
+				</svg>
+				<span class="h3 text-lg text-white font-bold mb-8 mt-6">Navigation</span
+				>
+				<ul
+					class="gdm-list flex flex-col justify-center alig-center text-center">
+					<li>
+						<a href="/"
+							><svg
+								class="mx-auto home-btn"
+								width="23"
+								height="21"
+								viewBox="0 0 23 21"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M20.4609 11.75L20.5 20.5H14.25V14.25H9.25V20.5H3V11.75H0.5V9.875L11.75 0.5L23 9.875V11.75H20.4609Z"
+								></path>
+							</svg>
+						</a>
+					</li>
+					<li><a href="/creation-site/">Création de site</a></li>
+					<li><a href="/creation-site/creer-ecommerce/">E-commerce</a></li>
+					<li><a href="/refercenement/">Référencement</a></li>
+					<li><a href="/webmarketing/">Webmarketing</a></li>
+					<li><a href="/articles/">Le Blog</a></li>
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{
+	Astro.url.pathname !== "/" && (
+		<div class="bd-container">
+			<Breadcrumbs transition:persist>
+				<svg
+					slot="index"
+					xmlns="http://www.w3.org/2000/svg"
+					height="1em"
+					viewBox="0 0 576 512">
+					<path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+				</svg>
+				<svg
+					slot="separator"
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round">
+					<polyline points="9 18 15 12 9 6" />
+				</svg>
+			</Breadcrumbs>
+		</div>
+	)
+}
+
+<script>
+	function setup() {
+		window.addEventListener("scroll", function () {
+			var header = document.querySelector(".header");
+			header?.classList.toggle("stickynav", window.scrollY > 200);
+		});
+		const navLinks = document.querySelectorAll("nav ul li a");
+
+		navLinks.forEach((link) => {
+			if (link.getAttribute("href") === window.location.pathname) {
+				link.classList.add("active");
+			}
+
+			link.addEventListener("click", () => {
+				navLinks.forEach((link) => link.classList.remove("active"));
+				link.classList.add("active");
+			});
+		});
+
+		const menuButton = document.querySelector("#hambBtn");
+		const closeButton = document.querySelector(".gdm-close-btn");
+		const closeOverlay = document.querySelector(".mobile-menu-overlay");
+		// Écouteur pour les clics en dehors du menu
+
+		//@ts-ignore
+		menuButton.addEventListener("click", toggleMenu);
+		//@ts-ignore
+		closeButton.addEventListener("click", toggleMenu);
+		//@ts-ignore
+		closeOverlay.addEventListener("click", toggleMenu);
+		// Récupérer tous les liens de la navigation mobile
+		const mobileNavLinks = document.querySelectorAll("#mobile-nav a");
+		// Ajouter un écouteur d'événements pour chaque lien
+		mobileNavLinks.forEach((link) => {
+			link.addEventListener("click", () => {
+				// Appeler toggleMenu pour fermer la navigation mobile
+				toggleMenu();
+			});
+		});
+	}
+
+	document.addEventListener("DOMContentLoaded", setup);
+	document.addEventListener("astro:page-load", setup);
+
+	function toggleMenu() {
+		const navBlack = document.querySelector(".gdm-nav-1");
+		const navRed = document.querySelector(".gdm-nav-2");
+		const navWhite = document.querySelector(".gdm-nav-3");
+		const overlay = document.querySelector(".mobile-menu-overlay");
+		// Cette logique vérifie si l'une des classes est déjà visible
+		// Si oui, cela signifie que le menu est ouvert et nous devons le fermer.
+		//@ts-ignore
+		const isMenuVisible = navBlack.classList.contains("activated");
+
+		// Basculer la classe 'activated' sur chaque élément de navigation
+		[navBlack, navRed, navWhite, overlay].forEach((nav) => {
+			//@ts-ignore
+			nav.classList.toggle("activated", !isMenuVisible);
+			//@ts-ignore
+			overlay.style.opacity = isMenuVisible ? "0" : "1";
+		});
+	}
+</script>
+<style lang="scss" is:global>
+	.topbar {
+		@apply bg-raisinblack text-white px-6 text-sm py-2 z-20 relative hidden sm:block;
+		.inner_container_lg {
+			@apply flex flex-col md:flex-row justify-between items-center;
+			.left {
+				@apply flex items-center;
+				a {
+					@apply flex items-center justify-center text-white;
+					&:hover {
+						@apply text-moonstone-400;
+						svg {
+							@apply text-moonstone-400 fill-moonstone-400;
+						}
+					}
+				}
+			}
+			.right {
+				@apply md:flex hidden items-center;
+				a {
+					@apply flex flex-col justify-center items-center text-white;
+					&:hover {
+						@apply text-moonstone-400;
+					}
+				}
+			}
+		}
+		svg {
+			@apply mr-2 fill-white transition-all duration-300 text-base;
+			&:hover {
+				@apply fill-moonstone-400 transition-all duration-300;
+			}
+		}
+		.svg-inline--fa {
+			@apply mx-2 w-4;
+		}
+	}
+	@keyframes slideDown {
+		0% {
+			transform: translateY(-100%);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+	.header {
+		@apply bg-prussian-400 py-0 px-6 relative z-20 transition-all duration-300 ease-in-out h-[65px] flex items-center justify-center lg:h-auto;
+		&.stickynav {
+			@apply bg-opacity-60 sticky top-0 transition-all duration-1000 ease-in-out z-30;
+			animation: slideDown 0.5s forwards;
+			nav.desktop-nav {
+				@apply h-[60px];
+			}
+			.logo {
+				@apply max-w-[120px] lg:max-w-[150px];
+			}
+		}
+
+		.container {
+			@apply max-w-[1600px] flex px-0 py-0 justify-between items-center;
+		}
+		.logo {
+			@apply max-w-[140px] lg:max-w-[230px] transition-all duration-300 ease-in-out;
+		}
+		nav.desktop-nav {
+			@apply xl:flex items-center h-[85px] hidden lg:block;
+			ul {
+				@apply flex h-full;
+				li {
+					a {
+						@apply md:text-sm lg:text-sm xl:text-base font-bold h-full flex items-center text-white lg:px-4 xl:px-6 flex-auto  hover:text-moonstone-400 hover:bg-prussian-600;
+						&.active {
+							@apply text-moonstone-400 bg-prussian-100;
+							svg {
+								@apply fill-moonstone-400;
+							}
+						}
+					}
+					svg {
+						@apply fill-powder transition-all duration-300 hover:fill-moonstone-400;
+					}
+				}
+			}
+		}
+		nav.mobile-nav {
+			@apply visible xl:hidden;
+		}
+	}
+	.bd-container {
+		@apply bg-white shadow-md;
+	}
+	.c-breadcrumbs {
+		@apply text-prussian-400 mx-auto max-w-[1650px] px-6 py-2  capitalize relative;
+		a.c-breadcrumbs__link {
+			@apply text-dustyred-400 text-[12px] font-semibold;
+			&:hover {
+				@apply text-moonstone-400;
+			}
+		}
+	}
+
+	.mobile-menu-overlay {
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7); /* Noir avec opacité */
+		z-index: 29;
+		pointer-events: none;
+		transition: 300ms ease all;
+	}
+
+	/* Style pour montrer l'overlay quand le menu mobile est activé */
+	.mobile-menu-overlay.activated {
+		pointer-events: all;
+		opacity: 1;
+		transition: 300ms ease all;
+	}
+	.gdm-text {
+		text-transform: uppercase;
+	}
+
+	.gdm-nav-btn {
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+		font-size: 20px;
+	}
+
+	.gdm-open-btn {
+		position: fixed;
+		top: 10px;
+		left: 10px;
+	}
+
+	.gdm-nav {
+		position: fixed;
+		top: 0;
+		z-index: 30;
+		right: 0;
+		height: 100vh;
+
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.gdm-nav.activated {
+		transform: translateX(0);
+	}
+
+	.gdm-nav-1 {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-end;
+		align-items: flex-end;
+		background-color: #fafffd;
+		width: 100%;
+		max-width: 360px;
+		min-width: 360px;
+		transition-delay: 0s;
+	}
+
+	.gdm-nav-1.activated {
+		transition-delay: 0s;
+	}
+
+	.gdm-nav-2 {
+		display: flex;
+		flex-direction: column;
+		align-content: flex-end;
+		align-items: flex-end;
+		background-color: #445069;
+		transition-delay: 0.1s;
+		width: 95%;
+	}
+
+	.gdm-nav-2.activated {
+		transition-delay: 0.1s;
+	}
+
+	.gdm-nav-3 {
+		background-color: #232634;
+		padding: 40px;
+		position: relative;
+		transition-delay: 0.2s;
+		width: 95%;
+	}
+
+	.gdm-nav-3.activated {
+		transition-delay: 0.2s;
+	}
+
+	.gdm-close-btn {
+		fill: white;
+		opacity: 0.6;
+		position: absolute;
+		top: 30px;
+		left: 30px;
+	}
+
+	.gdm-logo {
+		width: 150px;
+	}
+
+	.gdm-list {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.gdm-list li {
+		margin: 10px 0;
+	}
+
+	.gdm-list li a {
+		color: white;
+		font-size: 18px;
+		text-decoration: none;
+		font-weight: bold;
+		transition: 300ms ease all;
+		svg.home-btn {
+			@apply fill-white transition-all duration-300 text-base;
+			&:hover {
+				@apply fill-moonstone-400 transition-all duration-300;
+			}
+		}
+		&:hover {
+			@apply text-moonstone-400 transition-all duration-300;
+		}
+	}
+</style>
