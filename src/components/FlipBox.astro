@@ -100,10 +100,10 @@ const { title, bodyFront, bodyBack, icon, color } = Astro.props;
 		border: 1px #f1f1f1;
 		perspective: 1000px;
 		h3 {
-			@apply text-lg font-bold text-powder mb-2 mt-2;
+			@apply text-lg font-bold text-white mb-2 mt-2;
 		}
 		h4 {
-			@apply text-md font-bold text-powder mb-2 mt-2;
+			@apply text-md font-bold text-white mb-2 mt-2;
 		}
 	}
 	.flip-box-inner {
@@ -127,7 +127,7 @@ const { title, bodyFront, bodyBack, icon, color } = Astro.props;
 
 	.flip-box-front,
 	.flip-box-back {
-		@apply border border-dashed border-powder;
+		@apply border border-dashed border-white;
 		position: absolute;
 		width: 100%;
 		min-height: 100%;
@@ -145,13 +145,13 @@ const { title, bodyFront, bodyBack, icon, color } = Astro.props;
 	}
 
 	.flip-box-back {
-		@apply bg-powder text-prussian-400;
+		@apply bg-white text-blackbean;
 		transform: rotateY(180deg);
 		h4 {
-			@apply text-prussian-400;
+			@apply text-blackbean;
 		}
 		svg {
-			@apply fill-dustyred-400;
+			@apply fill-harvestgold;
 		}
 	}
 </style>

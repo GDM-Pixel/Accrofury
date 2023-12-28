@@ -1,131 +1,417 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroBoxHome from "../components/HeroBoxHome.astro";
+import { Image } from "astro:assets";
+import ParcoursSlider from "../components/ParcoursSlider.astro";
+import OverLayMap from "../assets/img/overlaymap.png";
+import LigneVieContinue from "../assets/img/ligne-vie-continue-1.png";
+import EncadrantsDiplomes from "../assets/img/encadrants-diplomes.png";
+import GalleriePark from "../components/GalleriePark.astro";
+import "jarallax/dist/jarallax.min.css";
+import TestimonialsSlider from "../components/TestimonialsSlider.astro";
+import Accordion from "../components/Accordion.astro";
+import * as animations from "../components/animations.js";
+import CTABand from "../components/CTABand.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<Header />
-	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			viewBox="0 0 495 623"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M167.19 364.254C83.4786 364.254 0 404.819 0 404.819C0 404.819 141.781 19.4876 142.087 18.7291C146.434 7.33701 153.027 0 162.289 0H332.441C341.703 0 348.574 7.33701 352.643 18.7291C352.92 19.5022 494.716 404.819 494.716 404.819C494.716 404.819 426.67 364.254 327.525 364.254L264.41 169.408C262.047 159.985 255.147 153.581 247.358 153.581C239.569 153.581 232.669 159.985 230.306 169.408L167.19 364.254ZM160.869 530.172C160.877 530.18 160.885 530.187 160.894 530.195L160.867 530.181C160.868 530.178 160.868 530.175 160.869 530.172ZM136.218 411.348C124.476 450.467 132.698 504.458 160.869 530.172C160.997 529.696 161.125 529.242 161.248 528.804C161.502 527.907 161.737 527.073 161.917 526.233C165.446 509.895 178.754 499.52 195.577 500.01C211.969 500.487 220.67 508.765 223.202 527.254C224.141 534.12 224.23 541.131 224.319 548.105C224.328 548.834 224.337 549.563 224.347 550.291C224.563 566.098 228.657 580.707 237.264 593.914C245.413 606.426 256.108 615.943 270.749 622.478C270.593 621.952 270.463 621.508 270.35 621.126C270.045 620.086 269.872 619.499 269.685 618.911C258.909 585.935 266.668 563.266 295.344 543.933C298.254 541.971 301.187 540.041 304.12 538.112C310.591 533.854 317.059 529.599 323.279 525.007C345.88 508.329 360.09 486.327 363.431 457.844C364.805 446.148 363.781 434.657 359.848 423.275C358.176 424.287 356.587 425.295 355.042 426.275C351.744 428.366 348.647 430.33 345.382 431.934C303.466 452.507 259.152 455.053 214.03 448.245C184.802 443.834 156.584 436.019 136.218 411.348Z"
-				fill="url(#paint0_linear_1805_24383)"></path>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<h2 class="fifou">Coucou npm runPoulet !sss!!</h2>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+	<HeroBoxHome />
+	<section
+		class="reassurance grid grid-cols-3 container gap-12 -mt-20 relative z-10">
+		<div class="reassurbox">
+			<svg
+				width="85"
+				height="85"
+				viewBox="0 0 85 85"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M8.05273 19.0752L42.501 5.69434L76.9492 19.0586C77.3975 26.6289 76.2021 38.4492 71.1885 49.9873C66.1748 61.5254 57.3428 72.7812 42.501 79.2061C27.6592 72.7812 18.8271 61.542 13.8135 50.0039C8.7998 38.4658 7.60449 26.6455 8.05273 19.0752ZM82.2617 18.7598L82.0625 15.3564L78.875 14.1113L44.4268 0.74707L42.501 0L40.5752 0.74707L6.12695 14.1113L2.95605 15.3564L2.75683 18.7598C2.27539 27.0439 3.57031 39.7275 8.94921 52.1123C14.3779 64.6133 24.0566 77.0146 40.3926 84.0869L42.501 85L44.6094 84.0869C60.9453 77.0146 70.624 64.6133 76.0527 52.1123C81.4316 39.7109 82.7266 27.0439 82.2451 18.7598H82.2617ZM60.3145 33.751L62.1904 31.875L58.4385 28.123L56.5625 29.999L37.1885 49.373L28.4394 40.624L26.5635 38.748L22.8115 42.5L24.6875 44.376L35.3125 55.001L37.1885 56.877L39.0644 55.001L60.3145 33.751Z"
+					fill="#3C1518"></path>
+			</svg>
+			<div class="right-content">
+				<span class="h3">Sécurité maximale</span><p>
+					Système de ligne de vie continue unique sur tous les parcours !
+				</p>
+			</div>
+		</div>
+		<div class="reassurbox">
+			<svg
+				width="86"
+				height="90"
+				viewBox="0 0 86 90"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M27.9375 11.25C27.9375 9.01224 27.0486 6.86612 25.4662 5.28379C23.8839 3.70145 21.7378 2.8125 19.5 2.8125C17.2623 2.8125 15.1161 3.70145 13.5338 5.28379C11.9515 6.86612 11.0625 9.01224 11.0625 11.25C11.0625 13.4878 11.9515 15.6339 13.5338 17.2162C15.1161 18.7986 17.2623 19.6875 19.5 19.6875C21.7378 19.6875 23.8839 18.7986 25.4662 17.2162C27.0486 15.6339 27.9375 13.4878 27.9375 11.25ZM8.25002 11.25C8.25002 8.26631 9.43528 5.40483 11.5451 3.29505C13.6548 1.18526 16.5163 0 19.5 0C22.4837 0 25.3452 1.18526 27.455 3.29505C29.5648 5.40483 30.75 8.26631 30.75 11.25C30.75 14.2337 29.5648 17.0952 27.455 19.205C25.3452 21.3147 22.4837 22.5 19.5 22.5C16.5163 22.5 13.6548 21.3147 11.5451 19.205C9.43528 17.0952 8.25002 14.2337 8.25002 11.25ZM4.34767 41.2559L3.62697 49.9219C3.22267 54.8438 7.10744 59.0625 12.0293 59.0625H16.6875H22.3125H25.125V61.875H23.7188V84.375C23.7188 85.9219 24.9844 87.1875 26.5313 87.1875C27.041 87.1875 27.5156 87.0469 27.9375 86.8184V89.8242C27.4805 89.9473 27.0235 90 26.5313 90C23.4199 90 20.9063 87.4863 20.9063 84.375V61.875H18.0938V84.375C18.0938 87.4863 15.5801 90 12.4688 90C9.35744 90 6.84377 87.4863 6.84377 84.375V60.6094C2.959 58.5879 0.445326 54.3867 0.832045 49.6934L1.55275 41.0273C2.1504 33.7324 8.25001 28.125 15.5625 28.125H23.4375C24.668 28.125 25.8633 28.2832 26.9883 28.582C26.7598 29.4785 26.6192 30.4277 26.5488 31.377C25.5469 31.0957 24.5098 30.9375 23.4199 30.9375H15.5625C9.709 30.9375 4.83986 35.4199 4.34767 41.2559ZM57.4688 90C56.9766 90 56.5196 89.9473 56.0625 89.8242V86.8184C56.4844 87.0645 56.959 87.1875 57.4688 87.1875C59.0156 87.1875 60.2813 85.9219 60.2813 84.375V67.5H58.875V64.6875H61.6875H67.3125H75.75H79.5469C81.4102 64.6875 82.7637 62.8945 82.2539 61.1016L75.3809 37.0547C74.3438 33.4336 71.0391 30.9375 67.2598 30.9375H61.7403C60.1934 30.9375 58.7344 31.3594 57.4688 32.0977C57.4512 31.0781 57.3457 30.0762 57.1348 29.1094C58.5586 28.4766 60.1231 28.125 61.7403 28.125H67.2598C72.2871 28.125 76.6992 31.4473 78.0703 36.2812L84.9434 60.3281C85.9629 63.9141 83.2735 67.5 79.5293 67.5H77.1563V84.375C77.1563 87.4863 74.6426 90 71.5313 90C68.4199 90 65.9063 87.4863 65.9063 84.375V67.5H63.0938V84.375C63.0938 87.4863 60.5801 90 57.4688 90ZM12.0469 61.875C11.2207 61.875 10.4297 61.7871 9.65627 61.6289V84.375C9.65627 85.9219 10.9219 87.1875 12.4688 87.1875C14.0156 87.1875 15.2813 85.9219 15.2813 84.375V61.875H12.0469ZM72.9375 11.25C72.9375 9.01224 72.0486 6.86612 70.4662 5.28379C68.8839 3.70145 66.7378 2.8125 64.5 2.8125C62.2623 2.8125 60.1161 3.70145 58.5338 5.28379C56.9515 6.86612 56.0625 9.01224 56.0625 11.25C56.0625 13.4878 56.9515 15.6339 58.5338 17.2162C60.1161 18.7986 62.2623 19.6875 64.5 19.6875C66.7378 19.6875 68.8839 18.7986 70.4662 17.2162C72.0486 15.6339 72.9375 13.4878 72.9375 11.25ZM53.25 11.25C53.25 8.26631 54.4353 5.40483 56.5451 3.29505C58.6549 1.18526 61.5163 0 64.5 0C67.4837 0 70.3452 1.18526 72.455 3.29505C74.5648 5.40483 75.75 8.26631 75.75 11.25C75.75 14.2337 74.5648 17.0952 72.455 19.205C70.3452 21.3147 67.4837 22.5 64.5 22.5C61.5163 22.5 58.6549 21.3147 56.5451 19.205C54.4353 17.0952 53.25 14.2337 53.25 11.25ZM74.3438 67.5H68.7188V84.375C68.7188 85.9219 69.9844 87.1875 71.5313 87.1875C73.0781 87.1875 74.3438 85.9219 74.3438 84.375V67.5ZM49.0313 32.3438C49.0313 30.4789 48.2905 28.6905 46.9719 27.3719C45.6532 26.0533 43.8648 25.3125 42 25.3125C40.1352 25.3125 38.3468 26.0533 37.0282 27.3719C35.7096 28.6905 34.9688 30.4789 34.9688 32.3438C34.9688 34.2086 35.7096 35.997 37.0282 37.3156C38.3468 38.6342 40.1352 39.375 42 39.375C43.8648 39.375 45.6532 38.6342 46.9719 37.3156C48.2905 35.997 49.0313 34.2086 49.0313 32.3438ZM32.1563 32.3438C32.1563 29.733 33.1934 27.2292 35.0394 25.3832C36.8855 23.5371 39.3893 22.5 42 22.5C44.6107 22.5 47.1145 23.5371 48.9606 25.3832C50.8067 27.2292 51.8438 29.733 51.8438 32.3438C51.8438 34.9545 50.8067 37.4583 48.9606 39.3043C47.1145 41.1504 44.6107 42.1875 42 42.1875C39.3893 42.1875 36.8855 41.1504 35.0394 39.3043C33.1934 37.4583 32.1563 34.9545 32.1563 32.3438ZM42 47.8125C35.7949 47.8125 30.75 52.8574 30.75 59.0625V64.6875C30.75 67.7988 33.2637 70.3125 36.375 70.3125H47.625C50.7363 70.3125 53.25 67.7988 53.25 64.6875V59.0625C53.25 52.8574 48.2051 47.8125 42 47.8125ZM27.9375 59.0625C27.9375 51.293 34.2305 45 42 45C49.7696 45 56.0625 51.293 56.0625 59.0625V64.6875C56.0625 68.3613 53.7071 71.4902 50.4375 72.6504V88.5938C50.4375 89.3672 49.8047 90 49.0313 90C48.2578 90 47.625 89.3672 47.625 88.5938V73.125H36.375V88.5938C36.375 89.3672 35.7422 90 34.9688 90C34.1953 90 33.5625 89.3672 33.5625 88.5938V72.6504C30.293 71.4902 27.9375 68.3613 27.9375 64.6875V59.0625Z"
+					fill="#3C1518"></path>
+			</svg>
 
+			<div class="right-content">
+				<span class="h3">Accessibilité</span><p>
+					Des parcours adaptés à tous les niveaux, petits et grands !
+				</p>
+			</div>
+		</div><div class="reassurbox">
+			<svg
+				width="71"
+				height="71"
+				viewBox="0 0 71 71"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M35.5 0C34.2797 0 33.2812 0.998437 33.2812 2.21875V15.5312C33.2812 16.7516 34.2797 17.75 35.5 17.75C36.7203 17.75 37.7188 16.7516 37.7188 15.5312V4.5207C53.8324 5.65781 66.5625 19.0951 66.5625 35.5C66.5625 52.6537 52.6537 66.5625 35.5 66.5625C18.3463 66.5625 4.4375 52.6537 4.4375 35.5C4.4375 29.0379 6.40664 23.0334 9.79023 18.0551C10.4836 17.0428 10.2201 15.6561 9.20781 14.9766C8.19551 14.2971 6.80879 14.5467 6.1293 15.559C2.26035 21.2445 0 28.1088 0 35.5C0 55.1082 15.8918 71 35.5 71C55.1082 71 71 55.1082 71 35.5C71 15.8918 55.1082 0 35.5 0ZM23.7545 20.6205C22.8947 19.7607 21.4803 19.7607 20.6205 20.6205C19.7607 21.4803 19.7607 22.8947 20.6205 23.7545L33.933 37.067C34.7928 37.9268 36.2072 37.9268 37.067 37.067C37.9268 36.2072 37.9268 34.7928 37.067 33.933L23.7545 20.6205Z"
+					fill="#3C1518"></path>
+			</svg>
+
+			<div class="right-content">
+				<span class="h3">Expérience illimitée</span><p>
+					L’accès au parcours est sans limite de temps, vous restez autant que
+					vous voulez !
+				</p>
+			</div>
+		</div>
+	</section>
+	<main>
+		<section class="intro">
+			<div class="container">
+				<div class="inner">
+					<div class="left">
+						<h2>
+							AccroFury, votre épopée dans les cimes, à 10 minutes de Caen !
+						</h2>
+						<p>
+							AccroFury, le parc d'accrobranche enchanté au cœur de la
+							Normandie, vous invite pour une épopée inoubliable en pleine
+							nature.
+						</p>
+						<p>
+							Que vous cherchiez l'adrénaline d'une tyrolienne longue de
+							plusieurs centaines de mètres, la joie d'une journée en famille,
+							ou simplement un moment de communion avec la nature, AccroFury est
+							votre destination.
+						</p>
+						<p>
+							Parcourez les passerelles mystiques, bravez les ponts suspendus et
+							découvrez la magie des Terres Normandes, en totale sécurité.
+							Rejoignez-nous pour une aventure inoubliable, à la portée de tous,
+							petits et grands !
+						</p>
+					</div>
+					<div class="right">img</div>
+				</div>
+				<hr />
+			</div>
+		</section>
+		<section class="slider-parcours">
+			<div class="parcours-board"><h2>Les parcours</h2></div>
+			<ParcoursSlider />
+			<button class="mapdl">Télécharger la<br />carte des parcours</button>
+			<Image src={OverLayMap} class="overlaymap" alt="overlaymap" />
+		</section>
+		<section class="security pt-20 pb-40 bg-harvestgold bg-opacity-20">
+			<div class="section-title text-center">
+				<svg
+					width="48"
+					height="50"
+					viewBox="0 0 48 50"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="mx-auto mb-6">
+					<path
+						d="M3.73633 11.2207L24 3.34961L44.2637 11.2109C44.5273 15.6641 43.8242 22.6172 40.875 29.4043C37.9258 36.1914 32.7305 42.8125 24 46.5918C15.2695 42.8125 10.0742 36.2012 7.125 29.4141C4.17578 22.627 3.47266 15.6738 3.73633 11.2207ZM47.3887 11.0352L47.2715 9.0332L45.3965 8.30078L25.1328 0.439453L24 0L22.8672 0.439453L2.60352 8.30078L0.738285 9.0332L0.621098 11.0352C0.337895 15.9082 1.09961 23.3691 4.26368 30.6543C7.45704 38.0078 13.1504 45.3027 22.7598 49.4629L24 50L25.2402 49.4629C34.8496 45.3027 40.543 38.0078 43.7363 30.6543C46.9004 23.3594 47.6621 15.9082 47.3789 11.0352H47.3887ZM23.0039 16.2207C21.7637 15 20.0938 14.3164 18.3555 14.3164H18.2285C14.6348 14.3164 11.7246 17.2266 11.7246 20.8203C11.7246 22.5684 12.4277 24.2383 13.668 25.459L22.9063 34.5312L24 35.6055L25.0938 34.5312L34.332 25.459C35.582 24.2383 36.2754 22.5684 36.2754 20.8203C36.2754 17.2266 33.3652 14.3164 29.7715 14.3164H29.6445C27.9063 14.3164 26.2363 15 24.9961 16.2207L24 17.1973L23.0039 16.2207ZM15.8555 23.2422C15.2109 22.6074 14.8398 21.7383 14.8398 20.8301C14.8398 18.9648 16.3535 17.4512 18.2188 17.4512H18.3457C19.2637 17.4512 20.1426 17.8125 20.8066 18.457L21.8027 19.4336L24 21.582L26.1875 19.4336L27.1836 18.457C27.8379 17.8125 28.7266 17.4512 29.6445 17.4512H29.7715C31.6367 17.4512 33.1504 18.9648 33.1504 20.8301C33.1504 21.7383 32.7891 22.6074 32.1348 23.2422L24 31.2305L15.8555 23.2422Z"
+						fill="#3C1518"></path>
+				</svg>
+				<h2>Focus sur la sécurité</h2>
+			</div>
+			<div class="max-w-5xl mx-auto mt-12 px-6">
+				<div class="flex flex-row mb-10 justify-between">
+					<div class="col w-[48%] flex flex-col justify-center">
+						<h3 class="text-xl mb-3">Nos Priorités, Votre Tranquillité</h3>
+						<p class="text-lg">
+							À Accrofury, la sécurité est primordiale. Tous nos parcours sont
+							équipés d'un système de "ligne de vie continue" qui assure une
+							protection optimale pour tous nos aventuriers. Vous pouvez
+							explorer à votre guise, sans avoir à vous préoccuper de
+							l'accrochage et du décrochage des mousquetons.
+						</p>
+					</div>
+					<div class="col w-[48%]">
+						<Image
+							src={LigneVieContinue}
+							alt="ligne de vie continue"
+							class="rounded-lg w-full"
+						/>
+					</div>
+				</div>
+
+				<div class="flex flex-row-reverse justify-between">
+					<div class="col w-[48%] flex flex-col justify-center">
+						<p class="text-lg">
+							Nos encadrants, formés et diplômés, veillent constamment à votre
+							sécurité et à celle de vos enfants. Avec des équipements modernes
+							conformes aux normes françaises et européennes, Accrofury vous
+							offre une aventure excitante, immergée dans la nature, sans
+							compromettre votre sécurité.
+						</p>
+						<strong class="text-lemon text-lg"
+							>Suspendez-vous d'arbre en arbre et vivez l'aventure en toute
+							sérénité.</strong
+						>
+					</div>
+					<div class="col w-[48%]">
+						<Image
+							src={EncadrantsDiplomes}
+							alt="Encadrants diplomés"
+							class="rounded-lg w-full"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="galery-park pt-20 pb-40 bg-harvestgold bg-opacity-20">
+			<div
+				class="section-title text-center flex-col justify-center align-center">
+				<svg
+					class="mx-auto mb-6"
+					width="44"
+					height="44"
+					viewBox="0 0 44 44"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M40.7764 34.5V37.625C40.7764 39.3535 39.3747 40.75 37.6398 40.75H6.27329C4.53833 40.75 3.13665 39.3535 3.13665 37.625V34.5H40.7764ZM10.3313 31.375H3.13665V30.457L12.5466 21.082L16.6046 25.125L10.6548 31.0527L10.3313 31.375ZM14.7716 31.375L19.9373 26.2285L28.2298 17.957L40.7764 30.457V31.375H14.7618H14.7716ZM40.7764 26.043L30.4451 15.75C29.2198 14.5293 27.23 14.5293 26.0048 15.75L18.8199 22.918L14.7618 18.875C13.5366 17.6543 11.5468 17.6543 10.3215 18.875L3.13665 26.043V6.375C3.13665 4.64648 4.53833 3.25 6.27329 3.25H37.6398C39.3747 3.25 40.7764 4.64648 40.7764 6.375V26.043ZM43.913 29.8125V6.375C43.913 2.92773 41.0999 0.125 37.6398 0.125H6.27329C2.81318 0.125 0 2.92773 0 6.375V29.8125V31.375V32.9375V34.5V37.625C0 41.0723 2.81318 43.875 6.27329 43.875H37.6398C41.0999 43.875 43.913 41.0723 43.913 37.625V34.5V32.9375V31.375V29.8125ZM12.5466 10.2812C12.5466 9.65965 12.2987 9.06351 11.8576 8.62397C11.4164 8.18443 10.818 7.9375 10.1941 7.9375C9.57018 7.9375 8.97182 8.18443 8.53064 8.62397C8.08947 9.06351 7.84162 9.65965 7.84162 10.2812C7.84162 10.9029 8.08947 11.499 8.53064 11.9385C8.97182 12.3781 9.57018 12.625 10.1941 12.625C10.818 12.625 11.4164 12.3781 11.8576 11.9385C12.2987 11.499 12.5466 10.9029 12.5466 10.2812Z"
+						fill="#3C1518"></path>
+				</svg>
+				<h2>Découvrir le parc en image</h2>
+			</div>
+			<GalleriePark />
+			<div class="cta_container mt-12 flex justify-center">
+				<button class="cta wood">Réserver</button>
+			</div>
+		</section>
+
+		<section class="trotfuryband jarallax">
+			<img class="jarallax-img" src="/img/trotfuryband.jpg" alt="TroFury" />
+			<div class="section-title text-center relative z-10">
+				<svg
+					class="mx-auto mb-6"
+					width="61"
+					height="44"
+					viewBox="0 0 61 44"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M32.6524 1.6875C32.6524 0.828125 33.3521 0.125 34.2073 0.125H38.182C40.1936 0.125 41.972 1.41406 42.6037 3.32813L43.109 4.8418L48.6191 2.07812C49.1244 1.82422 49.6881 1.6875 50.2614 1.6875C51.6997 1.6875 52.8659 2.85938 52.8659 4.31445V11.5703C52.8659 13.0156 51.6997 14.1973 50.2517 14.1973C49.6784 14.1973 49.1244 14.0605 48.6094 13.8066L45.5774 12.2734L48.0555 19.7539C48.6094 19.6855 49.1827 19.6562 49.7561 19.6562C53.7891 19.6562 57.443 21.2773 60.1058 23.9043C60.718 24.5098 60.7277 25.4961 60.1252 26.1113C59.5227 26.7266 58.5412 26.7363 57.9289 26.1309C55.8201 24.0605 52.9339 22.7812 49.7561 22.7812C44.2654 22.7812 39.6494 26.5996 38.4152 31.7461C38.3083 32.1953 38.2208 32.6543 38.1723 33.123C38.0848 33.9141 37.4143 34.5 36.6271 34.5H32.6524H27.9878H24.878C24.878 39.6758 20.6993 43.875 15.5488 43.875C10.3982 43.875 6.21951 39.6758 6.21951 34.5H3.10976C1.38967 34.5 0 33.1035 0 31.375V28.25C0 21.3457 5.56841 15.75 12.439 15.75H21.7683C23.4884 15.75 24.878 17.1465 24.878 18.875V28.25C24.878 29.9785 26.2677 31.375 27.9878 31.375H31.0976H32.6524H34.2073H35.3152C35.3443 31.248 35.3735 31.1309 35.4026 31.0039C36.5882 26.043 40.2616 22.0586 45.0137 20.4375L39.6688 4.31445C39.455 3.67969 38.8622 3.25 38.1917 3.25H34.2073C33.3521 3.25 32.6524 2.54688 32.6524 1.6875ZM44.1877 8.08398C44.2071 8.09375 44.2168 8.09375 44.2363 8.10352L49.7561 10.877V4.99805L44.2363 7.77148C44.1974 7.79102 44.1488 7.81055 44.1099 7.83008L44.1974 8.08398H44.1877ZM10.8841 9.5H23.3232C24.1784 9.5 24.878 10.2031 24.878 11.0625C24.878 11.9219 24.1784 12.625 23.3232 12.625H10.8841C10.029 12.625 9.32927 11.9219 9.32927 11.0625C9.32927 10.2031 10.029 9.5 10.8841 9.5ZM21.7683 18.875H12.439C7.28849 18.875 3.10976 23.0742 3.10976 28.25V31.375H6.754H10.165H20.9325H22.5943C22.0696 30.457 21.7586 29.3926 21.7586 28.25V18.875H21.7683ZM15.5488 40.75C18.9792 40.75 21.7683 37.9473 21.7683 34.5H9.32927C9.32927 37.9473 12.1183 40.75 15.5488 40.75ZM49.7561 40.75C51.4056 40.75 52.9876 40.0915 54.154 38.9194C55.3203 37.7473 55.9756 36.1576 55.9756 34.5C55.9756 32.8424 55.3203 31.2527 54.154 30.0806C52.9876 28.9085 51.4056 28.25 49.7561 28.25C48.1066 28.25 46.5246 28.9085 45.3582 30.0806C44.1919 31.2527 43.5366 32.8424 43.5366 34.5C43.5366 36.1576 44.1919 37.7473 45.3582 38.9194C46.5246 40.0915 48.1066 40.75 49.7561 40.75ZM49.7561 25.125C52.2304 25.125 54.6033 26.1127 56.3529 27.8709C58.1025 29.629 59.0854 32.0136 59.0854 34.5C59.0854 36.9864 58.1025 39.371 56.3529 41.1291C54.6033 42.8873 52.2304 43.875 49.7561 43.875C47.2818 43.875 44.9089 42.8873 43.1593 41.1291C41.4097 39.371 40.4268 36.9864 40.4268 34.5C40.4268 32.0136 41.4097 29.629 43.1593 27.8709C44.9089 26.1127 47.2818 25.125 49.7561 25.125Z"
+						fill="white"></path>
+				</svg>
+			</div>
+			<div class="elemcontainer">
+				<h2>Les Trot’Fury</h2>
+				<p>
+					Chevauchez une de nos trottinettes électriques et parcourez le parc à
+					vive allure !
+				</p>
+				<div class="cta_container mt-12 flex justify-center">
+					<button class="cta wood">Découvrir</button>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</section>
+		<section class="testimonials py-20">
+			<div class="section-title text-center relative z-10">
+				<svg
+					class="mx-auto"
+					width="50"
+					height="50"
+					viewBox="0 0 50 50"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_1_3435)">
+						<path
+							d="M18.75 40.625C18.75 38.8965 17.3535 37.5 15.625 37.5H6.25C4.52148 37.5 3.125 36.1035 3.125 34.375V6.25C3.125 4.52148 4.52148 3.125 6.25 3.125H43.75C45.4785 3.125 46.875 4.52148 46.875 6.25V34.375C46.875 36.1035 45.4785 37.5 43.75 37.5H30.2051C29.5312 37.5 28.8672 37.7148 28.3301 38.125L18.75 45.3125V40.625ZM6.25 0C2.80273 0 0 2.80273 0 6.25V34.375C0 37.8223 2.80273 40.625 6.25 40.625H12.5H15.625V43.75V48.4375C15.625 49.0332 15.957 49.5703 16.4844 49.834C17.0117 50.0977 17.6465 50.0391 18.125 49.6875L30.2051 40.625H43.75C47.1973 40.625 50 37.8223 50 34.375V6.25C50 2.80273 47.1973 0 43.75 0H6.25ZM35.4785 14.3848C36.084 13.7793 36.084 12.7832 35.4785 12.1777C34.873 11.5723 33.877 11.5723 33.2715 12.1777L21.875 23.5742L16.7285 18.4277C16.123 17.8223 15.127 17.8223 14.5215 18.4277C13.916 19.0332 13.916 20.0293 14.5215 20.6348L20.7715 26.8848C21.377 27.4902 22.373 27.4902 22.9785 26.8848L35.4785 14.3848Z"
+							fill="#3C1518"></path>
+					</g>
+					<defs>
+						<clipPath id="clip0_1_3435">
+							<rect width="50" height="50" fill="white"></rect>
+						</clipPath>
+					</defs>
+				</svg>
+				<span class="sub">Témoignages</span>
+				<h2>Nos clients en parlent</h2>
+			</div>
+			<TestimonialsSlider />
+			<img class="jongleurleft" src="/img/jongleur1.png" alt="Jongleur" />
+			<img class="jongleurright" src="/img/jongleur1.png" alt="Jongleur" />
+		</section>
+		<section class="faq">
+			<div class="section-title text-center relative z-10 mb-10">
+				<svg
+					class="mx-auto mb-6"
+					width="44"
+					height="45"
+					viewBox="0 0 44 45"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M6.28571 3.28568C4.54732 3.28568 3.14286 4.69014 3.14286 6.42854V37.8571C3.14286 39.5955 4.54732 41 6.28571 41H37.7143C39.4527 41 40.8571 39.5955 40.8571 37.8571V6.42854C40.8571 4.69014 39.4527 3.28568 37.7143 3.28568H6.28571ZM0 6.42854C0 2.96157 2.81875 0.142822 6.28571 0.142822H37.7143C41.1812 0.142822 44 2.96157 44 6.42854V37.8571C44 41.3241 41.1812 44.1428 37.7143 44.1428H6.28571C2.81875 44.1428 0 41.3241 0 37.8571V6.42854ZM8.64286 6.42854C9.26801 6.42854 9.86756 6.67688 10.3096 7.11893C10.7517 7.56098 11 8.16053 11 8.78568C11 9.41083 10.7517 10.0104 10.3096 10.4524C9.86756 10.8945 9.26801 11.1428 8.64286 11.1428C8.0177 11.1428 7.41816 10.8945 6.97611 10.4524C6.53405 10.0104 6.28571 9.41083 6.28571 8.78568C6.28571 8.16053 6.53405 7.56098 6.97611 7.11893C7.41816 6.67688 8.0177 6.42854 8.64286 6.42854ZM33 8.78568C33 8.16053 33.2483 7.56098 33.6904 7.11893C34.1324 6.67688 34.732 6.42854 35.3571 6.42854C35.9823 6.42854 36.5818 6.67688 37.0239 7.11893C37.4659 7.56098 37.7143 8.16053 37.7143 8.78568C37.7143 9.41083 37.4659 10.0104 37.0239 10.4524C36.5818 10.8945 35.9823 11.1428 35.3571 11.1428C34.732 11.1428 34.1324 10.8945 33.6904 10.4524C33.2483 10.0104 33 9.41083 33 8.78568ZM8.64286 33.1428C9.26801 33.1428 9.86756 33.3912 10.3096 33.8332C10.7517 34.2753 11 34.8748 11 35.5C11 36.1251 10.7517 36.7247 10.3096 37.1667C9.86756 37.6088 9.26801 37.8571 8.64286 37.8571C8.0177 37.8571 7.41816 37.6088 6.97611 37.1667C6.53405 36.7247 6.28571 36.1251 6.28571 35.5C6.28571 34.8748 6.53405 34.2753 6.97611 33.8332C7.41816 33.3912 8.0177 33.1428 8.64286 33.1428ZM33 35.5C33 34.8748 33.2483 34.2753 33.6904 33.8332C34.1324 33.3912 34.732 33.1428 35.3571 33.1428C35.9823 33.1428 36.5818 33.3912 37.0239 33.8332C37.4659 34.2753 37.7143 34.8748 37.7143 35.5C37.7143 36.1251 37.4659 36.7247 37.0239 37.1667C36.5818 37.6088 35.9823 37.8571 35.3571 37.8571C34.732 37.8571 34.1324 37.6088 33.6904 37.1667C33.2483 36.7247 33 36.1251 33 35.5ZM13.4259 14.4625C14.0643 12.0464 16.2446 10.3571 18.7491 10.3571H24.3571C27.8438 10.3571 30.6429 13.2053 30.6429 16.6723C30.6429 19.0294 29.3268 21.2098 27.2152 22.2901L23.5714 24.1366V26.0714C23.5714 26.9357 22.8643 27.6428 22 27.6428C21.1357 27.6428 20.4286 26.9357 20.4286 26.0714V23.1741C20.4286 22.5848 20.7625 22.0446 21.283 21.7696L25.7812 19.4714C26.8321 18.941 27.5 17.841 27.5 16.6526C27.5 14.9044 26.0857 13.4803 24.3571 13.4803H18.7491C17.6786 13.4803 16.7357 14.2071 16.4705 15.2384L16.4509 15.3071C16.2348 16.1419 15.3705 16.6526 14.5357 16.4268C13.7009 16.2009 13.1902 15.3464 13.4161 14.5116L13.4357 14.4428L13.4259 14.4625ZM19.6429 32.3571C19.6429 31.732 19.8912 31.1324 20.3332 30.6904C20.7753 30.2483 21.3748 30 22 30C22.6252 30 23.2247 30.2483 23.6668 30.6904C24.1088 31.1324 24.3571 31.732 24.3571 32.3571C24.3571 32.9823 24.1088 33.5818 23.6668 34.0239C23.2247 34.4659 22.6252 34.7142 22 34.7142C21.3748 34.7142 20.7753 34.4659 20.3332 34.0239C19.8912 33.5818 19.6429 32.9823 19.6429 32.3571Z"
+						fill="#3C1518"></path>
+				</svg>
+				<span class="sub">Réponses aux questions fréquentes</span>
+				<h2>Besoin de plus d’infos ?</h2>
+			</div>
+
+			<div class="faqcontainer max-w-5xl mx-auto shadow-xl rounded-lg overflow-clip">
+				<Accordion
+					items={[
+						{
+							title: "Quels sont les différents parcours disponibles ?",
+							answer:
+								"<p>R : Nous offrons une variété de parcours adaptés à tous les niveaux, du débutant au confirmé. Chaque parcours est conçu pour offrir une expérience unique en harmonie avec la nature.</p>",
+							isopen: true,
+						},
+						{
+							title:
+								"Est-ce sécurisé de faire de l'accrobranche chez AccroFury ?",
+							answer:
+								"<p>R : La sécurité est notre priorité absolue chez AccroFury. Tous nos parcours d'accrobranche sont conçus et construits conformément aux normes de sécurité les plus strictes du secteur. Avant de commencer l'aventure, chaque participant reçoit un équipement de protection individuel, incluant un harnais, des mousquetons et une ligne de vie continue.</p><p>De plus, notre personnel qualifié assure une formation complète sur les techniques de sécurité et l'utilisation correcte du matériel avant que les visiteurs ne débutent le parcours. Ils sont également présents en permanence sur le site pour surveiller les parcours et intervenir en cas de besoin.</p><p>Nous effectuons régulièrement des inspections et des maintenances sur tous nos équipements et parcours pour garantir leur bon état de fonctionnement. Les participants sont encadrés par des consignes précises et doivent respecter les règles de sécurité établies pour garantir une expérience amusante et sans danger.</p><p>Nous sommes fiers de notre bilan en matière de sécurité et nous nous engageons à offrir une expérience d'accrobranche sûre et excitante pour tous nos visiteurs.</p>",
+						},
+						{
+							title: "Y a-t-il une limite d'âge pour participer ?",
+							answer:
+								"<p>R : Non, il n'y a pas de limite d'âge stricte pour participer à la plupart des activités ou parcours d'aventure. Cependant, il est important de noter que certains parcours, notamment ceux conçus pour les adultes, peuvent avoir des exigences spécifiques en termes de taille. Par exemple, pour des raisons de sécurité, les parcours pour adultes ne sont généralement accessibles qu'aux personnes mesurant plus de 1 mètre 30. Cela permet de s'assurer que les participants sont capables d'atteindre et d'utiliser correctement les équipements de sécurité, comme les harnais et les lignes de vie.</p><p>Pour les enfants et les personnes de petite taille, il existe souvent des parcours adaptés à leur âge et à leur taille, ce qui leur permet de profiter de l'expérience en toute sécurité. Il est toujours recommandé de vérifier les règles spécifiques de l'activité ou du parc d'aventure que vous envisagez de visiter pour vous assurer que tous les participants répondent aux critères requis.</p>",
+						},
+						{
+							title:
+								" Dois-je avoir une certaine condition physique pour faire de l'accrobranche ?",
+							answer:
+								"<p>R : L'accrobranche est une activité de plein air qui peut être adaptée à différents niveaux de condition physique, et nos parcours sont de difficultés variées pour accueillir un large éventail de participants. En général, il n'est pas nécessaire d'avoir une condition physique exceptionnelle pour s'essayer à l'accrobranche.</p><p>Cependant, certains parcours, comme le parcours noir, est conçu pour être plus exigeant et peut nécessiter une meilleure condition physique. Ce parcours inclut des obstacles plus difficiles, des passages plus longs ou des éléments qui demandent plus de force et d'endurance. Si vous choisissez de vous lancer dans ce parcours, attendez-vous à un défi physique plus important.</p><p>Toutefois, chaque participant est équipé d'un baudrier avec une poulie de tyrolienne. Cette poulie est utilisée pour se déplacer sur les câbles lors des tyroliennes et peut également servir à franchir certains obstacles. Il est très simple d'utiliser la poulie pour se tirer à travers certains obstacles si vous trouvez que vous ne pouvez pas les franchir par la force physique seule, mais cela pourrait être considéré comme un peu de la \"triche\" par rapport à l'intention du parcours, qui est de relever les défis par son propre effort.</p><p>En résumé, le parc est accessible à la plupart des gens, mais si vous visez les parcours de haut niveau, comme le parcours noir, il est conseillé d'avoir une bonne condition physique. Et même si vous pouvez techniquement utiliser la poulie pour vous aider, l'idée est de tenter de surmonter les obstacles par vous-même pour une expérience complète et satisfaisante. Avant de commencer, il est toujours sage de discuter avec le personnel pour choisir le parcours le mieux adapté à votre niveau de forme et d'expérience.</p>",
+						},
+						{
+							title: "Comment réserver une session d'accrobranche ?",
+							answer:
+								"<p>R : Vous pouvez réserver votre session d'accrobranche en nous contactant par mail, par téléphone, ou en utilisant notre système de réservation disponible sur le site.</p>",
+						},
+						{
+							title:
+								"Que dois-je porter pour une session d'accrobranche ?",
+							answer:"<p>R : Pour une session d'accrobranche, il est important de porter une tenue adaptée qui assure votre confort et votre sécurité tout en vous permettant de vous déplacer librement. Voici quelques conseils sur ce que vous devriez porter :</p><ul><li><strong>Vêtements confortables et ajustés</strong> : Optez pour des vêtements qui ne sont ni trop serrés ni trop amples. Des vêtements trop amples pourraient se coincer dans les équipements, tandis que des vêtements trop serrés pourraient restreindre vos mouvements. Un t-shirt ou un sweat à manches longues et un pantalon de sport ou un legging sont généralement recommandés pour protéger votre peau des frottements et des éraflures.</li><li><strong>Chaussures fermées et antidérapantes</strong> : Il est essentiel de porter des chaussures qui soutiennent bien le pied et qui ont une bonne adhérence, comme des baskets ou des chaussures de randonnée. Évitez les sandales, les tongs ou les chaussures à talons hauts.</li><li><strong>Cheveux attachés</strong> : Si vous avez les cheveux longs, pensez à les attacher pour éviter qu'ils ne se prennent dans les équipements ou ne vous gênent pendant l'activité.</li><li><strong>Peu ou pas de bijoux</strong> : Il est conseillé de retirer les bijoux tels que colliers, bracelets, boucles d'oreilles ou bagues avant de commencer l'activité pour éviter qu'ils ne s'accrochent ou ne se perdent.</li><li><strong>Sac à dos léger</strong> : Si vous avez besoin d'emporter des effets personnels, choisissez un petit sac à dos qui ne vous gênera pas pendant l'activité. Assurez-vous qu'il peut être fermé correctement pour que rien ne tombe.</li></ul><p>",
+						},
+					]}
+				/>
+			</div>
+			<p class="text-center mx-auto mt-12 font-lemon text-xl max-w-2xl">Vous ne trouvez pas la réponse que vous cherchez ?
+Envoyez nous un message !</p>
+		</section>
+		<CTABand />
+	</main>
+	<Footer />
+</Layout>
+<script>
+	import { jarallax } from "jarallax";
+	jarallax(document.querySelectorAll(".jarallax"), {
+		speed: 0.6,
+	});
+</script>
 <style lang="scss">
-	.fifou {
-		@apply font-bold;
+	.reassurbox {
+		@apply bg-scroll border-2 border-blackbean rounded-lg shadow-lg p-8 text-blackbean;
+		box-shadow:
+			2px 2px 3px rgba(0, 0, 0, 0.2),
+			0 0 15px #9b7025ae inset;
+		@apply flex justify-center items-center gap-4;
+		.right-content {
+			@apply flex-auto;
+		}
+		svg {
+			@apply shrink-0 flex-auto;
+		}
+		.h3 {
+			@apply font-lemon text-lg;
+		}
+		p {
+			@apply font-sylfaen text-lg;
+		}
+	}
+	.slider-parcours {
+		@apply relative overflow-clip text-center;
+		.parcours-board {
+			@apply absolute top-0 left-[50%] z-10 text-center w-full -translate-x-1/2;
+			background: url("/img/parcours-board.png") no-repeat center center;
+			height: 250px;
+			h2 {
+				@apply font-lemon text-white text-center mt-[120px] text-xxxxl;
+			}
+		}
+		button.mapdl {
+			@apply absolute bottom-20 z-20 font-lemon text-xl text-white px-[92px] py-[20px] -translate-x-1/2;
+			width: 450px;
+			background: url("/img/wooden-large.png") no-repeat center center;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -32px;
+				left: -31px;
+				width: 102px;
+				height: 79px;
+				background: url("/img/bck-leaf-top-left.png") no-repeat;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: -17px;
+				right: 10px;
+				width: 74px;
+				height: 104px;
+				background: url("/img/bck-leaf-top-right.png") no-repeat;
+			}
+		}
+	}
+	.overlaymap {
+		@apply absolute top-0 right-0 z-0 bottom-0 left-0 w-full h-full;
+	}
+	.trotfuryband {
+		@apply relative text-center py-20;
+		.elemcontainer {
+			@apply relative z-10;
+			h2 {
+				@apply font-lemon text-white text-xxxxl shadow-md;
+			}
+			p {
+				@apply font-sylfaen text-white text-xxl max-w-2xl mx-auto  shadow-md;
+			}
+		}
+
+		.overlay {
+			@apply absolute top-0 right-0 z-0 bottom-0 left-0 w-full h-full bg-black opacity-50;
+		}
+	}
+	.testimonials {
+		@apply bg-harvestgold bg-opacity-10 relative overflow-clip;
+		.sub {
+			@apply block mt-2 font-[Arial] font-bold text-sm text-blackbean;
+		}
+		.jongleurleft {
+			@apply absolute top-0 -left-[40%] z-10 translate-x-1/2;
+		}
+		.jongleurright {
+			@apply absolute top-0 -right-[40%] z-10 -translate-x-1/2;
+		}
+	}
+
+	.faq {
+		@apply py-20;
+		background:url("/img/parchemin.jpg") no-repeat center center;
+		background-size: cover;
+		.sub {
+			@apply block mt-2 font-[Arial] font-bold text-sm text-blackbean;
+		}
 	}
 	main {
 		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-		
-
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
 	}
 </style>

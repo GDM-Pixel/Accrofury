@@ -1,75 +1,12 @@
 ---
 import { Image } from "astro:assets";
-interface Props {
-	//title: string;
-	//body: string;
-	//href: string;
-}
+interface Props {}
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
 import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 ---
 
-<div class="topbar">
-	<div class="inner_container_lg">
-		<div class="left">
-			<a href="tel:+33977216680" class="mr-2">
-				<i class="fa-sharp fa-solid fa-phone"></i>+33-9-7721-6680</a
-			>| <a href="mailto:contact@gdm-pixel.fr"
-				><i class="fa-sharp fa-solid fa-envelope"></i> contact@gdm-pixel.fr</a
-			>
-		</div>
-		<div class="right">
-			<span
-				class="gogdm"
-				data-goto="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2dkbXBpeGVsLw==">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					height="1em"
-					viewBox="0 0 448 512"
-					><path
-						d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
-					></path></svg
-				>
-			</span>
-			<span class="gogdm" data-goto="aHR0cHM6Ly90d2l0dGVyLmNvbS9nZG1fcGl4ZWw=">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					height="1em"
-					viewBox="0 0 512 512"
-					><path
-						d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-					></path></svg
-				>
-			</span>
-			<span
-				class="gogdm"
-				data-goto="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2NoYXJsZXMtYW5ub25pLThhNjQ1NjU2Lw==">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					height="1em"
-					viewBox="0 0 448 512"
-					><path
-						d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-					></path></svg
-				>
-			</span>
-			<span
-				class="gogdm"
-				data-goto="aHR0cHM6Ly93d3cueW91dHViZS5jb20vYy9HRE1QaXhlbA==">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					height="1em"
-					viewBox="0 0 576 512"
-					><path
-						d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
-					></path></svg
-				></span
-			>
-		</div>
-	</div>
-</div>
-<div class="header" transition:persist>
+<header class="header" transition:persist>
 	<div class="container">
 		<a href="/" data-image-src="/img/hero-home-bck.webp"
 			><Image class="logo" src={AccrofuryLogo} alt="logo GDM-Pixel" /></a
@@ -79,32 +16,31 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 				<li>
 					<a href="/" data-image-src="/img/hero-home-bck.webp"
 						><svg
-							xmlns="http://www.w3.org/2000/svg"
-							height="1em"
-							viewBox="0 0 576 512"
-							><path
-								d="M576 287.6H511.8l1 224.4H472 456 352V352H224V512H120 104 64.1V474.8c-.1-.9-.1-1.8-.1-2.8V360c0-.9 0-1.9 .1-2.8V287.6H0V240L288.4 0 416 106.5V32h96V186.6L576 240v47.6z"
-							></path></svg
-						></a
+							width="27"
+							height="24"
+							viewBox="0 0 27 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M17.5969 0.262491C18.075 0.660929 18.1359 1.36874 17.7375 1.84687L14.9672 5.16093L26.0156 18.3797C26.4094 18.8531 26.625 19.4484 26.625 20.0625V21.375C26.625 22.8234 25.4484 24 24 24H13.5H3C1.55156 24 0.375 22.8234 0.375 21.375V20.0625C0.375 19.4484 0.590625 18.8531 0.984375 18.3797L12.0328 5.16093L9.2625 1.84687C8.86406 1.36874 8.92969 0.660929 9.40312 0.262491C9.87656 -0.135946 10.5891 -0.070321 10.9875 0.403117L13.5 3.4078L16.0125 0.403117C16.4109 -0.0750085 17.1187 -0.135946 17.5969 0.262491ZM2.71406 19.8187C2.65781 19.8844 2.625 19.9734 2.625 20.0578V21.3703C2.625 21.5766 2.79375 21.7453 3 21.7453H5.90625L12.6141 13.1812C12.825 12.9094 13.1531 12.75 13.5 12.75C13.8469 12.75 14.175 12.9094 14.3859 13.1812L21.0937 21.75H24C24.2062 21.75 24.375 21.5812 24.375 21.375V20.0625C24.375 19.9734 24.3422 19.8891 24.2859 19.8234L13.5 6.91405L2.71406 19.8187ZM8.76562 21.75H13.5H18.2344L13.5 15.6984L8.76562 21.75Z"
+							></path>
+						</svg></a
 					>
 				</li>
 				<li>
 					<a href="/creation-site/" data-image-src="/img/HeroBoxCreasite.webp"
-						>Création de site</a>
+						>Horaires et tarifs</a
+					>
 				</li>
 				<li>
 					<a
 						href="/creation-site/creer-ecommerce/"
-						data-image-src="/img/HeroEcommerce.webp">E-commerce</a>
+						data-image-src="/img/HeroEcommerce.webp">Les Trot’Furys</a
+					>
 				</li>
 				<li>
 					<a href="/referencement/" data-image-src="/img/SEOHero.webp"
-						>Référencement</a>
-				</li>
-				<li><a href="/webmarketing/">Webmarketing</a></li>
-				<li>
-					<a href="/contact/" data-image-src="/img/contact-hero-bck.webp"
-						>Contact</a>
+						>Accès et contact</a
+					>
 				</li>
 			</ul>
 		</nav>
@@ -117,13 +53,16 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 				xmlns="http://www.w3.org/2000/svg"
 				height="1em"
 				viewBox="0 0 448 512"
-				fill="#ffffff"
+				fill="#3C1518"
 				><path d="M0 64H448v64H0V64zM0 224H448v64H0V224zM448 384v64H0V384H448z"
 				></path></svg
 			>
 		</button>
 	</div>
-</div>
+	<img class="liane-gauche" src="/img/lierre-gauche.png" alt="Liane gauche" />
+	<img class="liane-centre" src="/img/liane-centre.png" alt="Liane centre" />
+	<img class="liane-droite" src="/img/liane-droite.png" alt="Liane droite" />
+</header>
 <div class="mobile-menu-overlay"></div>
 <div id="mobile-nav" class="gdm-nav gdm-nav-1">
 	<div class="gdm-nav gdm-nav-2">
@@ -179,12 +118,10 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 							</svg>
 						</a>
 					</li>
-					<li><a href="/creation-site/">Création de site</a></li>
-					<li><a href="/creation-site/creer-ecommerce/">E-commerce</a></li>
-					<li><a href="/refercenement/">Référencement</a></li>
-					<li><a href="/webmarketing/">Webmarketing</a></li>
-					<li><a href="/articles/">Le Blog</a></li>
-					<li><a href="/contact/">Contact</a></li>
+					<li><a href="/">Création de site</a></li>
+					<li><a href="/">E-commerce</a></li>
+					<li><a href="/">Référencement</a></li>
+					<li><a href="/">Webmarketing</a></li>
 				</ul>
 			</div>
 		</div>
@@ -284,42 +221,6 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 	}
 </script>
 <style lang="scss" is:global>
-	.topbar {
-		@apply bg-raisinblack text-white px-6 text-sm py-2 z-20 relative hidden sm:block;
-		.inner_container_lg {
-			@apply flex flex-col md:flex-row justify-between items-center;
-			.left {
-				@apply flex items-center;
-				a {
-					@apply flex items-center justify-center text-white;
-					&:hover {
-						@apply text-moonstone-400;
-						svg {
-							@apply text-moonstone-400 fill-moonstone-400;
-						}
-					}
-				}
-			}
-			.right {
-				@apply md:flex hidden items-center;
-				a {
-					@apply flex flex-col justify-center items-center text-white;
-					&:hover {
-						@apply text-moonstone-400;
-					}
-				}
-			}
-		}
-		svg {
-			@apply mr-2 fill-white transition-all duration-300 text-base;
-			&:hover {
-				@apply fill-moonstone-400 transition-all duration-300;
-			}
-		}
-		.svg-inline--fa {
-			@apply mx-2 w-4;
-		}
-	}
 	@keyframes slideDown {
 		0% {
 			transform: translateY(-100%);
@@ -329,40 +230,53 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		}
 	}
 	.header {
-		@apply bg-prussian-400 py-0 px-6 relative z-20 transition-all duration-300 ease-in-out h-[65px] flex items-center justify-center lg:h-auto;
+		@apply bg-scroll py-0 px-6 relative z-20 transition-all duration-300 ease-in-out h-[115px] flex items-center justify-center;
+		box-shadow:
+			2px 2px 10px rgba(0, 0, 0, 0.5),
+			0 0 30px #9b7025 inset;
 		&.stickynav {
-			@apply bg-opacity-60 sticky top-0 transition-all duration-1000 ease-in-out z-30;
+			@apply bg-opacity-60 h-[85px] sticky top-0 transition-all duration-1000 ease-in-out z-30;
 			animation: slideDown 0.5s forwards;
 			nav.desktop-nav {
-				@apply h-[60px];
+				@apply h-[40px];
 			}
 			.logo {
-				@apply max-w-[120px] lg:max-w-[150px];
+				@apply max-w-[250px] lg:max-w-[250px] -mb-[40px];
+			}
+			.liane-centre {
+				@apply top-[-30px];
 			}
 		}
 
 		.container {
-			@apply max-w-[1600px] flex px-0 py-0 justify-between items-center;
+			@apply max-w-[1900px] flex px-0 py-0 justify-between items-center;
 		}
 		.logo {
-			@apply max-w-[140px] lg:max-w-[230px] transition-all duration-300 ease-in-out;
+			@apply max-w-[140px] lg:max-w-[380px] transition-all duration-300 ease-in-out -mb-[60px] z-10 relative;
 		}
 		nav.desktop-nav {
-			@apply xl:flex items-center h-[85px] hidden lg:block;
+			@apply xl:flex items-center h-[55px] hidden lg:block;
 			ul {
 				@apply flex h-full;
 				li {
+					@apply mx-4;
 					a {
-						@apply md:text-sm lg:text-sm xl:text-base font-bold h-full flex items-center text-white lg:px-4 xl:px-6 flex-auto  hover:text-moonstone-400 hover:bg-prussian-600;
+						@apply border-t-4 border-b-4 border-transparent font-lemon md:text-sm lg:text-sm xl:text-base font-bold h-full flex items-center text-blackbean lg:px-4 xl:px-4 flex-auto transition-all duration-300;
+						&:hover {
+							@apply text-harvestgold border-harvestgold transition-all duration-300;
+						}
+						svg {
+							@apply fill-blackbean transition-all duration-300;
+						}
 						&.active {
-							@apply text-moonstone-400 bg-prussian-100;
+							@apply text-airblue border-blackbean;
 							svg {
-								@apply fill-moonstone-400;
+								@apply fill-blackbean;
 							}
 						}
 					}
 					svg {
-						@apply fill-powder transition-all duration-300 hover:fill-moonstone-400;
+						@apply fill-white transition-all duration-300 hover:fill-airblue;
 					}
 				}
 			}
@@ -370,16 +284,25 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		nav.mobile-nav {
 			@apply visible xl:hidden;
 		}
+		.liane-gauche {
+			@apply absolute -top-2 left-0 z-0;
+		}
+		.liane-centre {
+			@apply absolute top-0 left-[40%];
+		}
+		.liane-droite {
+			@apply absolute top-0 right-0 pointer-events-none;
+		}
 	}
 	.bd-container {
 		@apply bg-white shadow-md;
 	}
 	.c-breadcrumbs {
-		@apply text-prussian-400 mx-auto max-w-[1650px] px-6 py-2  capitalize relative;
+		@apply text-blackbean mx-auto max-w-[1650px] px-6 py-2  capitalize relative;
 		a.c-breadcrumbs__link {
-			@apply text-dustyred-400 text-[12px] font-semibold;
+			@apply text-harvestgold text-[12px] font-semibold;
 			&:hover {
-				@apply text-moonstone-400;
+				@apply text-airblue;
 			}
 		}
 	}
@@ -440,7 +363,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		flex-direction: column;
 		align-content: flex-end;
 		align-items: flex-end;
-		background-color: #fafffd;
+		background-color: #D8C99E;
 		width: 100%;
 		max-width: 360px;
 		min-width: 360px;
@@ -456,7 +379,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		flex-direction: column;
 		align-content: flex-end;
 		align-items: flex-end;
-		background-color: #445069;
+		background-color: #637807;
 		transition-delay: 0.1s;
 		width: 95%;
 	}
@@ -466,7 +389,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 	}
 
 	.gdm-nav-3 {
-		background-color: #232634;
+		background-color: #3C1518;
 		padding: 40px;
 		position: relative;
 		transition-delay: 0.2s;
@@ -507,11 +430,11 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		svg.home-btn {
 			@apply fill-white transition-all duration-300 text-base;
 			&:hover {
-				@apply fill-moonstone-400 transition-all duration-300;
+				@apply fill-airblue transition-all duration-300;
 			}
 		}
 		&:hover {
-			@apply text-moonstone-400 transition-all duration-300;
+			@apply text-airblue transition-all duration-300;
 		}
 	}
 </style>

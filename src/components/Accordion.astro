@@ -10,11 +10,12 @@ const { items, extraClass = "" } = Astro.props;
 			//@ts-ignore
 			<div key={index}>
 				<button aria-label={item.title}
-					class={`accordion flex justify-between gap-3 ${
+					class={`accordion flex gap-3  ${
 						item.isopen ? "active" : ""
 					}`}>
-					{item.title}
-					<svg
+					<span class="index w-10">{index + 1}</span>
+					<span class="flex-grow-1 self-start w-full">{item.title}</span>
+					<svg class="w-10"
 						width="24"
 						height="25"
 						viewBox="0 0 24 25"
@@ -23,7 +24,7 @@ const { items, extraClass = "" } = Astro.props;
 						<path d="M12.0002 24.2344C18.6284 24.2344 24.0002 18.8625 24.0002 12.2344C24.0002 5.60625 18.6284 0.234375 12.0002 0.234375C5.37212 0.234375 0.000244141 5.60625 0.000244141 12.2344C0.000244141 18.8625 5.37212 24.2344 12.0002 24.2344ZM10.8752 16.3594V13.3594H7.87524C7.25181 13.3594 6.75024 12.8578 6.75024 12.2344C6.75024 11.6109 7.25181 11.1094 7.87524 11.1094H10.8752V8.10938C10.8752 7.48594 11.3768 6.98438 12.0002 6.98438C12.6237 6.98438 13.1252 7.48594 13.1252 8.10938V11.1094H16.1252C16.7487 11.1094 17.2502 11.6109 17.2502 12.2344C17.2502 12.8578 16.7487 13.3594 16.1252 13.3594H13.1252V16.3594C13.1252 16.9828 12.6237 17.4844 12.0002 17.4844C11.3768 17.4844 10.8752 16.9828 10.8752 16.3594Z" />
 					</svg>
 				</button>
-				<div class="panel" data-isopen={item.isopen ? "true" : "false"}>
+				<div class="panel pl-12 text-lg" data-isopen={item.isopen ? "true" : "false"}>
 					<div class="accordion-content" set:html={item.answer} />
 				</div>
 			</div>
@@ -77,6 +78,7 @@ const { items, extraClass = "" } = Astro.props;
 			});
 		});
 	}
+	initAccordion();
 	document.addEventListener("astro:content-ready", initAccordion);
 	document.addEventListener("astro:page-load", initAccordion);
 </script>
@@ -84,45 +86,49 @@ const { items, extraClass = "" } = Astro.props;
 <style lang="scss">
 	/* Style de l'accordéon avec effet de glissement */
 	.accordion {
-		@apply w-full bg-prussian-600 transition-all duration-300 ease-in-out border-b-2 border-prussian-100 text-left px-6 py-8 cursor-pointer font-semibold;
+		@apply w-full bg-forest transition-all duration-300 ease-in-out border-b-2 border-white text-left px-6 py-8 cursor-pointer text-xl font-lemon text-white;
 	}
 
 	.accordion svg {
-		@apply fill-moonstone-500 transition-all duration-500 ease-in-out rotate-0 flex-shrink-0;
+		@apply fill-harvestgold transition-all duration-500 ease-in-out rotate-0 flex-shrink-0;
+	}
+	.accordion .index {
+		@apply text-harvestgold;
 	}
 	.accordion.active svg {
-		@apply fill-dustyred-200 transition-all duration-500 ease-in-out rotate-45;
+		@apply fill-harvestgold transition-all duration-500 ease-in-out rotate-45;
 	}
 
 	.active {
 		color: white;
-		@apply bg-prussian-200 transition-all duration-300 ease-in-out text-white;
+		@apply bg-white transition-all duration-300 ease-in-out text-blackbean border-white;
 	}
 	.accordion:hover {
-		@apply bg-prussian-500 transition-all duration-300 ease-in-out;
+		@apply bg-blackbean transition-all duration-300 text-white ease-in-out;
 	}
 
 	.clearaccordion {
 		@apply shadow-lg;
 		.accordion.active {
-			@apply bg-prussian-200 transition-all duration-300 ease-in-out;
+			@apply bg-blackbean transition-all duration-300 ease-in-out;
 		}
 		.accordion:hover {
-			@apply bg-prussian-200 transition-all duration-300 ease-in-out;
+			@apply bg-blackbean transition-all duration-300 ease-in-out;
 		}
 		.accordion {
-			@apply bg-white text-prussian-700 border-t border-prussian-400 border-solid;
+			@apply bg-white text-blackbean border-t border-blackbean border-solid;
 		}
 		& > div:first-child button {
 			@apply border-t-0;
 		}
 	}
 	.panel {
-    @apply max-h-0 overflow-hidden transition-all duration-300 border-b bg-white text-prussian-700;
+    @apply max-h-0 overflow-hidden transition-all duration-300 border-b bg-white text-blackbean;
 	}
 
 	.accordion-content {
-		padding: 18px;
+		padding: 18px 18px 36px 18px; 
 		background-color: white;
+		ul li {@apply mb-6}
 	}
 </style>

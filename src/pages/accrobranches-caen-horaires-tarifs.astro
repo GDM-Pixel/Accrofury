@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import ContactImage from "../assets/img/contact-img.png";
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import PixelSeparator from "../components/PixelSeparator.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro.jsx";
+import Header from "../components/Header.astro.jsx";
+import PixelSeparator from "../components/PixelSeparator.astro.jsx";
+import Footer from "../components/Footer.astro.jsx";
 import * as animations from "../components/animations.js";
 ---
 
@@ -36,7 +36,7 @@ import * as animations from "../components/animations.js";
 				<div class="col2 col-span-7">
 					<div class="section-header left">
 						<span
-							class="h6 text-dustyred-400 uppercase font-semibold mb-6 block"
+							class="h6 text-harvestgold uppercase font-semibold mb-6 block"
 							>Formulaire de contact</span
 						>
 						<h2 class="section-title">Demande de renseignements</h2>
@@ -178,7 +178,7 @@ import * as animations from "../components/animations.js";
 		padding: 1rem 1rem 4rem 1rem;
 	}
 	#success-message {
-		@apply fixed bg-prussian-700 text-center text-white p-8 rounded-md border-solid border-2 border-white flex flex-col items-center w-[300px] mx-auto transform -translate-x-1/2 -translate-y-full left-1/2 -top-28 z-20;
+		@apply fixed bg-blackbean text-center text-white p-8 rounded-md border-solid border-2 border-white flex flex-col items-center w-[300px] mx-auto transform -translate-x-1/2 -translate-y-full left-1/2 -top-28 z-20;
 		svg {
 			@apply fill-white w-12 h-12 mb-6;
 		}
@@ -188,7 +188,7 @@ import * as animations from "../components/animations.js";
 		background: url("/img/contact-hero-bck.webp") no-repeat center center;
 		@apply bg-cover bg-center flex flex-col justify-center items-center text-white h-[485px] -mt-10 z-0;
 		h1 {
-			@apply text-base font-bold uppercase text-moonstone-400 mb-4;
+			@apply text-base font-bold uppercase text-airblue mb-4;
 		}
 		.baseline {
 			@apply text-xxxxl font-extrabold leading-[66px] uppercase text-white mb-0;
@@ -206,13 +206,13 @@ import * as animations from "../components/animations.js";
 	#contact-form {
 		input,
 		textarea {
-			@apply px-4 py-3 rounded-md border border-solid border-prussian-100 border-opacity-20;
+			@apply px-4 py-3 rounded-md border border-solid border-blackbean border-opacity-20;
 		}
 		textarea {
 			@apply min-h-[120px];
 		}
 		input[type="submit"] {
-			@apply bg-dustyred-400 text-white font-bold text-base px-4 py-3 rounded-md cursor-pointer normal-case hover:bg-moonstone-500 transition-all;
+			@apply bg-harvestgold text-white font-bold text-base px-4 py-3 rounded-md cursor-pointer normal-case hover:bg-airblue transition-all;
 		}
 	}
 </style>

@@ -1,0 +1,190 @@
+---
+import { Image } from "astro:assets";
+import BabyParcoursBCK from "../assets/img/babyparcoursbck.png";
+import HobbitParcoursBCK from "../assets/img/hobbitparcoursbck.png";
+import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
+---
+
+<div class="parcours-container">
+	<div class="mx-auto relative">
+		<div class="swiper-ParcoursSwiper overflow-hidden">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="internal-container">
+						<h3>Pour les tout petits : Le parcours baby Hobbit</h3>
+						<p>
+							Le parcours Hobbit est conçu spécialement pour nos plus jeunes
+							aventuriers ! Cette épopée enchanteresse leur permet d'explorer la
+							forêt sereinement.
+						</p>
+						<p>
+							Ils traverseront des ponts, chevaucheront le marteau de Thror et
+							profiteront de la vue depuis les airs, tout cela en toute sécurité
+							grâce à notre système de ligne de vie continue.
+						</p>
+						<p>
+							Adapté aux enfants à partir de 4 ans, ce parcours promet des
+							heures d'amusement et d'émerveillement, en pleine nature, dans un
+							environnement sûr et stimulant !
+						</p>
+					</div>
+					<Image
+						src={BabyParcoursBCK}
+						alt="Benchmark"
+						width="1920"
+						height="1084"
+						class="bg-img-parcours"
+					/>
+				</div>
+				<div class="swiper-slide">
+					<div class="internal-container">
+						<h3>Pour les Hobbits : L'Aventure Miniature</h3>
+						<p>
+							Le parcours Hobbit est conçu spécialement pour nos plus jeunes
+							aventuriers ! Cette épopée enchanteresse leur permet d'explorer la
+							forêt sereinement.
+						</p>
+						<p>
+							Ils traverseront des ponts, chevaucheront le marteau de Thror et
+							profiteront de la vue depuis les airs, tout cela en toute sécurité
+							grâce à notre système de ligne de vie continue.
+						</p>
+						<p>
+							Adapté aux enfants à partir de 4 ans, ce parcours promet des
+							heures d'amusement et d'émerveillement, en pleine nature, dans un
+							environnement sûr et stimulant !
+						</p>
+					</div>
+					<Image
+						src={BabyParcoursBCK}
+						alt="Benchmark"
+						width="1920"
+						height="1084"
+						class="bg-img-parcours"
+					/>
+				</div>
+				<div class="swiper-slide">
+					<div class="internal-container">
+						<h3>Pour les aventuriers : Les parcours elfiques</h3>
+						<p>
+							Le parcours Hobbit est conçu spécialement pour nos plus jeunes
+							aventuriers ! Cette épopée enchanteresse leur permet d'explorer la
+							forêt sereinement.
+						</p>
+						<p>
+							Ils traverseront des ponts, chevaucheront le marteau de Thror et
+							profiteront de la vue depuis les airs, tout cela en toute sécurité
+							grâce à notre système de ligne de vie continue.
+						</p>
+						<p>
+							Adapté aux enfants à partir de 4 ans, ce parcours promet des
+							heures d'amusement et d'émerveillement, en pleine nature, dans un
+							environnement sûr et stimulant !
+						</p>
+					</div>
+					<Image
+						src={BabyParcoursBCK}
+						alt="Benchmark"
+						width="1920"
+						height="1084"
+						class="bg-img-parcours"
+					/>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="navelementwraper">
+			<div class="process-next">
+				<img src="/img/nextbtn.png" alt="arrow" />
+			</div>
+			<div class="process-prev">
+				<img src="/img/prevbtn.png" alt="arrow" />
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<script>
+	import Swiper from "swiper/bundle";
+	import "swiper/css/bundle";
+
+	function initializeSwiperProcess() {
+		var swiper = new Swiper(".swiper-ParcoursSwiper", {
+			effect: 'fade', 
+			fadeEffect: { 
+				crossFade: true
+			},
+			slidesPerView: 1,
+			watchSlidesProgress: true,
+			slideToClickedSlide: true,
+			loop: false,
+			grabCursor: true,
+			spaceBetween: 40,
+			freeMode: false,
+			speed: 500,
+			navigation: {
+				nextEl: ".process-next",
+				prevEl: ".process-prev",
+			},
+		});
+	}
+	initializeSwiperProcess();
+	document.addEventListener("astro:page-load", initializeSwiperProcess);
+</script>
+
+
+
+<style lang="scss">
+	.internal-container {
+		@apply z-20 max-w-3xl relative bg-black bg-opacity-70 p-12 text-white rounded-xl mt-80 mb-60;
+		box-shadow:
+			0 0 40px #000000 inset;
+			h3 {
+				@apply text-white font-normal text-xl mb-4;
+			}
+			p {
+				@apply text-white font-light text-[22px] leading-7 mb-3;
+			}
+	}
+	.navelementwraper {
+		@apply absolute top-0 left-0 right-0 z-10 h-full w-full pointer-events-none;
+		.process-next,
+		.process-prev {
+			@apply z-30 cursor-pointer absolute top-1/2 w-12 h-12 flex items-center justify-center align-middle pointer-events-auto;
+			svg {
+				@apply fill-harvestgold  transition-all duration-300 ease-in-out  hover:fill-blackbean;
+			}
+		}
+		.process-next {
+			@apply lg:right-8 right-1 hidden md:block;
+		}
+		.process-prev {
+			@apply lg:left-8 left-1 hidden md:block;
+		}
+	}
+	.swiper {
+		height: 100%;
+		width: 100%;
+	}
+	.swiper-wrapper {
+		@apply mx-auto relative;
+		.bg-img-parcours {
+			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0 opacity-60;
+		}
+	}
+
+	.swiper-container {
+		@apply relative overflow-hidden;
+		
+	}
+
+	.swiper-slide {
+		@apply text-center text-base flex flex-col justify-center items-center;
+		
+	}
+	.parcours-container {
+		@apply relative;}
+		
+</style>

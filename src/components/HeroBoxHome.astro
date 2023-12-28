@@ -1,0 +1,95 @@
+---
+interface Props {
+	//title: string;
+	//body: string;
+	//href: string;
+}
+import * as animations from "./animations.js";
+import { Image } from "astro:assets";
+import HeroHomeImg from "../assets/img/demo-home.png";
+---
+
+<section class="heroboxhome jarallaxhero">
+	<Image
+		src={HeroHomeImg}
+		alt="Accrobranche à Caen"
+		width="1920"
+		height="843"
+		class="heroimg jarallax-img"
+	/>
+	<div class="herocontainer">
+		<h1>Parc Accrobranche, à 10 minutes de Caen</h1>
+		<p class="baseline">
+			Vivez une épopée vertigineuse, au coeur de la Forêt Normande
+		</p>
+		<div class="cta_container">
+			<button class="cta wood">Découvrir</button>
+		</div>
+	</div>
+	
+	<div class="overlay"></div>
+</section>
+<script>
+	import { jarallax } from "jarallax";
+	jarallax(document.querySelectorAll(".jarallaxhero"), {
+		speed: 0.2,
+	});
+</script>
+<style lang="scss">
+	.heroboxhome {
+		@apply relative flex flex-col w-full text-white xl:aspect-[16/6] lg:aspect-[16/7.5] md:aspect-[16/10] sm:aspect-[16/12] xs:aspect-[16/16] mt-0 z-0;
+		.herocontainer {
+			@apply relative mx-auto max-w-4xl h-full -mt-10 z-10 flex flex-col justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
+		}
+		.heroimg {
+			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0;
+		}
+		h1 {
+			@apply text-[19px] font-sylfaen font-normal text-white mb-8;
+		}
+		.baseline {
+			@apply font-lemon xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xxl xs:text-xl leading-[66px] uppercase text-white mb-4;
+		}
+
+		.cta_container {
+			@apply mt-6 gap-4 flex sm:text-sm xs:text-xs md:text-base xs:mx-auto xs:justify-center sm:justify-start;
+		}
+		.overlay {
+			@apply absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0;
+		}
+	}
+
+	/*ROUGE XS*/
+	@media screen and (min-width: 240px) and (max-width: 639px) {
+		.heroboxhome {
+			/*background-position: 47% 24%;
+			background-size: cover;*/
+		}
+	}
+	/*ORANGE SM*/
+	@media screen and (min-width: 640px) and (max-width: 767px) {
+		.heroboxhome {
+			/*background-position: 39% 24%;
+			background-size: 163%;*/
+		}
+	}
+
+	/*JAUNE MD*/
+	@media screen and (min-width: 768px) and (max-width: 1023px) {
+		.heroboxhome {
+			/*background-position: 25% 26%;
+			background-size: 136%;*/
+		}
+	}
+	/*VERT LG*/
+	@media screen and (min-width: 1024px) and (max-width: 1279px) {
+		.heroboxhome {
+			/*background-position: 40% 26%;
+			background-size: 136%;*/
+		}
+	}
+
+	/*BLEU XL*/
+	@media screen and (min-width: 1280px) {
+	}
+</style>
