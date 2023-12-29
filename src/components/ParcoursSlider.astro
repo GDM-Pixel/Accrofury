@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import BabyParcoursBCK from "../assets/img/babyparcoursbck.png";
-import HobbitParcoursBCK from "../assets/img/hobbitparcoursbck.png";
-import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
+import BabyParcoursBCK from "../assets/img/bck-parcours-baby-hobbit.jpg";
+import HobbitParcoursBCK from "../assets/img/bck-parcours-hobbit.jpg";
+import AdultParcoursBCK from "../assets/img/bck-parcours-adulte.jpg";
 ---
 
 <div class="parcours-container">
@@ -30,68 +30,74 @@ import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
 					</div>
 					<Image
 						src={BabyParcoursBCK}
-						alt="Benchmark"
+						alt="Parcours Baby Hobbit"
 						width="1920"
 						height="1084"
 						class="bg-img-parcours"
+						loading="lazy"
 					/>
 				</div>
 				<div class="swiper-slide">
 					<div class="internal-container">
-						<h3>Pour les Hobbits : L'Aventure Miniature</h3>
+						<h3>L'Aventure des Jeunes Hobbits</h3>
 						<p>
-							Le parcours Hobbit est conçu spécialement pour nos plus jeunes
-							aventuriers ! Cette épopée enchanteresse leur permet d'explorer la
-							forêt sereinement.
+							Appel à tous les jeunes explorateurs ! Le parcours Hobbit est une
+							aventur spécialement taillée pour les esprits aventureux âgés de 7
+							à 12 ans.
 						</p>
 						<p>
-							Ils traverseront des ponts, chevaucheront le marteau de Thror et
-							profiteront de la vue depuis les airs, tout cela en toute sécurité
-							grâce à notre système de ligne de vie continue.
+							Glissez-vous à travers les tunnels de la Vieille Forêt et
+							balancez-vous sur les lianes de la Lorien. Avec des ateliers
+							conçus pour stimuler et amuser, nos aventuriers vivront leur quête
+							sous la surveillance de nos Rangers de la Forêt.
 						</p>
 						<p>
-							Adapté aux enfants à partir de 4 ans, ce parcours promet des
-							heures d'amusement et d'émerveillement, en pleine nature, dans un
-							environnement sûr et stimulant !
+							Notre système de sécurité innovant veille à ce que chaque petit
+							Hobbit puisse vivre son aventure en toute confiance, permettant
+							aux parents de se détendre pendant que les enfants s'élancent dans
+							leur propre Odyssée.
 						</p>
 					</div>
 					<Image
-						src={BabyParcoursBCK}
-						alt="Benchmark"
+						src={HobbitParcoursBCK}
+						alt="Parcours Hobbit"
 						width="1920"
 						height="1084"
 						class="bg-img-parcours"
+						loading="lazy"
 					/>
 				</div>
 				<div class="swiper-slide">
 					<div class="internal-container">
-						<h3>Pour les aventuriers : Les parcours elfiques</h3>
+						<h3>Pour les aventuriers : La Quête des Braves</h3>
 						<p>
-							Le parcours Hobbit est conçu spécialement pour nos plus jeunes
-							aventuriers ! Cette épopée enchanteresse leur permet d'explorer la
-							forêt sereinement.
+							Aventuriers adultes et les jeunes adultes (13 ans et plus), le
+							parcours des Braves vous attend pour tester votre courage et votre
+							force.
 						</p>
 						<p>
-							Ils traverseront des ponts, chevaucheront le marteau de Thror et
-							profiteront de la vue depuis les airs, tout cela en toute sécurité
-							grâce à notre système de ligne de vie continue.
+							Affrontez les passages vertigineux de nos parcours et survolez nos
+							étangs grâce aux tyroliennes épiques présentes sur le parc. Votre
+							quête sera semée d'embûches et de merveilles, mais n'en restera
+							pas moins amusante et pleine de sensations !
 						</p>
 						<p>
-							Adapté aux enfants à partir de 4 ans, ce parcours promet des
-							heures d'amusement et d'émerveillement, en pleine nature, dans un
-							environnement sûr et stimulant !
+							Avec notre équipement de pointe et notre système de ligne de vie
+							continue, vous pourrez vous concentrer sur l'aventure tout en
+							bénéficiant d'une sécurité optimale. Ecrivez votre propre légende
+							parmi les cimes des arbres !
 						</p>
 					</div>
 					<Image
-						src={BabyParcoursBCK}
-						alt="Benchmark"
+						src={AdultParcoursBCK}
+						alt="Parcours Adultes"
 						width="1920"
 						height="1084"
 						class="bg-img-parcours"
+						loading="lazy"
 					/>
 				</div>
 			</div>
-			
 		</div>
 
 		<div class="navelementwraper">
@@ -103,7 +109,6 @@ import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
 			</div>
 		</div>
 	</div>
-	
 </div>
 
 <script>
@@ -112,9 +117,10 @@ import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
 
 	function initializeSwiperProcess() {
 		var swiper = new Swiper(".swiper-ParcoursSwiper", {
-			effect: 'fade', 
-			fadeEffect: { 
-				crossFade: true
+			autoHeight: true,
+			effect: "fade",
+			fadeEffect: {
+				crossFade: true,
 			},
 			slidesPerView: 1,
 			watchSlidesProgress: true,
@@ -134,19 +140,16 @@ import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
 	document.addEventListener("astro:page-load", initializeSwiperProcess);
 </script>
 
-
-
 <style lang="scss">
 	.internal-container {
 		@apply z-20 max-w-3xl relative bg-black bg-opacity-70 p-12 text-white rounded-xl mt-80 mb-60;
-		box-shadow:
-			0 0 40px #000000 inset;
-			h3 {
-				@apply text-white font-normal text-xl mb-4;
-			}
-			p {
-				@apply text-white font-light text-[22px] leading-7 mb-3;
-			}
+		box-shadow: 0 0 40px #000000 inset;
+		h3 {
+			@apply text-white font-normal text-xl mb-4;
+		}
+		p {
+			@apply text-white font-light text-[22px] leading-7 mb-3;
+		}
 	}
 	.navelementwraper {
 		@apply absolute top-0 left-0 right-0 z-10 h-full w-full pointer-events-none;
@@ -168,23 +171,23 @@ import AdultParcoursBCK from "../assets/img/adultparcoursbck.png";
 		height: 100%;
 		width: 100%;
 	}
+
+	.swiper-container {
+		@apply relative overflow-hidden flex flex-col;
+	}
 	.swiper-wrapper {
-		@apply mx-auto relative;
+		@apply mx-auto relative flex items-stretch;
+
 		.bg-img-parcours {
-			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0 opacity-60;
+			@apply absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover object-center z-0 opacity-60;
 		}
 	}
 
-	.swiper-container {
-		@apply relative overflow-hidden;
-		
+	.swiper-slide {
+		@apply text-center text-base flex flex-col justify-center items-center h-full flex-grow;
 	}
 
-	.swiper-slide {
-		@apply text-center text-base flex flex-col justify-center items-center;
-		
-	}
 	.parcours-container {
-		@apply relative;}
-		
+		@apply relative;
+	}
 </style>

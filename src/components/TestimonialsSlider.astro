@@ -329,7 +329,6 @@ import { Image } from "astro:assets";
 			</div>
 		</div>
 	</div>
-	
 </div>
 
 <script>
@@ -394,7 +393,7 @@ import { Image } from "astro:assets";
 		height: 100%;
 		width: 100%;
 	}
-	.swiper-wrapper { 
+	.swiper-wrapper {
 	}
 
 	.testi-container {
@@ -406,8 +405,12 @@ import { Image } from "astro:assets";
 
 	.swiper-slide {
 		@apply bg-forest bg-opacity-90 p-6 rounded-sm border-2 border-x-forest;
-        &:hover{@apply cursor-grab;}
-        .slidecontent {@apply flex flex-col justify-center}
+		&:hover {
+			@apply cursor-grab;
+		}
+		.slidecontent {
+			@apply flex flex-col justify-center;
+		}
 		blockquote {
 			@apply text-xl text-white mb-4 mt-4;
 		}
