@@ -1,39 +1,42 @@
 ---
+import { Image } from "astro:assets";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-//import '@fancyapps/ui/dist/fancybox/fancybox.umd.js';
+import Galerie1 from "../assets/img/galerie-1.jpg";
+import Galerie2 from "../assets/img/galerie-2.jpg";
+import Galerie3 from "../assets/img/galerie-3.jpg";
+import Galerie4 from "../assets/img/galerie-4.jpg";
+import Galerie5 from "../assets/img/galerie-5.jpg";
+import Galerie6 from "../assets/img/galerie-6.jpg";
+import Galerie7 from "../assets/img/galerie-7.jpg";
 ---
 
 <script
 	is:inline
 	src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"
 ></script>
+ 
 <div class="gallery container mt-6" id="MyCarousel">
-	<a data-src="/img/galerie-1.jpg" data-fancybox="Galerrie1"  data-caption="Texte de contenu" class=" ">
-		<img
-			class="mainimg"
-			src="/img/galerie-1.jpg"
-			width="630"
-			height="354"
-		/>
+	<a data-src={Galerie1} data-fancybox="GaleryAccro"  data-caption="Texte de contenu">
+		<Image class="mainimg" src={Galerie1} width="630" height="354" loading="lazy" alt="Galerie Accrofury" />
 	</a>
 	<div class="grid grid-cols-6 gap-6">
-		<a data-src="/img/galerie-2.jpg" data-fancybox="Galerrie1" data-caption="Texte de contenu">
-			<img src="/img/galerie-2.jpg" class="thumb" loading="lazy"/> 
+		<a data-src={Galerie2} data-fancybox="GaleryAccro" data-caption="Texte de contenu">
+			<Image src={Galerie2} class="thumb" loading="lazy"  alt="Galerie Accrofury"/> 
 		</a>
-		<a data-src="/img/galerie-3.jpg" data-fancybox="Galerrie1" data-caption="Texte de contenu">
-			<img src="/img/galerie-3.jpg"class="thumb" loading="lazy"/>
+		<a data-src={Galerie3} data-fancybox="GaleryAccro" data-caption="Texte de contenu">
+			<Image src={Galerie3}class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
 		</a>
-		<a data-src="/img/galerie-4.jpg" data-fancybox="Galerrie1" data-caption="Texte de contenu">
-			<img src="/img/galerie-4.jpg"class="thumb" loading="lazy"/>
+		<a data-src={Galerie4} data-fancybox="GaleryAccro" data-caption="Texte de contenu">
+			<Image src={Galerie4}class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
 		</a>
-        <a data-src="/img/galerie-5.jpg" data-fancybox="Galerrie1" data-caption="Texte de contenu">
-			<img src="/img/galerie-5.jpg"class="thumb" loading="lazy"/>
+        <a data-src={Galerie5} data-fancybox="GaleryAccro" data-caption="Texte de contenu">
+			<Image src={Galerie5}class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
 		</a>
-        <a data-src="/img/galerie-6.jpg" data-fancybox="Galerrie1" data-caption="Texte de contenu">
-			<img src="/img/galerie-6.jpg"class="thumb" loading="lazy"/>
+        <a data-src={Galerie6} data-fancybox="GaleryAccro" data-caption="Texte de contenu">
+			<Image src={Galerie6}class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
 		</a>
-        <a data-src="/img/galerie-7.jpg" data-fancybox="Galerrie1" data-caption="Texte de contenu">
-			<img src="/img/galerie-7.jpg"class="thumb" loading="lazy"/>
+        <a data-src={Galerie7} data-fancybox="GaleryAccro" data-caption="Texte de contenu">
+			<Image src={Galerie7}class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
 		</a>
 	</div>
 </div>
