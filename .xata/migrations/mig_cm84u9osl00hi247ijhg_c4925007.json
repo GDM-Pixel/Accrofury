@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm84u9osl00hi247ijhg",
+  "parentID": "mig_cm84u4osl00hi247ijgg",
+  "checksum": "1:c4925007f3e2f13b537d8b0321b867974a553d8aa8daee6f52ebf6b948f6251e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Nombre_Aventuriers",
+          "type": "int"
+        },
+        "table": "Reservations"
+      }
+    }
+  ]
+}

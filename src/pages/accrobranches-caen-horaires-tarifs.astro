@@ -3,32 +3,29 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ResaForm from "../components/Resa.jsx";
 import * as animations from "../components/animations.js";
+// Generated with CLI
+// Generated with CLI
+import { getXataClient } from "../xata";
+const xata = getXataClient();
+const record = await xata.db.Reservations.read("rec_cm87vvsofvchp6jd7pqg");
+console.log(record);
+
 ---
 <Layout
 	title="Bienvenue à bord, capitaine."
 	description="Ceci est la meta description">
 	<Header />
-	<section class="herobox medium">
-		<div class="container" transition:animate={animations.myFadeSlide}>
-			<h1>Nous contacter</h1>
-			<p class="baseline">Demande de RDV / prise de contact</p>
-			<p class="intro">
-				Laissez-nous un message, posez votre question à notre IA ou prenez un
-				rendez-vous en ligne
-			</p>
-			<div class="cta_container">
-				<a href="#" class="cta red">Demander un RDV en ligne</a>
-				<a href="#" class="cta blue">Poser une question à Nova</a>
-			</div>
-		</div>
+	<section class="herobox medium text-forest bg-forest">
+		<ResaForm client:visible/>
 	</section>
 
 	<main class="-mt-16">
 		<div class="container mx-auto max-w-6xl">
 			<div class="grid grid-cols-12 gap-6 p-12 shadow-2xl bg-white rounded-lg">
 				<div class="col1 col-span-5 flex flex-col justify-center">
-					IMG
+					
 				</div>
 				<div class="col2 col-span-7">
 					<div class="section-header left">
@@ -74,14 +71,19 @@ import * as animations from "../components/animations.js";
 	</main>
 	<Footer />
 </Layout>
+
 <script>
-	import { gsap } from "gsap";
+//console.log('COUCOU');
+//console.log('Clé API Xata:', process.env.XATA_API_KEY);
+</script>
+<script>
+	//import { gsap } from "gsap";
 	//@ts-ignore
-	function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
-	function initializeForm() {
+	//function validateEmail(email) {
+  //  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  //  return re.test(String(email).toLowerCase());
+ // }
+	/*function initializeForm() {
 
 
 		//@ts-ignore
@@ -168,7 +170,7 @@ import * as animations from "../components/animations.js";
 			});
 	}
 	initializeForm();
-	document.addEventListener("astro:page-load", initializeForm);
+	document.addEventListener("astro:page-load", initializeForm);*/
 </script>
 <style lang="scss">
 	main {
@@ -182,8 +184,8 @@ import * as animations from "../components/animations.js";
 	}
 
 	.herobox.medium {
-		background: url("/img/contact-hero-bck.webp") no-repeat center center;
-		@apply bg-cover bg-center flex flex-col justify-center items-center text-white h-[485px] -mt-10 z-0;
+		
+		@apply bg-cover bg-center flex flex-col justify-center items-center  h-[485px] -mt-10 z-0;
 		h1 {
 			@apply text-base font-bold uppercase text-airblue mb-4;
 		}

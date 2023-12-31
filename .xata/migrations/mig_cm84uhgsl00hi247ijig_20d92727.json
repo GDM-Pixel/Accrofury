@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm84uhgsl00hi247ijig",
+  "parentID": "mig_cm84uelj1s5b7dbl3vk0",
+  "checksum": "1:20d92727a3dd187224fa10c90bd251c308e4e9052e60a5fb1360c5d75c07e9ba",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Telephone",
+          "type": "string"
+        },
+        "table": "Reservations"
+      }
+    }
+  ]
+}

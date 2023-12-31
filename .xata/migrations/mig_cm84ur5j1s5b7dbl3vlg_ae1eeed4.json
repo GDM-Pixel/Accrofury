@@ -1,0 +1,12 @@
+{
+  "id": "mig_cm84ur5j1s5b7dbl3vlg",
+  "parentID": "mig_cm84uk0sl00hi247ijjg",
+  "checksum": "1:ae1eeed41e960101adff375d4dcf35522a1ea4b534a9d04e271651859bd7cf76",
+  "operations": [
+    {
+      "addTable": {
+        "table": "CapaciteJournaliere"
+      }
+    }
+  ]
+}

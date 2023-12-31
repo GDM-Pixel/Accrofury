@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm84uelj1s5b7dbl3vk0",
+  "parentID": "mig_cm84u9osl00hi247ijhg",
+  "checksum": "1:8367f68f2afbe5e5cc740b32c1c9b0d7716ed30a3510fbd557c5de834780bf1f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Date",
+          "type": "datetime"
+        },
+        "table": "Reservations"
+      }
+    }
+  ]
+}

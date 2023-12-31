@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://charles-s-workspace-8luqs9.eu-central-1.xata.sh/db/Accrofury",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

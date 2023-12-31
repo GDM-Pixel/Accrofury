@@ -1,0 +1,41 @@
+/* ReservationForm.css */
+.form-container
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    /* Adjust the width as needed */
+    margin: auto;
+}
+
+.form-field
+{
+    margin-bottom: 15px;
+    /* Space between fields */
+}
+
+.form-field input,
+.form-field button
+{
+    width: 100%;
+    /* Full width of the container */
+    padding: 10px;
+    /* Padding for inputs and button */
+    box-sizing: border-box;
+    /* Include padding in the width */
+}
+
+.form-field button
+{
+    background-color: #4CAF50;
+    /* Green background for the submit button */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-field button:hover
+{
+    opacity: 0.8;
+    /* Slight transparency on hover */
+}

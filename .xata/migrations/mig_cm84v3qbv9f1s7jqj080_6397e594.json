@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm84v3qbv9f1s7jqj080",
+  "parentID": "mig_cm84uvibv9f1s7jqj070",
+  "checksum": "1:6397e59489d65ba0145c0a27b177136c627b3e6c03311d3fce471558d65a8379",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Capacite_Max",
+          "type": "int"
+        },
+        "table": "CapaciteJournaliere"
+      }
+    }
+  ]
+}

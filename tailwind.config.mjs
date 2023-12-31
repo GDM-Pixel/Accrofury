@@ -40,7 +40,8 @@ export default {
 			sans: ["Open Sans, Arial"],
 			serif: ["Times New Roman"],
 			lemon: ["Lemon"],
-			sylfaen: ["Sylfaen"]
+			sylfaen: ["Sylfaen"],
+			sourcesans: "Source Sans Pro",
 		},
 		fontSize: {
 			xs: ["0.875rem", "1.25rem"],

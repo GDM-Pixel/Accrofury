@@ -1,0 +1,17 @@
+{
+  "id": "mig_cm84uvibv9f1s7jqj070",
+  "parentID": "mig_cm84ur5j1s5b7dbl3vlg",
+  "checksum": "1:722204b2e033fb7e0e81a2ecda87fc896319885496886c23cdbf1b5c589411f8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Date",
+          "type": "datetime",
+          "unique": true
+        },
+        "table": "CapaciteJournaliere"
+      }
+    }
+  ]
+}

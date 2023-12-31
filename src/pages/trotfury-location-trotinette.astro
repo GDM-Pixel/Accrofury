@@ -1,216 +1,555 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import HeroBoxTrotFury from "../components/HeroBoxTrotFury.astro";
+import { Image } from "astro:assets";
+import ParcoursSlider from "../components/ParcoursSlider.astro";
+import OverLayMap from "../assets/img/overlaymap.png";
+import LigneVieContinue from "../assets/img/ligne-vie-continue-1.png";
+import EncadrantsDiplomes from "../assets/img/encadrants-diplomes.png";
+import GalleriePark from "../components/GalleriePark.astro";
+import "jarallax/dist/jarallax.min.css";
+import TestimonialsSlider from "../components/TestimonialsSlider.astro";
+import Accordion from "../components/Accordion.astro";
 import * as animations from "../components/animations.js";
+import CTABand from "../components/CTABand.astro";
+import Footer from "../components/Footer.astro";
+import ArbreBig from "../assets/img/arbre-big.png";
+import ArbreSide from "../assets/img/arbre2.png";
+import PlantBottom from "../assets/img/plant-bottom.png";
+import TrotFuryRide1 from "../assets/img/trotfury-ride-1.png";
+import TrotFuryRide2 from "../assets/img/trotfury-ride-2.png";
+import Elf1 from "../assets/img/elf-1.png";
+import Elf2 from "../assets/img/elf-2.png";
+import TrotFuryCover from "../assets/img/trotfury-cover.jpg";
+import TrotFuryTitle from "../assets/img/trotfury-title.png";
+import HobbitGang from "../assets/img/hobbitgang.png";
+import TestimonialsBand from "../components/TestimonialsBand.astro";
 ---
 
-<Layout
-	title="Bienvenue à bord, capitaine."
-	description="Ceci est la meta description">
+<Layout title="Welcome to Astro." description="Descr">
 	<Header />
-	<section class="herobox medium">
-		<div class="container" transition:animate={animations.myFadeSlide}>
-			<h1>Nous contacter</h1>
-			<p class="baseline">Demande de RDV / prise de contact</p>
-			<p class="intro">
-				Laissez-nous un message, posez votre question à notre IA ou prenez un
-				rendez-vous en ligne
-			</p>
-			<div class="cta_container">
-				<a href="#" class="cta red">Demander un RDV en ligne</a>
-				<a href="#" class="cta blue">Poser une question à Nova</a>
-			</div>
-		</div>
-	</section>
+	<HeroBoxTrotFury />
 
-	<main class="-mt-16">
-		<div class="container mx-auto max-w-6xl">
-			<div class="grid grid-cols-12 gap-6 p-12 shadow-2xl bg-white rounded-lg">
-				<div class="col1 col-span-5 flex flex-col justify-center">
-					
-				</div>
-				<div class="col2 col-span-7">
-					<div class="section-header left">
-						<span
-							class="h6 text-harvestgold uppercase font-semibold mb-6 block"
-							>Formulaire de contact</span
-						>
-						<h2 class="section-title">Demande de renseignements</h2>
-						
+	<main>
+		<section class="intro-Trotfury">
+			<div class="section-title text-center">
+				<svg
+					class="mx-auto"
+					width="65"
+					height="50"
+					viewBox="0 0 65 50"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M34.6524 4.6875C34.6524 3.82812 35.3521 3.125 36.2073 3.125H40.182C42.1936 3.125 43.972 4.41406 44.6037 6.32813L45.109 7.8418L50.6191 5.07812C51.1244 4.82422 51.6881 4.6875 52.2614 4.6875C53.6997 4.6875 54.8659 5.85938 54.8659 7.31445V14.5703C54.8659 16.0156 53.6997 17.1973 52.2517 17.1973C51.6784 17.1973 51.1244 17.0605 50.6094 16.8066L47.5774 15.2734L50.0555 22.7539C50.6094 22.6855 51.1827 22.6562 51.7561 22.6562C55.7891 22.6562 59.443 24.2773 62.1058 26.9043C62.718 27.5098 62.7277 28.4961 62.1252 29.1113C61.5227 29.7266 60.5412 29.7363 59.9289 29.1309C57.8201 27.0605 54.9339 25.7812 51.7561 25.7812C46.2654 25.7812 41.6494 29.5996 40.4152 34.7461C40.3083 35.1953 40.2208 35.6543 40.1723 36.123C40.0848 36.9141 39.4143 37.5 38.6271 37.5H34.6524H29.9878H26.878C26.878 42.6758 22.6993 46.875 17.5488 46.875C12.3982 46.875 8.21951 42.6758 8.21951 37.5H5.10976C3.38967 37.5 2 36.1035 2 34.375V31.25C2 24.3457 7.56841 18.75 14.439 18.75H23.7683C25.4884 18.75 26.878 20.1465 26.878 21.875V31.25C26.878 32.9785 28.2677 34.375 29.9878 34.375H33.0976H34.6524H36.2073H37.3152C37.3443 34.248 37.3735 34.1309 37.4026 34.0039C38.5882 29.043 42.2616 25.0586 47.0137 23.4375L41.6688 7.31445C41.455 6.67969 40.8622 6.25 40.1917 6.25H36.2073C35.3521 6.25 34.6524 5.54688 34.6524 4.6875ZM46.1877 11.084C46.2071 11.0938 46.2168 11.0937 46.2363 11.1035L51.7561 13.877V7.99805L46.2363 10.7715C46.1974 10.791 46.1488 10.8105 46.1099 10.8301L46.1974 11.084H46.1877ZM12.8841 12.5H25.3232C26.1784 12.5 26.878 13.2031 26.878 14.0625C26.878 14.9219 26.1784 15.625 25.3232 15.625H12.8841C12.029 15.625 11.3293 14.9219 11.3293 14.0625C11.3293 13.2031 12.029 12.5 12.8841 12.5ZM23.7683 21.875H14.439C9.28849 21.875 5.10976 26.0742 5.10976 31.25V34.375H8.754H12.165H22.9325H24.5943C24.0696 33.457 23.7586 32.3926 23.7586 31.25V21.875H23.7683ZM17.5488 43.75C20.9792 43.75 23.7683 40.9473 23.7683 37.5H11.3293C11.3293 40.9473 14.1183 43.75 17.5488 43.75ZM51.7561 43.75C53.4056 43.75 54.9876 43.0915 56.154 41.9194C57.3203 40.7473 57.9756 39.1576 57.9756 37.5C57.9756 35.8424 57.3203 34.2527 56.154 33.0806C54.9876 31.9085 53.4056 31.25 51.7561 31.25C50.1066 31.25 48.5246 31.9085 47.3582 33.0806C46.1919 34.2527 45.5366 35.8424 45.5366 37.5C45.5366 39.1576 46.1919 40.7473 47.3582 41.9194C48.5246 43.0915 50.1066 43.75 51.7561 43.75ZM51.7561 28.125C54.2304 28.125 56.6033 29.1127 58.3529 30.8709C60.1025 32.629 61.0854 35.0136 61.0854 37.5C61.0854 39.9864 60.1025 42.371 58.3529 44.1291C56.6033 45.8873 54.2304 46.875 51.7561 46.875C49.2818 46.875 46.9089 45.8873 45.1593 44.1291C43.4097 42.371 42.4268 39.9864 42.4268 37.5C42.4268 35.0136 43.4097 32.629 45.1593 30.8709C46.9089 29.1127 49.2818 28.125 51.7561 28.125Z"
+						fill="#3C1518"></path>
+				</svg>
+
+				<h2 class="max-w-sm mx-auto">Trot'Fury : Roulez, Explorez, Vivez !</h2>
+			</div>
+			<div class="max-w-6xl mx-auto mt-12 px-6 mb-8">
+				<div class="flex flex-row-reverse mb-20 justify-between">
+					<div class="col w-[48%] flex flex-col justify-center">
+						<h3 class="text-xl mb-3">
+							Prêt pour une aventure à deux roues comme aucune autre ?
+						</h3>
+						<p class="text-lg mb-3">
+							Découvrez Trot'Fury, notre tout nouveau service de location de
+							trottinettes électriques tout-terrain !
+						</p>
+						<p class="text-lg mb-3">
+							Spécialement conçues pour les terrains exigeants de notre parc,
+							ces machines vous permettent d'explorer les splendeurs de la forêt
+							normande à vive allure.
+						</p>
+						<p class="text-lg mb-3">
+							Vous vous inquiétez pour la batterie ? N'ayez crainte, nos
+							trottinettes sont équipées de batteries longue durée, vous offrant
+							une liberté ininterrompue.
+						</p>
+						<p class="text-lg mb-3">
+							Et pour vous assurer une expérience sans tracas, notre équipe
+							dévouée prend tout en charge, de l'équipement de sécurité à la
+							formation.
+						</p>
+						<p class="text-lg font-lemon text-blackbean">
+							Enfourchez votre Trot'Fury et vivez l'aventure Accrofury comme
+							jamais auparavant !
+						</p>
 					</div>
-					<form id="contact-form" class="grid grid-cols-2 gap-6" method="POST">
-						<input type="hidden" name="contactNumber" />
-						<input type="text" name="userName" placeholder="Nom" />
-						<input type="email" name="userEmail" placeholder="E-mail" />
-						<input type="text" name="userPhone" placeholder="Téléphone" />
-						<input type="text" name="demande" placeholder="Objet" />
-						<textarea
-							name="message"
-							placeholder="Votre message"
-							class="col-span-2"></textarea>
-						<input
-							type="submit"
-							value="Envoyer votre demande"
-							class="col-span-2"
-						/> 
-						<div class="error-message" style="color: red;"></div>
-
-					</form>
+					<div class="col w-[48%]">
+						<Image
+							src={TrotFuryRide1}
+							alt="Explorez la forêt avec Trot'Fury"
+							class="rounded-lg w-full"
+							loading="lazy"
+						/>
+					</div>
 				</div>
 
-				<div id="success-message">
-					<img
-						src="https://media0.giphy.com/media/E8rJEUMGs9cyWEtNXT/giphy.gif?cid=ecf05e47sb2icuh3cndpy6sdvvo5p27ff3o34zulu8hb8djn&ep=v1_gifs_related&rid=giphy.gif&ct=g"
-						width="300"
-						height="300"
-						loading="lazy"
-					/><p class="mt-6">
-						Merci, nous avons reçu votre demande et vous répondrons sous peu.
-					</p>
+				<div class="flex flex-row justify-between">
+					<div class="col w-[48%] flex flex-col justify-center">
+						<h3 class="text-xl mb-3">A partir de 14 ans, pas avant !</h3>
+						<p class="text-lg mb-3">
+							Votre sécurité est notre priorité absolue chez Accrofury. Notre
+							parcours de trottinettes électriques tout-terrain a été
+							méticuleusement conçu pour vous offrir une expérience à la fois
+							excitante et sûre.
+						</p>
+						<p class="text-lg mb-3">
+							Équipées des dernières technologies de freinage et de
+							stabilisation, nos trottinettes subissent des contrôles de
+							sécurité rigoureux. De plus, notre personnel formé vous fournira
+							toutes les instructions et l'équipement de sécurité nécessaires.
+						</p>
+						<strong class="text-lemon text-lg"
+							>Aventurez-vous en toute sérénité dans les splendeurs de la forêt
+							normande !</strong
+						>
+					</div>
+					<div class="col w-[48%]">
+						<Image
+							src={TrotFuryRide2}
+							alt="Location de trotinette éléctrique tout terrain à Caen"
+							class="rounded-lg w-full"
+							loading="lazy"
+						/>
+					</div>
 				</div>
 			</div>
-		</div>
+
+			<Image src={PlantBottom} alt="plant" class="plantbottom" loading="lazy" />
+		</section>
+		<section class="video-section">
+			<div class="section-title text-center">
+				<svg
+					class="mx-auto mb-4"
+					width="44"
+					height="30"
+					viewBox="0 0 44 30"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M3.66667 3.66667V25.6667H25.6667V3.66667H3.66667ZM0 0H3.66667H25.6667H29.3333V3.66667V7.33333V22V25.6667V29.3333H25.6667H3.66667H0V25.6667V3.66667V0ZM31.7778 19.1201L40.3333 23.3979V5.93542L31.7778 10.2132V6.11111L40.3333 1.83333L44 0V4.10208V25.2312V29.3333L40.3333 27.5L31.7778 23.2222V19.1201Z"
+						fill="#3C1518"></path>
+				</svg>
+				<h2 class="mx-auto">Une vidéo vaut tous les discours !</h2>
+				<p class="text-lg">Découvrez nos Trot’Fury en action</p>
+
+				<div class="video-container max-w-4xl mx-auto">
+					<div class="video-thumbnail rounded-lg px-6">
+						<Image
+							src={TrotFuryCover}
+							alt="Trotfury"
+							width="795"
+							height="445"
+							class="featuredimg rounded-lg w-full mt-6 mb-12"
+						/>
+						<a
+							data-src="https://www.youtube.com/watch?v=6ZywH1lTc6Y"
+							data-fancybox="video-gallery"
+							data-caption="Vivez Accrofury à toute allure !">
+							<div class="play-button-container">
+								<div class="circle circle-1"></div>
+								<div class="circle circle-2"></div>
+								<div class="circle circle-3"></div>
+								<svg
+									class="play-icon"
+									width="96"
+									height="96"
+									viewBox="0 0 96 96"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M48 96C74.5097 96 96 74.5097 96 48C96 21.4903 74.5097 0 48 0C21.4903 0 0 21.4903 0 48C0 74.5097 21.4903 96 48 96Z"
+									></path>
+									<path d="M62 48L42 60V36L62 48Z" fill="white"></path>
+								</svg>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<button class="cta wood small mx-auto">Réserver</button>
+				<Image src={Elf1} alt="Elf" class="elfgauche" loading="lazy" />
+				<Image src={Elf2} alt="Garde" class="elfdroit" loading="lazy" />
+			</div>
+		</section>
+
+		<section class="info-trotfury">
+			<div class="midcontainer">
+				<Image
+					src={TrotFuryTitle}
+					alt="Trot Fury"
+					width="545"
+					height="159"
+					class="TrotTitleCenter"
+				/>
+				<h2>
+					Trottinettes Tout-Terrain<br />Votre Passeport pour l'Aventure !
+				</h2>
+				<div class="pricecontainer">
+					<ul class="pricelist">
+						<li class="priceel">
+							<h3>
+								<svg
+									fill="#3C1518"
+									xmlns="http://www.w3.org/2000/svg"
+									height="16"
+									width="14"
+									viewBox="0 0 448 512"
+									><path
+										d="M447.9 142.5l-23.2 22L181 395.3l-22 20.8-22-20.8L23.2 287.6 0 265.6l44-46.5 23.2 22L159 328 380.7 118l23.2-22 44 46.5z"
+									></path></svg
+								>20 minutes = 15 €
+							</h3>
+							<p>Une aventure rapide, idéale pour débuter !</p>
+						</li>
+						<li class="priceel">
+							<h3>
+								<svg
+									fill="#3C1518"
+									xmlns="http://www.w3.org/2000/svg"
+									height="16"
+									width="14"
+									viewBox="0 0 448 512"
+									><path
+										d="M447.9 142.5l-23.2 22L181 395.3l-22 20.8-22-20.8L23.2 287.6 0 265.6l44-46.5 23.2 22L159 328 380.7 118l23.2-22 44 46.5z"
+									></path></svg
+								>30 minutes = 20 €
+							</h3>
+							<p>Plus de temps, plus de fun et plus d'exploration !</p>
+						</li>
+						<li class="priceel">
+							<h3>
+								<svg
+									fill="#3C1518"
+									xmlns="http://www.w3.org/2000/svg"
+									height="16"
+									width="14"
+									viewBox="0 0 448 512"
+									><path
+										d="M447.9 142.5l-23.2 22L181 395.3l-22 20.8-22-20.8L23.2 287.6 0 265.6l44-46.5 23.2 22L159 328 380.7 118l23.2-22 44 46.5z"
+									></path></svg
+								>40 minutes = 25 €
+							</h3>
+							<p>L'expérience ultime, pour les vrais aventuriers !</p>
+						</li>
+					</ul>
+					<Image src={HobbitGang} alt="gang de trottinette" loading="lazy" />
+				</div>
+			</div>
+			<p class="conclude">
+				<span class="small">Vous avez aimé votre parcours ?</span>
+				 Les Trot'Furys sont disponibles à la vente !
+			</p>
+			<span class="check-w-us">Voir avec notre équipe sur place</span>
+		</section>
+		<section class="testimonials">
+			<TestimonialsBand />
+		</section>
+		<section class="faq">
+			<div class="section-title text-center relative z-10 mb-10">
+				<svg
+					class="mx-auto mb-6"
+					width="44"
+					height="45"
+					viewBox="0 0 44 45"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M6.28571 3.28568C4.54732 3.28568 3.14286 4.69014 3.14286 6.42854V37.8571C3.14286 39.5955 4.54732 41 6.28571 41H37.7143C39.4527 41 40.8571 39.5955 40.8571 37.8571V6.42854C40.8571 4.69014 39.4527 3.28568 37.7143 3.28568H6.28571ZM0 6.42854C0 2.96157 2.81875 0.142822 6.28571 0.142822H37.7143C41.1812 0.142822 44 2.96157 44 6.42854V37.8571C44 41.3241 41.1812 44.1428 37.7143 44.1428H6.28571C2.81875 44.1428 0 41.3241 0 37.8571V6.42854ZM8.64286 6.42854C9.26801 6.42854 9.86756 6.67688 10.3096 7.11893C10.7517 7.56098 11 8.16053 11 8.78568C11 9.41083 10.7517 10.0104 10.3096 10.4524C9.86756 10.8945 9.26801 11.1428 8.64286 11.1428C8.0177 11.1428 7.41816 10.8945 6.97611 10.4524C6.53405 10.0104 6.28571 9.41083 6.28571 8.78568C6.28571 8.16053 6.53405 7.56098 6.97611 7.11893C7.41816 6.67688 8.0177 6.42854 8.64286 6.42854ZM33 8.78568C33 8.16053 33.2483 7.56098 33.6904 7.11893C34.1324 6.67688 34.732 6.42854 35.3571 6.42854C35.9823 6.42854 36.5818 6.67688 37.0239 7.11893C37.4659 7.56098 37.7143 8.16053 37.7143 8.78568C37.7143 9.41083 37.4659 10.0104 37.0239 10.4524C36.5818 10.8945 35.9823 11.1428 35.3571 11.1428C34.732 11.1428 34.1324 10.8945 33.6904 10.4524C33.2483 10.0104 33 9.41083 33 8.78568ZM8.64286 33.1428C9.26801 33.1428 9.86756 33.3912 10.3096 33.8332C10.7517 34.2753 11 34.8748 11 35.5C11 36.1251 10.7517 36.7247 10.3096 37.1667C9.86756 37.6088 9.26801 37.8571 8.64286 37.8571C8.0177 37.8571 7.41816 37.6088 6.97611 37.1667C6.53405 36.7247 6.28571 36.1251 6.28571 35.5C6.28571 34.8748 6.53405 34.2753 6.97611 33.8332C7.41816 33.3912 8.0177 33.1428 8.64286 33.1428ZM33 35.5C33 34.8748 33.2483 34.2753 33.6904 33.8332C34.1324 33.3912 34.732 33.1428 35.3571 33.1428C35.9823 33.1428 36.5818 33.3912 37.0239 33.8332C37.4659 34.2753 37.7143 34.8748 37.7143 35.5C37.7143 36.1251 37.4659 36.7247 37.0239 37.1667C36.5818 37.6088 35.9823 37.8571 35.3571 37.8571C34.732 37.8571 34.1324 37.6088 33.6904 37.1667C33.2483 36.7247 33 36.1251 33 35.5ZM13.4259 14.4625C14.0643 12.0464 16.2446 10.3571 18.7491 10.3571H24.3571C27.8438 10.3571 30.6429 13.2053 30.6429 16.6723C30.6429 19.0294 29.3268 21.2098 27.2152 22.2901L23.5714 24.1366V26.0714C23.5714 26.9357 22.8643 27.6428 22 27.6428C21.1357 27.6428 20.4286 26.9357 20.4286 26.0714V23.1741C20.4286 22.5848 20.7625 22.0446 21.283 21.7696L25.7812 19.4714C26.8321 18.941 27.5 17.841 27.5 16.6526C27.5 14.9044 26.0857 13.4803 24.3571 13.4803H18.7491C17.6786 13.4803 16.7357 14.2071 16.4705 15.2384L16.4509 15.3071C16.2348 16.1419 15.3705 16.6526 14.5357 16.4268C13.7009 16.2009 13.1902 15.3464 13.4161 14.5116L13.4357 14.4428L13.4259 14.4625ZM19.6429 32.3571C19.6429 31.732 19.8912 31.1324 20.3332 30.6904C20.7753 30.2483 21.3748 30 22 30C22.6252 30 23.2247 30.2483 23.6668 30.6904C24.1088 31.1324 24.3571 31.732 24.3571 32.3571C24.3571 32.9823 24.1088 33.5818 23.6668 34.0239C23.2247 34.4659 22.6252 34.7142 22 34.7142C21.3748 34.7142 20.7753 34.4659 20.3332 34.0239C19.8912 33.5818 19.6429 32.9823 19.6429 32.3571Z"
+						fill="#3C1518"></path>
+				</svg>
+				<span class="sub">Réponses aux questions fréquentes</span>
+				<h2>Besoin de plus d’infos ?</h2>
+			</div>
+
+			<div
+				class="faqcontainer max-w-5xl mx-auto shadow-xl rounded-lg overflow-clip">
+				<Accordion
+					items={[
+						{
+							title: "Quelle est l'autonomie de la batterie ?",
+							answer:
+								"<p>R : L'autonomie de la batterie de nos trotinettes électriques tout terrain est conçue pour vous permettre de profiter pleinement de votre aventure en forêt sans interruption. Les batteries sont toujours entièrement chargées avant votre départ, ce qui vous assure largement assez d'énergie pour effectuer plusieurs tours du circuit.</p><p>Dans le cas peu probable où la batterie viendrait à se vider durant votre promenade, nous avons mis en place un service de remplacement de batterie. Il vous suffit de revenir à notre point de service, et nous échangerons rapidement votre trotinette contre une avec une batterie pleinement chargée pour que vous puissiez continuer à explorer les sentiers sans perdre de temps. Notre objectif est de vous garantir une expérience fluide et agréable sur nos trotinettes \"Trotfury\".</p>",
+							isopen: true,
+						},
+						{
+							title:
+								"Comment fonctionne le système de sécurité des trottinettes ?",
+							answer:
+								"<p>R : La sécurité de nos utilisateurs étant notre priorité absolue, nos trottinettes électriques tout terrain \"Trotfury\" sont équipées d'un système de sécurité robuste et fiable pour assurer une promenade agréable et sans risque en forêt.</p><p>Voici les éléments clés du système de sécurité :</p><ul><li><strong>Casque de Protection</strong> : Chaque utilisateur se voit fournir un casque de sécurité adapté, obligatoire à porter pendant toute la durée de la promenade pour protéger contre les chutes ou les chocs éventuels.</li><li><strong>Parcours Balisé</strong> : Le circuit sur lequel vous évoluerez est clairement balisé et conçu pour éviter les zones dangereuses. Cela permet de vous orienter facilement tout en profitant de l'environnement forestier.</li><li><strong>Formation Initiale</strong> : Avant de débuter, chaque participant reçoit une formation sur le fonctionnement des trottinettes, les règles de conduite à suivre sur le parcours et les consignes de sécurité à respecter.</li><li><strong>Système de Freinage Efficace</strong> : Les trottinettes sont équipées de freins performants, vous permettant de vous arrêter rapidement en cas de besoin.</li><li><strong>Vitesse Limitée</strong> : Les trottinettes sont configurées pour respecter une vitesse maximale sécuritaire, réduisant ainsi le risque d'accidents dus à une vitesse excessive.</li><li><strong>Contrôles Réguliers</strong> : Nos trottinettes subissent des contrôles de sécurité réguliers pour s'assurer que tous les composants sont en parfait état de fonctionnement.</li><li><strong>Assistance en Cas de Problème</strong> : En cas de problème ou de panne, notre équipe est prête à intervenir rapidement pour vous assister et vous permettre de continuer votre balade en toute sécurité.</li></ul><p>Nous nous engageons à maintenir et à actualiser constamment nos équipements et procédures de sécurité pour garantir que votre expérience avec les trottinettes \"Trotfury\" soit non seulement amusante mais également sûre.</p>",
+						},
+						{
+							title: "Dois-je porter un casque et d'autres équipements de protection ?",
+							answer:
+								"<p>R : Oui, le port d'un casque est obligatoire lorsque vous utilisez nos trottinettes électriques tout terrain \"Trotfury\". Le casque est un élément essentiel de votre équipement de protection et il est fourni par nos services pour assurer votre sécurité en cas de chute ou de collision.</p><p>Nous vous conseillons de porter des vêtements adaptés à l'activité et à la météo, ainsi que des gants si vous le souhaitez, pour une meilleure prise en main des guidons et une protection supplémentaire.</p>",
+						},
+						{
+							title:
+								"Y a-t-il des restrictions d'âge ou de poids pour la location de trottinettes ?",
+							answer:
+								"<p>R : Oui, il existe des restrictions d'âge pour la location de nos trottinettes électriques tout terrain \"Trotfury\". Les participants doivent avoir au moins 14 ans pour pouvoir utiliser nos trottinettes. Cette restriction vise à s'assurer que tous les utilisateurs ont la maturité et les compétences nécessaires pour manœuvrer la trottinette de manière sûre et responsable.</p><p>En ce qui concerne les restrictions de poids, elles sont généralement mises en place pour garantir le bon fonctionnement et la sécurité de la trottinette. Il est important de vérifier avec le service de location si de telles restrictions s'appliquent et quel est le poids maximum autorisé pour les utilisateurs. Ces informations sont essentielles pour assurer la sécurité de tous et la durabilité des équipements.</p><p>Il est toujours recommandé de consulter les termes et conditions de la location pour connaître toutes les exigences spécifiques et s'assurer que tous les participants sont éligibles pour l'activité. Si vous avez des questions ou des préoccupations concernant les restrictions d'âge ou de poids, n'hésitez pas à contacter le service de location pour obtenir des conseils.</p>",
+						},
+						{
+							title: "Puis-je réserver une trottinette à l'avance ?",
+							answer:
+								"<p>R : Oui, il est généralement possible et même conseillé de réserver une trottinette à l'avance. La réservation préalable vous garantit la disponibilité d'une trottinette électrique tout terrain \"Trotfury\" pour la date et l'heure souhaitées, surtout pendant les périodes de forte affluence ou les saisons touristiques.</p><p>Pour réserver votre trottinette, vous pouvez souvent le faire directement en ligne via le site web du service de location, par téléphone ou en personne si vous vous trouvez à proximité du point de location. Vous aurez peut-être besoin de fournir des informations de base telles que votre nom, le nombre de participants, ainsi que des détails de contact.</p><p>Il est également possible que l'on vous demande de verser un acompte ou de payer la totalité de la location à l'avance pour confirmer votre réservation. Assurez-vous de bien comprendre les conditions de réservation et d'annulation en cas de changement de vos plans.</p><p>En réservant à l'avance, vous pouvez planifier votre journée d'aventure en toute tranquillité, sachant que tout est déjà organisé pour votre expérience de trottinette en forêt.</p>",
+						},
+						{
+							title: "Que se passe-t-il en cas de panne ou de problème technique ?",
+							answer:
+								"<p>R : En cas de panne ou de problème technique avec votre trottinette électrique tout terrain \"Trotfury\", nous avons mis en place une procédure pour vous assister et vous permettre de continuer à profiter de votre expérience en toute sécurité.</p><ul><li><strong>Arrêtez-vous en Sécurité</strong> : Si vous remarquez un problème technique, arrêtez-vous dès que possible en un lieu sûr, loin du chemin des autres utilisateurs.</li><li><strong>Contactez le Personnel</strong> : Utilisez votre téléphone portable pour contacter le personnel du service de location. Les coordonnées devraient vous être fournies au moment de la location ou elles peuvent être trouvées sur la trottinette ou le matériel de location.</li><li><strong>Évaluation du Problème</strong> : Le personnel vous demandera peut-être de décrire le problème pour évaluer s'il peut être résolu sur place ou si la trottinette doit être remplacée.</li><li><strong>Assistance sur Place ou Remplacement</strong> : Selon la nature du problème, le personnel pourra soit vous fournir une assistance sur place pour résoudre le problème technique, soit organiser le remplacement de la trottinette afin que vous puissiez reprendre votre activité sans délai important.</li><li><strong>Retour ou Continuation</strong> : Une fois le problème résolu ou la trottinette remplacée, vous pourrez soit continuer votre promenade, soit, si nécessaire, retourner au point de départ avec l'assistance du personnel.</li></ul><p>Notre équipe est formée pour gérer rapidement et efficacement tout problème technique afin de minimiser les désagréments et de maximiser votre temps de plaisir sur nos trottinettes. N'hésitez pas à nous contacter pour toute question ou préoccupation avant ou pendant votre location.</p>",
+						},
+					]}
+				/>
+			</div>
+			<p class="text-center mx-auto mt-12 font-lemon text-xl max-w-2xl">
+				Vous ne trouvez pas la réponse que vous cherchez ? Envoyez nous un
+				message !
+			</p>
+		</section>
+		<section class="accrofuryband jarallax">
+			<img
+				class="jarallax-img"
+				src="/img/accrofuryband.jpg"
+				alt="TroFury"
+				loading="lazy"
+			/>
+			<div class="section-title text-center relative z-10">
+				<svg
+					class="mx-auto mb-6"
+					width="56"
+					height="56"
+					viewBox="0 0 56 56"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M20.3328 11.3313L19.7312 13.9016L17.1719 13.2891C16.7234 13.1797 16.2422 13.125 15.75 13.125C12.3703 13.125 9.625 15.8703 9.625 19.25C9.625 19.8406 9.7125 20.4094 9.86562 20.9344L10.5 23.1328L8.38906 24.0625C6.52969 24.8719 5.25 26.7313 5.25 28.875V36.75H25.375V35V28V16.625V14H30.625V16.625V28V35V36.75H50.75V28.875C50.75 26.7313 49.4594 24.8828 47.6109 24.0625L45.5109 23.1438L46.1453 20.9453C46.2984 20.4094 46.3859 19.8406 46.3859 19.2609C46.3859 15.8813 43.6406 13.1359 40.2609 13.1359C39.7687 13.1359 39.2984 13.1906 38.8391 13.3L36.2797 13.9016L35.6781 11.3313C34.8578 7.84219 31.7297 5.25 28 5.25C24.2703 5.25 21.1422 7.84219 20.3328 11.3313ZM25.375 42H2.625H0V39.375V28.875C0 25.3422 1.75 22.2141 4.41875 20.3109C4.38594 19.9609 4.375 19.6109 4.375 19.25C4.375 12.9719 9.47188 7.875 15.75 7.875C15.8266 7.875 15.8922 7.875 15.9688 7.875C17.9922 3.2375 22.6187 0 28 0C33.3812 0 38.0078 3.2375 40.0312 7.875C40.1078 7.875 40.1734 7.875 40.25 7.875C46.5281 7.875 51.625 12.9719 51.625 19.25C51.625 19.6109 51.6031 19.9609 51.5812 20.3109C54.25 22.2141 56 25.3422 56 28.875V39.375V42H53.375H30.625V53.375V56H25.375V53.375V42Z"
+						fill="white"></path>
+				</svg>
+			</div>
+			<div class="elemcontainer">
+				<h2>Accrofury</h2>
+				<p>
+					Découvrez un parc accrobranche totalement unique au coeur de la
+					Normandie !
+				</p>
+				<div class="cta_container mt-12 flex justify-center">
+					<button class="cta wood small">Découvrir</button>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</section>
+		<CTABand />
 	</main>
 	<Footer />
 </Layout>
 <script>
-	import { gsap } from "gsap";
-	//@ts-ignore
-	function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
-	function initializeForm() {
+	import { jarallax } from "jarallax";
+	jarallax(document.querySelectorAll(".jarallax"), {
+		speed: 0.6,
+	});
+</script>
+<script>
+	import { Fancybox } from "@fancyapps/ui";
+	import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-
-		//@ts-ignore
-	const form = document.getElementById("contact-form");
-	//@ts-ignore
-    const emailInput = form.querySelector('input[name="userEmail"]');
-	//@ts-ignore
-    const messageTextarea = form.querySelector('textarea[name="message"]');
-    //@ts-ignore
-	let errorDiv = form.querySelector('.error-message'); // Ajout d'une classe pour le div d'erreur
-    if (!errorDiv) {
-      errorDiv = document.createElement('div');
-      errorDiv.className = 'error-message'; // Ajout d'une classe pour le div d'erreur
-      //@ts-ignore
-	  errorDiv.style.color = 'red';
-	  //@ts-ignore
-      form.appendChild(errorDiv);
-    }
-//@ts-ignore
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Empêche l'envoi du formulaire de manière traditionnelle
-
-      //@ts-ignore
-      errorDiv.textContent = ''; // Réinitialiser le message d'erreur
-	  //@ts-ignore
-      if (!emailInput.value || !validateEmail(emailInput.value)) {
-	  //@ts-ignore
-        errorDiv.textContent = 'Veuillez fournir un email valide.';
-        return; // Arrête la fonction si l'email n'est pas valide
-      }
-	  //@ts-ignore
-      if (!messageTextarea.value) {
-	  //@ts-ignore
-        errorDiv.textContent = 'Veuillez écrire un message.';
-        return; // Arrête la fonction si le message est vide
-      }
-				const target = event.target as typeof event.target & {
-					userName: { value: string };
-					userEmail: { value: string };
-					userPhone: { value: string };
-					demande: { value: string };
-					message: { value: string };
-				};
-
-				const data = {
-					userName: target["userName"].value,
-					userEmail: target["userEmail"].value,
-					userPhone: target["userPhone"].value,
-					demande: target["demande"].value,
-					message: target["message"].value,
-				};
-
-				fetch("/.netlify/functions/triggerContactEmail", {
-					method: "POST",
-					body: JSON.stringify({
-						userName: data.userName,
-						userEmail: data.userEmail,
-						AdminEmail: "charles@gdm-pixel.fr",
-						userPhone: data.userPhone,
-						demande: data.demande,
-						message: data.message,
-					}),
-				})
-					.then((response) => response.json())
-					.then((data) => {
-						console.log(data);
-						gsap.to("#success-message", {
-							autoAlpha: 1,
-							y: 200,
-							duration: 0.5,
-						});
-						setTimeout(() => {
-							gsap.to("#success-message", {
-								autoAlpha: 0,
-								y: -30,
-								duration: 0.5,
-							});
-						}, 4000); 
-					})
-					.catch((error) => {
-						console.error("Error:", error);
-						// Gérez les erreurs ici également
-					});
-			});
+	function initFancybox() {
+		Fancybox.bind("[data-fancybox]", {
+			width: 400,
+			height: 720,
+		});
 	}
-	initializeForm();
-	document.addEventListener("astro:page-load", initializeForm);
+	initFancybox();
+	document.addEventListener("astro:page-load", initFancybox);
 </script>
 <style lang="scss">
-	main {
-		padding: 1rem 1rem 4rem 1rem;
-	}
-	#success-message {
-		@apply fixed bg-blackbean text-center text-white p-8 rounded-md border-solid border-2 border-white flex flex-col items-center w-[300px] mx-auto transform -translate-x-1/2 -translate-y-full left-1/2 -top-28 z-20;
-		svg {
-			@apply fill-white w-12 h-12 mb-6;
+	.intro-Trotfury {
+		@apply pt-20 pb-52 bg-harvestgold bg-opacity-20 relative overflow-clip;
+		.plantbottom {
+			@apply absolute bottom-0 w-full -z-10;
 		}
 	}
 
-	.herobox.medium {
-		background: url("/img/contact-hero-bck.webp") no-repeat center center;
-		@apply bg-cover bg-center flex flex-col justify-center items-center text-white h-[485px] -mt-10 z-0;
-		h1 {
-			@apply text-base font-bold uppercase text-airblue mb-4;
+	.overlaymap {
+		@apply absolute top-0 right-0 z-0 bottom-0 left-0 w-full h-full;
+	}
+	.video-section {
+		@apply overflow-clip pt-20 pb-20 bg-white relative text-center;
+		.elfgauche,
+		.elfdroit {
+			@apply absolute top-0  object-cover;
 		}
-		.baseline {
-			@apply text-xxxxl font-extrabold leading-[66px] uppercase text-white mb-0;
+		.elfdroit {
+			@apply -right-[300px];
 		}
-		.intro {
-			@apply max-w-md text-md;
+		.elfgauche {
+			@apply -left-[330px];
 		}
-		.cta_container {
-			@apply mt-6 gap-4 flex;
-			.cta {
-				@apply text-base;
-			}
+		.plantbottom {
+			@apply absolute bottom-0 w-full -z-10;
 		}
 	}
-	#contact-form {
-		input,
-		textarea {
-			@apply px-4 py-3 rounded-md border border-solid border-blackbean border-opacity-20;
+
+	.info-trotfury {
+		@apply pt-40 pb-20 bg-harvestgold bg-opacity-20;
+		.midcontainer {
+			@apply max-w-5xl mx-auto rounded-xl border-4 border-blackbean p-20 relative;
+			&:before {
+				background: url("/img/parchemin.jpg") no-repeat center center;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				content: "";
+				z-index: -1;
+				opacity: 0.4;
+			}
+			box-shadow:
+				0px 2px 9px rgba(0, 0, 0, 0.6),
+				0 0 45px #9b70256e inset;
+			.TrotTitleCenter {
+				@apply mx-auto -mt-36;
+			}
+			h2 {
+				@apply mx-auto text-center mb-12;
+			}
+			.pricecontainer {
+				@apply flex flex-row-reverse justify-center gap-16 items-center mt-8;
+				ul {
+					@apply flex-grow;
+				}
+				img {
+					@apply flex-grow-0;
+				}
+			}
+			.pricelist {
+			}
+			.priceel {@apply mb-6;
+				h3 {
+					@apply font-lemon text-xl text-blackbean font-bold mb-2 flex items-stretch gap-2;
+					svg {
+						@apply h-[32px] w-auto align-baseline;
+					}
+				}
+				p {@apply text-[32px] leading-10}
+			}
+
 		}
-		textarea {
-			@apply min-h-[120px];
+		.conclude {
+			@apply text-center text-xxl font-lemon mt-8 text-blackbean max-w-lg mx-auto;
+			.small {
+				@apply text-xl block mb-2;
+			}
 		}
-		input[type="submit"] {
-			@apply bg-harvestgold text-white font-bold text-base px-4 py-3 rounded-md cursor-pointer normal-case hover:bg-airblue transition-all;
+		.check-w-us {@apply block text-center text-lg font-sylfaen mt-4;}
+
+	}
+
+	.accrofuryband {
+		@apply relative text-center py-20;
+		.elemcontainer {
+			@apply relative z-10;
+			h2 {
+				@apply font-lemon text-white text-xxxxl shadow-md;
+			}
+			p {
+				@apply font-sylfaen text-white text-xxl max-w-2xl mx-auto  shadow-md;
+			}
 		}
+
+		.overlay {
+			@apply absolute top-0 right-0 z-0 bottom-0 left-0 w-full h-full bg-black opacity-50;
+		}
+	}
+
+	.faq {
+		@apply py-20;
+		background: url("/img/parchemin.jpg") no-repeat center center;
+		background-size: cover;
+		.sub {
+			@apply block mt-2 font-[Arial] font-bold text-sm text-blackbean;
+		}
+	}
+	main {
+		margin: auto;
+	}
+
+	/*TROFURY VIDEO*/
+	.video-thumbnail {
+		position: relative;
+		cursor: pointer;
+	}
+	.play-button-container {
+		position: absolute;
+		width: 128px; /* Assurez-vous que cela correspond à la taille de votre bouton SVG */
+		height: 128px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		.play-icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			fill: rgb(219, 154, 56);
+			transition: 300ms ease all;
+			&:hover {
+				fill: #ff0000;
+				transition: 300ms ease all;
+			}
+		}
+		.circle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			background: rgb(219, 154, 56);
+			animation: circleFade 2s infinite ease-out;
+		}
+
+		.circle-1 {
+			opacity: 0;
+			width: 140px;
+			height: 140px;
+		}
+
+		.circle-2 {
+			opacity: 0;
+			width: 160px;
+			height: 160px;
+			animation-delay: 0.7s; /* Délai pour le début de l'animation */
+		}
+
+		.circle-3 {
+			width: 180px;
+			height: 180px;
+			opacity: 0;
+			animation-delay: 1.4s;
+		}
+	}
+
+	@keyframes circleFade {
+		0% {
+			transform: translate(-50%, -50%) scale(0);
+			opacity: 1;
+		}
+		100% {
+			transform: translate(-50%, -50%) scale(1.2);
+			opacity: 0;
+		}
+	}
+
+	/*FIN DE TROTFURY VIDEO*/
+</style>
+<style is:global>
+	.has-youtube .fancybox__content {
+		width: 1280px !important;
+		height: auto !important;
 	}
 </style>

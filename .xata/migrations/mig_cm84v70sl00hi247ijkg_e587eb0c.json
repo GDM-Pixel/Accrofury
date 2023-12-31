@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm84v70sl00hi247ijkg",
+  "parentID": "mig_cm84v3qbv9f1s7jqj080",
+  "checksum": "1:e587eb0c3a16b97c0945d6d1314af6e6146dabc1622f136b1e4b5cce3eed2e0c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Places_Restantes",
+          "type": "int"
+        },
+        "table": "CapaciteJournaliere"
+      }
+    }
+  ]
+}

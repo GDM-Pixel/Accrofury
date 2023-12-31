@@ -1,0 +1,16 @@
+{
+  "id": "mig_cm84uk0sl00hi247ijjg",
+  "parentID": "mig_cm84uhgsl00hi247ijig",
+  "checksum": "1:622792aea48ae16fb30cb2ef4a54bf4be01e6d93481b079cfdffd0d3fa3f7a9b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Email",
+          "type": "email"
+        },
+        "table": "Reservations"
+      }
+    }
+  ]
+}
