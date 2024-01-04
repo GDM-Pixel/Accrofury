@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 import tailwind from "@astrojs/tailwind";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -10,7 +11,5 @@ import node from "@astrojs/node";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: "server",
-  adapter: node({
-    mode: "standalone"
-  })
+  adapter: netlify(),
 });
