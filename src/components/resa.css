@@ -1,41 +1,102 @@
   /* ReservationForm.css */
-  .form-container
+  .form-inner
   {
       display: flex;
       flex-direction: column;
-      max-width: 400px;
+      max-width: 300px;
+      width: 100%;
       /* Adjust the width as needed */
       margin: auto;
+      text-align: center;
   }
 
   .form-field
   {
       margin-bottom: 15px;
+      text-align: center;
       /* Space between fields */
   }
 
-  .form-field input,
-  .form-field button
+  .form-field input
   {
       width: 100%;
+      text-align: center;
       /* Full width of the container */
       padding: 10px;
       /* Padding for inputs and button */
       box-sizing: border-box;
+      border-radius: 10px;
       /* Include padding in the width */
   }
 
+@keyframes glowing
+{
+    0%
+    {
+        box-shadow: 0 0 3px #99ff99,
+            /* glow externe vert pâle */
+            0 0 5px #99ff99,
+            /* glow externe plus large vert pâle */
+            0 0 10px #66ff66,
+            /* glow externe vert */
+            0 0 15px #66ff66;
+        /* glow externe plus large vert */
+    }
+
+    50%
+    {
+        box-shadow: 0 0 10px #33ff33,
+            /* glow externe vert intense */
+            0 0 20px #4be24b,
+            /* glow externe plus large vert intense */
+            0 0 30px #38ca3f,
+            /* glow externe rose */
+            0 0 40px #acdd0a;
+        /* glow externe plus large rose */
+    }
+
+    100%
+    {
+        box-shadow: 0 0 3px #99ff99,
+            /* glow externe vert pâle */
+            0 0 5px #99ff99,
+            /* glow externe plus large vert pâle */
+            0 0 10px #66ff66,
+            /* glow externe vert */
+            0 0 15px #66ff66;
+        /* glow externe plus large vert */
+    }
+}
   .form-field button
   {
-      background-color: #4CAF50;
+      
+      box-sizing: border-box;
+      border-radius: 10px;
+      text-align: center;
+      background: url("/img/magic-btn.png") no-repeat center center;
       /* Green background for the submit button */
       color: white;
       border: none;
       cursor: pointer;
+      font-family: 'Lemon';
+      transition: 300ms ease all;
+      padding: 18px 70px;
+      display: inline-block;
+      font-size:24px;
+      margin-top:15px;
+    animation: glowing 2s infinite alternate;
   }
 
   .form-field button:hover
   {
-      opacity: 0.8;
-      /* Slight transparency on hover */
+      filter: hue-rotate(176deg);
+      /* Ajout de l'effet de rotation de teinte */
+      box-shadow: 0 0 10px #fff,
+          /* glow externe blanc */
+          0 0 20px #fff,
+          /* glow externe plus large blanc */
+          0 0 30px #ff0080,
+          /* glow externe rose */
+          0 0 40px #ff0080;
+      transition: 300ms ease all;
   }

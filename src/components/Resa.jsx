@@ -21,7 +21,14 @@ function ReservationForm() {
       Date: formData.Date ? new Date(formData.Date).toISOString() : '',
       Nombre_Aventuriers: parseInt(formData.Nombre_Aventuriers) || 0,
     };
-    const response = await fetch('/api/resa', {
+    await fetch('/api/resa', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formattedData)
+    });
+
+    // Deuxième requête POST vers une autre URL
+    await fetch('/api/email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formattedData)
@@ -31,7 +38,7 @@ function ReservationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={handleSubmit} className="form-inner">
       <div className="form-field">
         <input type="text" name="Nom" placeholder="Nom" required onChange={handleChange} value={formData.Nom} />
       </div>
@@ -48,7 +55,7 @@ function ReservationForm() {
         <input type="email" name="Email" placeholder="Email" required onChange={handleChange} value={formData.Email} />
       </div>
       <div className="form-field">
-        <button type="submit">Réserzzverz</button>
+        <button type="submit">Réserver</button>
       </div>
     </form>
   );
