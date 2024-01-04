@@ -33,7 +33,7 @@ const { items, extraClass = "" } = Astro.props;
 </div>
 
 <script>
-	function initAccordion() {
+	function initAccordionFAQ() {
 		const allAccordionsGroups = document.querySelectorAll(".accordion-wrapper");
 
 		allAccordionsGroups.forEach((wrapper) => {
@@ -78,12 +78,13 @@ const { items, extraClass = "" } = Astro.props;
 			});
 		});
 	}
-	initAccordion();
-	document.addEventListener("astro:content-ready", initAccordion);
-	document.addEventListener("astro:page-load", initAccordion);
+	initAccordionFAQ();
+	document.addEventListener("DOMContentLoaded", initAccordionFAQ);
+	document.addEventListener("astro:content-ready", initAccordionFAQ);
+	document.addEventListener("astro:page-load", initAccordionFAQ);
 </script>
 
-<style lang="scss">
+<style lang="scss" is:global>
 	/* Style de l'accordéon avec effet de glissement */
 	.accordion {
 		@apply w-full bg-forest transition-all duration-300 ease-in-out border-b-2 border-white text-left px-6 py-8 cursor-pointer text-xl font-lemon text-white;

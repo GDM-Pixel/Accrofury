@@ -1,46 +1,107 @@
 ---
 import { Image } from "astro:assets";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
-
 ---
 
 <script
 	is:inline
 	src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"
 ></script>
- 
+
 <div class="gallery container mt-6" id="MyCarousel">
-	<a data-src="/img/galerie-1.jpg" data-fancybox="GaleryAccro"  data-caption="Texte de contenu">
-		<img class="mainimg" src="/img/galerie-1.jpg" width="630" height="354" loading="lazy" alt="Galerie Accrofury" />
+	<a
+		data-src="/img/galerie-1.jpg"
+		data-fancybox="GaleryAccro"
+		data-caption="Texte de contenu">
+		<img
+			class="mainimg"
+			src="/img/galerie-1.jpg"
+			width="630"
+			height="354"
+			loading="lazy"
+			alt="Galerie Accrofury"
+		/>
 	</a>
 	<div class="grid grid-cols-6 gap-6">
-		<a data-src="/img/galerie-2.jpg" data-fancybox="GaleryAccro" data-caption="Texte de contenu">
-			<img src="/img/galerie-2.jpg" class="thumb" loading="lazy"  alt="Galerie Accrofury"/> 
+		<a
+			data-src="/img/galerie-2.jpg"
+			data-fancybox="GaleryAccro"
+			data-caption="Texte de contenu">
+			<img
+				src="/img/galerie-2.jpg"
+				class="thumb"
+				loading="lazy"
+				alt="Galerie Accrofury"
+			/>
 		</a>
-		<a data-src="/img/galerie-3.jpg" data-fancybox="GaleryAccro" data-caption="Texte de contenu">
-			<img src="/img/galerie-3.jpg"class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
+		<a
+			data-src="/img/galerie-3.jpg"
+			data-fancybox="GaleryAccro"
+			data-caption="Texte de contenu">
+			<img
+				src="/img/galerie-3.jpg"
+				class="thumb"
+				loading="lazy"
+				alt="Galerie Accrofury"
+			/>
 		</a>
-		<a data-src="/img/galerie-4.jpg" data-fancybox="GaleryAccro" data-caption="Texte de contenu">
-			<img src="/img/galerie-4.jpg"class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
+		<a
+			data-src="/img/galerie-4.jpg"
+			data-fancybox="GaleryAccro"
+			data-caption="Texte de contenu">
+			<img
+				src="/img/galerie-4.jpg"
+				class="thumb"
+				loading="lazy"
+				alt="Galerie Accrofury"
+			/>
 		</a>
-        <a data-src="/img/galerie-5.jpg" data-fancybox="GaleryAccro" data-caption="Texte de contenu">
-			<img src="/img/galerie-5.jpg"class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
+		<a
+			data-src="/img/galerie-5.jpg"
+			data-fancybox="GaleryAccro"
+			data-caption="Texte de contenu">
+			<img
+				src="/img/galerie-5.jpg"
+				class="thumb"
+				loading="lazy"
+				alt="Galerie Accrofury"
+			/>
 		</a>
-        <a data-src="/img/galerie-6.jpg" data-fancybox="GaleryAccro" data-caption="Texte de contenu">
-			<img src="/img/galerie-6.jpg"class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
+		<a
+			data-src="/img/galerie-6.jpg"
+			data-fancybox="GaleryAccro"
+			data-caption="Texte de contenu">
+			<img
+				src="/img/galerie-6.jpg"
+				class="thumb"
+				loading="lazy"
+				alt="Galerie Accrofury"
+			/>
 		</a>
-        <a data-src="/img/galerie-7.jpg" data-fancybox="GaleryAccro" data-caption="Texte de contenu">
-			<img src="/img/galerie-7.jpg"class="thumb" loading="lazy"  alt="Galerie Accrofury"/>
+		<a
+			data-src="/img/galerie-7.jpg"
+			data-fancybox="GaleryAccro"
+			data-caption="Texte de contenu">
+			<img
+				src="/img/galerie-7.jpg"
+				class="thumb"
+				loading="lazy"
+				alt="Galerie Accrofury"
+			/>
 		</a>
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="scss" is:global>
 	.gallery {
 		@apply flex flex-col gap-6;
-.mainimg {@apply w-full border-4 border-solid border-blackbean rounded-lg shadow-lg aspect-[16/7] object-cover overflow-clip}
-	.thumb {@apply w-full border-4 border-solid border-blackbean rounded-md shadow-lg aspect-square object-cover overflow-clip}
-    }
+		.mainimg {
+			@apply w-full border-4 border-solid border-blackbean rounded-lg shadow-lg aspect-[16/7] object-cover overflow-clip;
+		}
+		.thumb {
+			@apply w-full border-4 border-solid border-blackbean rounded-md shadow-lg aspect-square object-cover overflow-clip;
+		}
+	}
 </style>
 
 <script>
@@ -56,3 +117,6 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 	document.addEventListener("DOMContentLoaded", initializeFancybox);
 	document.addEventListener("astro:page-load", initializeFancybox);
 </script>
+
+
+

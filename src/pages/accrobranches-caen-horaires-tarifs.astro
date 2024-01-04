@@ -5,16 +5,12 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import HeroBoxResa from "../components/HeroBoxResa.astro";
 import ResaForm from "../components/Resa.jsx";
-import * as animations from "../components/animations.js";
 import AccordionPricing from "../components/AccordionPricing.astro";
 import VertScroll from "../assets/img/vert-scroll.png";
 import CTABand from "../components/CTABand.astro";
-// Generated with CLI
-// Generated with CLI
-import { getXataClient } from "../xata";
-const xata = getXataClient();
-const record = await xata.db.Reservations.read("rec_cm87vvsofvchp6jd7pqg");
-console.log(record);
+//import { getXataClient } from "../xata";
+//const xata = getXataClient();
+//const record = await xata.db.Reservations.read("rec_cm87vvsofvchp6jd7pqg");
 ---
 
 <Layout
