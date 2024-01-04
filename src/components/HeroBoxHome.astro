@@ -86,10 +86,14 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 	</div>
 </section>
 <script>
-	import { jarallax } from "jarallax";
-	jarallax(document.querySelectorAll(".jarallaxhero"), {
-		speed: 0.2,
-	});
+    import { jarallax } from "jarallax";
+    function initJarallax() {
+        jarallax(document.querySelectorAll(".jarallaxhero"), {
+            speed: 0.2,
+        });
+    }
+    document.addEventListener("DOMContentLoaded", initJarallax);
+    document.addEventListener("astro:page-load", initJarallax);
 </script>
 <style lang="scss">
 	.heroboxhome {

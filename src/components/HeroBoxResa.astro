@@ -9,6 +9,7 @@ import { Image } from "astro:assets";
 
 import TrotFuryResa from "../assets/img/heroresa.jpg";
 ---
+
 <section class="heroboxresa jarallaxhero">
 	<img
 		src="/img/heroresa.jpg"
@@ -19,25 +20,25 @@ import TrotFuryResa from "../assets/img/heroresa.jpg";
 	/>
 	<div class="herocontainer">
 		<h1>Réservation parc Accrobranche</h1>
-		<p class="baseline">
-			Horaires, tarifs et réservation
-		</p>
-		
-
+		<p class="baseline">Horaires, tarifs et réservation</p>
 	</div>
-	
+
 	<div class="overlay"></div>
-	
 </section>
+
 <script>
 	import { jarallax } from "jarallax";
-	jarallax(document.querySelectorAll(".jarallaxhero"), {
-		speed: 0.6,
-	});
+	function initJarallax() {
+		jarallax(document.querySelectorAll(".jarallaxhero"), {
+			speed: 0.6,
+		});
+	}
+	document.addEventListener("DOMContentLoaded", initJarallax);
+	document.addEventListener("astro:page-load", initJarallax);
 </script>
 <style lang="scss">
 	.heroboxresa {
-		@apply relative flex flex-col w-full text-white xl:aspect-[16/2] lg:aspect-[16/2] md:aspect-[16/2] sm:aspect-[16/2] xs:aspect-[16/2] mt-0 z-0;
+		@apply relative flex flex-col w-full text-white xl:aspect-[16/3] lg:aspect-[16/3] md:aspect-[16/3] sm:aspect-[16/3] xs:aspect-[16/3] mt-0 z-0;
 		.herocontainer {
 			@apply relative mx-auto container h-full mt-2 z-10  flex flex-col-reverse justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
 		}
@@ -58,7 +59,7 @@ import TrotFuryResa from "../assets/img/heroresa.jpg";
 			@apply absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0;
 		}
 	}
-		.reassurbox {
+	.reassurbox {
 		@apply w-[390px] bg-scroll border-2 border-blackbean rounded-lg shadow-lg p-8 text-blackbean;
 		box-shadow:
 			2px 2px 3px rgba(0, 0, 0, 0.2),

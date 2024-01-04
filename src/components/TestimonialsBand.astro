@@ -135,8 +135,11 @@ import MarieMImage from "../assets/img/marie-mure-ravaud.jpg";
 		});
 	}
 	initializeTestiBandSwiper();
+	document.addEventListener("DOMContentLoaded", initializeTestiBandSwiper);
 	document.addEventListener("astro:page-load", initializeTestiBandSwiper);
 </script>
+
+
 
 <style lang="scss">
 	.swiper {

@@ -322,10 +322,15 @@ console.log(record);
 		</section>
 		<script>
 			import { jarallax } from "jarallax";
-			jarallax(document.querySelectorAll(".jarallaxresa"), {
-				speed: 0.4,
-			});
+			function initJarallax() {
+				jarallax(document.querySelectorAll(".jarallaxresa"), {
+					speed: 0.4,
+				});
+			}
+			document.addEventListener("DOMContentLoaded", initJarallax);
+			document.addEventListener("astro:page-load", initJarallax);
 		</script>
+
 		<CTABand />
 	</main>
 </Layout>
