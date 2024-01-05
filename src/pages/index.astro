@@ -49,7 +49,9 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 							petits et grands !
 						</p>
 					</div>
-					<div class="right"><Image src={ArbreBig} alt="arbre" loading="lazy"/></div>
+					<div class="right">
+						<Image src={ArbreBig} alt="arbre" loading="lazy" />
+					</div>
 				</div>
 				<svg
 					class="mx-auto mt-12"
@@ -86,7 +88,12 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 			<div class="parcours-board"><h2>Les parcours</h2></div>
 			<ParcoursSlider />
 			<button class="mapdl">Télécharger la<br />carte des parcours</button>
-			<Image src={OverLayMap} class="overlaymap" alt="overlaymap" loading="lazy"/>
+			<Image
+				src={OverLayMap}
+				class="overlaymap"
+				alt="overlaymap"
+				loading="lazy"
+			/>
 		</section>
 		<section class="security">
 			<div class="section-title text-center">
@@ -104,8 +111,8 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 				<h2>Focus sur la sécurité</h2>
 			</div>
 			<div class="max-w-5xl mx-auto mt-12 px-6">
-				<div class="flex flex-row mb-10 justify-between">
-					<div class="col w-[48%] flex flex-col justify-center">
+				<div class="gauche-droite">
+					<div class="col">
 						<h3 class="text-xl mb-3">Nos Priorités, Votre Tranquillité</h3>
 						<p class="text-lg">
 							À Accrofury, la sécurité est primordiale. Tous nos parcours sont
@@ -115,7 +122,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 							l'accrochage et du décrochage des mousquetons.
 						</p>
 					</div>
-					<div class="col w-[48%]">
+					<div class="col">
 						<Image
 							src={LigneVieContinue}
 							alt="ligne de vie continue"
@@ -125,8 +132,8 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 					</div>
 				</div>
 
-				<div class="flex flex-row-reverse justify-between">
-					<div class="col w-[48%] flex flex-col justify-center">
+				<div class="droite-gauche">
+					<div class="col">
 						<p class="text-lg">
 							Nos encadrants, formés et diplômés, veillent constamment à votre
 							sécurité et à celle de vos enfants. Avec des équipements modernes
@@ -139,7 +146,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 							sérénité.</strong
 						>
 					</div>
-					<div class="col w-[48%]">
+					<div class="col">
 						<Image
 							src={EncadrantsDiplomes}
 							alt="Encadrants diplomés"
@@ -149,7 +156,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 					</div>
 				</div>
 			</div>
-			<Image src={PlantBottom} alt="plant" class="plantbottom" loading="lazy"/>
+			<Image src={PlantBottom} alt="plant" class="plantbottom" loading="lazy" />
 			<Image src={ArbreSide} alt="arbre" class="arbregauche" loading="lazy" />
 			<Image src={ArbreSide} alt="arbre" class="arbredroit" loading="lazy" />
 		</section>
@@ -176,7 +183,12 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 		</section>
 
 		<section class="trotfuryband jarallax">
-			<img class="jarallax-img" src="/img/trotfuryband.jpg" alt="TroFury" loading="lazy"/>
+			<img
+				class="jarallax-img"
+				src="/img/trotfuryband.jpg"
+				alt="TroFury"
+				loading="lazy"
+			/>
 			<div class="section-title text-center relative z-10">
 				<svg
 					class="mx-auto mb-6"
@@ -226,8 +238,18 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 				<h2>Nos clients en parlent</h2>
 			</div>
 			<TestimonialsSlider />
-			<img class="jongleurleft" src="/img/jongleur1.png" alt="Jongleur" loading="lazy"/>
-			<img class="jongleurright" src="/img/jongleur1.png" alt="Jongleur" loading="lazy"/>
+			<img
+				class="jongleurleft"
+				src="/img/jongleur1.png"
+				alt="Jongleur"
+				loading="lazy"
+			/>
+			<img
+				class="jongleurright"
+				src="/img/jongleur1.png"
+				alt="Jongleur"
+				loading="lazy"
+			/>
 		</section>
 		<section class="faq">
 			<div class="section-title text-center relative z-10 mb-10">
@@ -286,7 +308,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 					]}
 				/>
 			</div>
-			<p class="text-center mx-auto mt-12 font-lemon text-xl max-w-2xl">
+			<p class="text-center mx-auto mt-12 font-lemon text-xl max-w-2xl px-6">
 				Vous ne trouvez pas la réponse que vous cherchez ? Envoyez nous un
 				message !
 			</p>
@@ -302,16 +324,16 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 			speed: 0.6,
 		});
 	}
-	 initJarallax();
+	initJarallax();
 	document.addEventListener("DOMContentLoaded", initJarallax);
 	document.addEventListener("astro:page-load", initJarallax);
 </script>
 <style lang="scss">
 	.intro {
-		@apply relative pt-36 pb-20  bg-harvestgold bg-opacity-20 -z-10;
+		@apply relative pt-36 pb-20 px-6  bg-harvestgold bg-opacity-20 -z-10;
 
 		.container {
-			@apply rounded-xl p-24 relative overflow-clip max-w-[1200px];
+			@apply rounded-xl md:p-24 p-12 relative overflow-clip max-w-[1200px];
 			box-shadow:
 				0px 2px 9px rgba(0, 0, 0, 0.6),
 				0 0 45px #9b7025ae inset;
@@ -328,9 +350,9 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 				z-index: -1;
 			}
 			.inner {
-				@apply flex gap-10;
+				@apply lg:flex gap-10;
 				.left {
-					@apply w-3/5;
+					@apply lg:w-3/5;
 					h2 {
 						@apply text-[26px] mb-6;
 					}
@@ -339,44 +361,42 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 					}
 				}
 				.right {
-					@apply w-2/5;
+					@apply lg:w-2/5;
 					img {
 						@apply w-full;
 					}
 				}
+			}
+			svg {
+				@apply max-w-full;
 			}
 		}
 	}
 	.slider-parcours {
 		@apply relative overflow-clip text-center;
 		.parcours-board {
-			@apply absolute top-0 left-[50%] z-10 text-center w-full -translate-x-1/2;
+			@apply absolute top-0 left-[50%] z-10 text-center w-full -translate-x-1/2 md:h-[250px] h-[190px];
 			background: url("/img/parcours-board.png") no-repeat center center;
-			height: 250px;
+			background-size:contain;
 			h2 {
-				@apply font-lemon text-white text-center mt-[120px] text-xxxxl;
+				@apply font-lemon text-white text-center md:mt-[120px]  mt-[90px] md:text-xxxxl text-xxl;
 			}
 		}
 		button.mapdl {
-			@apply absolute bottom-20 z-20 font-lemon text-xl text-white px-[92px] py-[20px] -translate-x-1/2;
-			width: 450px;
+			@apply absolute md:bottom-20 bottom-28 z-20 font-lemon md:text-xl text-lg text-white md:px-[92px] px-[22px] md:py-[20px] py-[10px] -translate-x-1/2 md:w-[450px] w-[300px] md:h-[104px] h-[90px] leading-tight md:leading-normal;
 			background: url("/img/wooden-large.png") no-repeat center center;
+			background-size: contain;
 			&:before {
 				content: "";
-				position: absolute;
-				top: -32px;
-				left: -31px;
-				width: 102px;
-				height: 79px;
+				@apply absolute -top-[20px] -left-[39px] w-[90px] h-[69px] md:-top-[32px] md:-left-[34px] md:w-[102px] md:h-[79px];
 				background: url("/img/bck-leaf-top-left.png") no-repeat;
+				background-size: contain;
 			}
 			&:after {
 				content: "";
-				position: absolute;
-				top: -17px;
-				right: 10px;
-				width: 74px;
-				height: 104px;
+				@apply absolute right-[0px] w-[74px] h-[104px] -top-[10px] 
+				md:right-[10px] md:w-[74px] md:h-[104px] md:-top-[17px];
+
 				background: url("/img/bck-leaf-top-right.png") no-repeat;
 			}
 		}
@@ -384,7 +404,8 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 	.overlaymap {
 		@apply absolute top-0 right-0 z-0 bottom-0 left-0 w-full h-full;
 	}
-	.security {@apply overflow-clip pt-20 pb-52 bg-harvestgold bg-opacity-20 relative;
+	.security {
+		@apply overflow-clip pt-20 pb-52 bg-harvestgold bg-opacity-20 relative;
 		.arbredroit,
 		.arbregauche {
 			@apply absolute top-1/2 -translate-y-1/2 object-cover;
@@ -399,23 +420,35 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 			@apply absolute bottom-0 w-full -z-10;
 		}
 	}
+	.gauche-droite {
+		@apply md:flex md:flex-row mb-10 justify-between;
+		.col {
+			@apply md:w-[48%] w-full flex flex-col justify-center md:my-0 my-6;
+		}
+	}
+	.droite-gauche {
+		@apply md:flex md:flex-row-reverse mb-10 justify-between;
+		.col {
+			@apply md:w-[48%] w-full flex flex-col justify-center md:my-0 my-6;
+		}
+	}
 	.galery-park {
-@apply  pt-20 pb-40 bg-harvestgold bg-opacity-20 relative;
+		@apply pt-20 pb-40 bg-harvestgold bg-opacity-20 relative;
 		&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: url("/img/parchemin.jpg") no-repeat center center;
-				background-size: cover;
-				opacity: 0.5;
-				z-index: -1;
-			}
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url("/img/parchemin.jpg") no-repeat center center;
+			background-size: cover;
+			opacity: 0.5;
+			z-index: -1;
+		}
 	}
 	.trotfuryband {
-		@apply relative text-center py-20;
+		@apply relative text-center py-20 px-6;
 		.elemcontainer {
 			@apply relative z-10;
 			h2 {

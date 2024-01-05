@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import Repere from "../components/Repere.astro";
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<Repere />
 	</body>
 </html>
 <script src="/js/gdm-goto.js" is:inline></script>
@@ -84,11 +86,9 @@ const { title } = Astro.props;
 		font-family: "Lemon";
 	}
 	.cta.wood {
-		@apply font-lemon text-white;
+		@apply font-lemon text-white w-[280px] h-[78px];
 		background: url("/img/woody-btn.png") no-repeat;
-		width: 380px;
 		background-size: cover;
-		height: 105px;
 		font-size: 24px;
 		display: flex;
 		flex-direction: column;
@@ -146,6 +146,12 @@ const { title } = Astro.props;
 		}
 		ul li {
 			@apply mb-6;
+		}
+	}
+
+	.section-title {
+		h2 {
+			@apply md:text-xxxl text-xl;
 		}
 	}
 </style>

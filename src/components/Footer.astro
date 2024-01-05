@@ -60,8 +60,9 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 				<p>contact@accrofury.com</p>
 			</div>
 		</div>
-		<div class="navigation">
+		<div class="navigation1">
 			<div class="row mb-10">
+				
 				<h4>Ouverture</h4>
 				<p>7j/7 durant les vacances</p>
 				<p>Mercredi & WE hors vacances</p>
@@ -71,7 +72,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 				<p><a href="#">Cliquez ici</a></p>
 			</div>
 		</div>
-		<div class="navigation">
+		<div class="navigation2">
 			<div class="row">
 				<h4>Pages</h4>
 				<ul>
@@ -149,7 +150,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		
 	</div>
 	<div class="bottomfooter">
-		<div class="container">
+		<div class="gdmcontainer">
 			<div class="col1">Copyright @ GDM-Pixel, tous droits réservés</div>
 			<div class="col2">
 				<ul>
@@ -167,11 +168,15 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		@apply bg-blackbean text-white;
 	}
 	.mainfooter {
-		@apply lg:container xs:px-8 lg:px-6 xl:px-6 justify-between items-center md:grid md:grid-cols-4 flex flex-col gap-6 pt-16 pb-12;
+		@apply lg:max-w-7xl mx-auto xs:px-6 lg:px-6 xl:px-6 justify-between items-center md:grid md:grid-cols-12 flex flex-col gap-6 pt-16 pb-12;
+		.id-contact {@apply lg:col-span-4 col-span-6;}
+		.navigation1 {@apply lg:col-span-3 col-span-6;}
+		.navigation2 {@apply lg:col-span-2 col-span-6;}
+		.social {@apply lg:col-span-3 col-span-6;}
 		.id-contact {
 			@apply md:text-left text-center;
 			img {
-				@apply max-w-[200px] lg:max-w-[230px] mb-4;
+				@apply max-w-[200px] lg:max-w-[230px] mb-4 mx-auto md:mx-0;
 			}
 			.icon-info {
 				@apply text-lg flex items-center mb-3 justify-center md:justify-start;
@@ -187,28 +192,30 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 			}
 			
 		}
-		.navigation {
+		
+
+		.navigation1,.navigation2 {
 			@apply text-white flex-col justify-center;
 			h4 {
-				@apply mb-4 text-harvestgold text-lg;
+				@apply mb-4 text-harvestgold text-lg text-center md:text-left;
 			}
 			p {
-				@apply text-lg mb-4;
+				@apply text-lg mb-4 text-center md:text-left;
 			}
 			ul li {
-				@apply mb-2;
+				@apply mb-2 text-center md:text-left;
 				a {
 					@apply text-white text-lg hover:text-airblue;
 				}
 			}
 		}
 		.social {
-			@apply text-white text-right flex flex-col justify-center items-end;
+			@apply text-white text-center md:text-left lg:text-right flex flex-col justify-center lg:items-end;
 			h4 {
-				@apply mb-4 text-harvestgold text-lg md:text-right text-center;
+				@apply mb-4 text-harvestgold text-lg text-center md:text-left lg:text-right;
 			}
 			ul {
-				@apply flex justify-center md:justify-end mb-6;
+				@apply flex md:justify-start lg:justify-end justify-center mb-6;
 				li {
 					@apply mr-4;
 					a {
@@ -227,9 +234,9 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		}
 	}
 	.bottomfooter {
-		@apply bg-[#250D0F] border-t border-[#DCB77F] ;
-		.container {
-			@apply grid md:grid-cols-2 grid-cols-1 justify-between items-center;
+		@apply bg-[#250D0F] border-t border-[#DCB77F];
+		.gdmcontainer {
+			@apply max-w-7xl mx-auto grid md:grid-cols-2 grid-cols-1 justify-between items-center px-6;
 			.col1,
 			.col2 {
 				@apply text-[#DCB77F] text-sm  py-4 text-center md:text-left;
@@ -250,32 +257,9 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 			}
 		}
 	}
-	.blogpost {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		text-decoration: none;
-		color: #fff;
-	}
-	.blogpost img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	.postmetawraper {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.category {
-		background-color: #fff;
-		color: #000;
-		padding: 0.5rem 1rem;
-		border-radius: 1rem;
-	}
-	.date {
-		font-size: 0.8rem;
-	}
+	
+	
+	
+	
+	
 </style>

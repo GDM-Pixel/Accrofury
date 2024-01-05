@@ -24,7 +24,7 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 	
 	<div class="overlay"></div>
 	<div
-		class="reassurance grid grid-cols-3 mx-auto gap-12 -mb-20 z-20 relative">
+		class="reassurance">
 		<div class="reassurbox">
 			<svg
 				width="85"
@@ -103,7 +103,7 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 			@apply text-[19px] font-sylfaen font-normal text-white mb-8;
 		}
 		.baseline {
-			@apply font-lemon xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xxl xs:text-xl leading-[66px] uppercase text-white mb-4;
+			@apply font-lemon xl:text-[40px] lg:text-xxl md:text-xl sm:text-xl text-lg uppercase leading-[1.5em] lg:leading-[1.6em] text-white mb-4;
 		}
 
 		.cta_container {
@@ -113,17 +113,18 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 			@apply absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0;
 		}
 	}
+	.reassurance {@apply md:grid md:grid-cols-3  flex flex-col mx-auto lg:gap-12 gap-4 px-6 -mb-20 z-20 relative;
 		.reassurbox {
-		@apply w-[390px] bg-scroll border-2 border-blackbean rounded-lg shadow-lg p-8 text-blackbean;
+		@apply xl:w-[390px] lg:w-[300px] text-center xl:text-left bg-scroll border-2 border-blackbean rounded-lg shadow-lg lg:p-8 p-4 text-blackbean;
 		box-shadow:
 			2px 2px 3px rgba(0, 0, 0, 0.2),
 			0 0 15px #9b7025ae inset;
-		@apply flex justify-center items-center gap-4;
+		@apply xl:flex xl:flex-row flex-col justify-center items-center gap-4;
 		.right-content {
 			@apply flex-auto;
 		}
 		svg {
-			@apply shrink-0 flex-auto;
+			@apply shrink-0 flex-auto mx-auto lg:mb-6 mb-2 lg:w-20 w-14;
 		}
 		.h3 {
 			@apply font-lemon text-lg;
@@ -132,6 +133,8 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 			@apply font-sylfaen text-lg;
 		}
 	}
+	}
+		
 
 	/*ROUGE XS*/
 	@media screen and (min-width: 240px) and (max-width: 639px) {

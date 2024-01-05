@@ -190,18 +190,19 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 				@apply h-[40px];
 			}
 			.logo {
-				@apply max-w-[250px] lg:max-w-[250px] -mb-[40px];
+				@apply max-w-[150px] lg:max-w-[200px] -mb-[10px];
 			}
-			.liane-centre {
-				@apply top-[-30px];
+			.liane-centre,.liane-gauche,.liane-droite {
+				@apply hidden;
 			}
+			
 		}
 
 		.container {
 			@apply max-w-[1900px] flex px-0 py-0 justify-between items-center;
 		}
 		.logo {
-			@apply max-w-[140px] lg:max-w-[380px] transition-all duration-300 ease-in-out -mb-[60px] z-10 relative;
+			@apply max-w-[240px] md:max-w-[280px] lg:max-w-[380px] transition-all duration-300 ease-in-out -mb-[30px] md:-mb-[60px] z-10 relative;
 		}
 		nav.desktop-nav {
 			@apply xl:flex items-center h-[55px] hidden lg:block;
@@ -218,14 +219,14 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 							@apply fill-blackbean transition-all duration-300;
 						}
 						&.active {
-							@apply text-airblue border-blackbean;
+							@apply text-harvestgold border-blackbean bg-transparent;
 							svg {
 								@apply fill-blackbean;
 							}
 						}
 					}
 					svg {
-						@apply fill-white transition-all duration-300 hover:fill-airblue;
+						@apply fill-white transition-all duration-300 hover:fill-harvestgold;
 					}
 				}
 			}
@@ -235,10 +236,10 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 			
 		}
 		.liane-gauche {
-			@apply absolute -top-2 left-0 z-0;
+			@apply absolute -top-2 left-0 z-0 pointer-events-none;
 		}
 		.liane-centre {
-			@apply absolute top-0 left-[40%];
+			@apply absolute top-0 left-[40%] pointer-events-none;
 		}
 		.liane-droite {
 			@apply absolute top-0 right-0 pointer-events-none;
@@ -252,7 +253,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		a.c-breadcrumbs__link {
 			@apply text-harvestgold text-[12px] font-semibold;
 			&:hover {
-				@apply text-airblue;
+				@apply text-harvestgold;
 			}
 		}
 	}
@@ -380,11 +381,11 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		svg.home-btn {
 			@apply fill-white transition-all duration-300 text-base;
 			&:hover {
-				@apply fill-airblue transition-all duration-300;
+				@apply fill-harvestgold transition-all duration-300;
 			}
 		}
 		&:hover {
-			@apply text-airblue transition-all duration-300;
+			@apply text-harvestgold transition-all duration-300;
 		}
 	}
 </style>
