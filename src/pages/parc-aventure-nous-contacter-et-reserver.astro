@@ -22,21 +22,23 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 	<main>
 		<div class="contactcontainer">
-				<div class="col1 col-span-6 flex flex-col justify-center">
-					<a
-						class="maplink"
-						data-fancybox=""
-						data-src="https://www.google.com/maps/place/Accrofury/@49.1123513,-0.4022765,15z/data=!4m6!3m5!1s0x480a417addb8e763:0x1acce0fcf9a1d772!8m2!3d49.1122108!4d-0.3950667!16s%2Fg%2F11byx7yhmq?entry=ttu"
-						class="flex items-center h-10 gap-2 px-4 font-semibold leading-normal text-white transition duration-150 bg-brand rounded"
-						><Image src={MapImg} alt="googlemap" /></a
-					>
-				</div>
-				<div class="col2 col-span-6">
-					<div class="section-header left">
-
-						<h2 class="section-title">Besoin de plus d’infos ?</h2>
-						<p>Notre équipe est à votre disposition pour répondre à toutes vos questions, vous conseiller, ou établir un devis !</p>
-						<div class="contactmed">
+			<div class="col1">
+				<a
+					class="maplink"
+					data-fancybox=""
+					data-src="https://www.google.com/maps/place/Accrofury/@49.1123513,-0.4022765,15z/data=!4m6!3m5!1s0x480a417addb8e763:0x1acce0fcf9a1d772!8m2!3d49.1122108!4d-0.3950667!16s%2Fg%2F11byx7yhmq?entry=ttu"
+					class="flex items-center h-10 gap-2 px-4 font-semibold leading-normal text-white transition duration-150 bg-brand rounded"
+					><Image src={MapImg} alt="googlemap" /></a
+				>
+			</div>
+			<div class="col2">
+				<div class="section-header left">
+					<h2 class="section-title">Besoin de plus d’infos ?</h2>
+					<p>
+						Notre équipe est à votre disposition pour répondre à toutes vos
+						questions, vous conseiller, ou établir un devis !
+					</p>
+					<div class="contactmed">
 						<div class="leftc">
 							<svg
 								width="43"
@@ -63,41 +65,46 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 							06 23 27 50 90
 						</div>
 						<div class="bottomc">
-							<svg width="42" height="31" viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.25 2.58333C3.79805 2.58333 2.625 3.73776 2.625 5.16667V8.38776L18.6703 19.9643C20.0566 20.9654 21.9434 20.9654 23.3297 19.9643L39.375 8.38776V5.16667C39.375 3.73776 38.202 2.58333 36.75 2.58333H5.25ZM2.625 11.5927V25.8333C2.625 27.2622 3.79805 28.4167 5.25 28.4167H36.75C38.202 28.4167 39.375 27.2622 39.375 25.8333V11.5927L24.8801 22.0471C22.5668 23.7102 19.425 23.7102 17.1199 22.0471L2.625 11.5927ZM0 5.16667C0 2.31693 2.3543 0 5.25 0H36.75C39.6457 0 42 2.31693 42 5.16667V25.8333C42 28.6831 39.6457 31 36.75 31H5.25C2.3543 31 0 28.6831 0 25.8333V5.16667Z" fill="#3C1518"/>
-</svg>contact@accrofury.com
-
+							<svg
+								width="42"
+								height="31"
+								viewBox="0 0 42 31"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M5.25 2.58333C3.79805 2.58333 2.625 3.73776 2.625 5.16667V8.38776L18.6703 19.9643C20.0566 20.9654 21.9434 20.9654 23.3297 19.9643L39.375 8.38776V5.16667C39.375 3.73776 38.202 2.58333 36.75 2.58333H5.25ZM2.625 11.5927V25.8333C2.625 27.2622 3.79805 28.4167 5.25 28.4167H36.75C38.202 28.4167 39.375 27.2622 39.375 25.8333V11.5927L24.8801 22.0471C22.5668 23.7102 19.425 23.7102 17.1199 22.0471L2.625 11.5927ZM0 5.16667C0 2.31693 2.3543 0 5.25 0H36.75C39.6457 0 42 2.31693 42 5.16667V25.8333C42 28.6831 39.6457 31 36.75 31H5.25C2.3543 31 0 28.6831 0 25.8333V5.16667Z"
+									fill="#3C1518"></path>
+							</svg>contact@accrofury.com
 						</div>
 					</div>
-					</div>
-					<form id="contact-form" class="flex flex-col gap-6" method="POST">
-						<input type="hidden" name="contactNumber" />
-						<input type="text" name="userName" placeholder="Nom" />
-						<input type="email" name="userEmail" placeholder="E-mail" />
-						<textarea
-							name="message"
-							placeholder="Votre message"
-							class="col-span-2"></textarea>
-						<input
-							type="submit"
-							value="Envoyer"
-							class="cta wood small mt-4 relative z-10"
-						/>
-						<div class="error-message" style="color: red;"></div>
-					</form>
 				</div>
+				<form id="contact-form" class="flex flex-col gap-6" method="POST">
+					<input type="hidden" name="contactNumber" />
+					<input type="text" name="userName" placeholder="Nom" />
+					<input type="email" name="userEmail" placeholder="E-mail" />
+					<textarea
+						name="message"
+						placeholder="Votre message"
+						class="col-span-2"></textarea>
+					<input
+						type="submit"
+						value="Envoyer"
+						class="cta wood small mt-4 relative z-10"
+					/>
+					<div class="error-message" style="color: red;"></div>
+				</form>
+			</div>
 
-				<div id="success-message">
-					<img
-						src="https://media0.giphy.com/media/E8rJEUMGs9cyWEtNXT/giphy.gif?cid=ecf05e47sb2icuh3cndpy6sdvvo5p27ff3o34zulu8hb8djn&ep=v1_gifs_related&rid=giphy.gif&ct=g"
-						width="300"
-						height="300"
-						loading="lazy"
-					/><p class="mt-6">
-						Merci, nous avons reçu votre demande et vous répondrons sous peu.
-					</p>
-				</div>
-		
+			<div id="success-message">
+				<img
+					src="https://media0.giphy.com/media/E8rJEUMGs9cyWEtNXT/giphy.gif?cid=ecf05e47sb2icuh3cndpy6sdvvo5p27ff3o34zulu8hb8djn&ep=v1_gifs_related&rid=giphy.gif&ct=g"
+					width="300"
+					height="300"
+					loading="lazy"
+				/><p class="mt-6">
+					Merci, nous avons reçu votre demande et vous répondrons sous peu.
+				</p>
+			</div>
 		</div>
 	</main>
 	<Footer />
@@ -212,46 +219,53 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 </script>
 <style lang="scss">
 	.contactcontainer {
-		@apply w-full grid grid-cols-12 gap-6 relative;
+		@apply w-full lg:grid lg:grid-cols-12 flex flex-col-reverse gap-6 relative;
 		&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: url("/img/parchemin.jpg") no-repeat center center;
-				background-size: cover;
-				opacity: 0.5;
-				z-index: -1;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url("/img/parchemin.jpg") no-repeat center center;
+			background-size: cover;
+			opacity: 0.5;
+			z-index: -1;
+		}
+		.col1 {
+			@apply col-span-6 flex flex-col justify-center;
+		}
+		.col2 {
+			@apply col-span-6 md:p-12 p-6;
+		}
+		.section-header.left {
+			p {
+				@apply text-lg text-blackbean mt-4;
 			}
-			.col2 {@apply p-12;}
-			.section-header.left {
-				p {@apply text-lg text-blackbean mt-4;}
-			}
-			.contactmed {
-					@apply flex flex-wrap gap-6 mt-6 mb-8 mx-auto text-xl font-lemon text-blackbean;
-					.leftc,
-					.rightc,.bottomc {
-						@apply flex gap-2 items-center;
-						svg {
-							@apply mr-1;
-						}
-					}
+		}
+		.contactmed {
+			@apply flex flex-wrap gap-6 mt-6 mb-8 mx-auto text-xl font-lemon text-blackbean;
+			.leftc,
+			.rightc,
+			.bottomc {
+				@apply flex gap-2 items-center;
+				svg {
+					@apply mr-1;
 				}
+			}
+		}
 	}
 	a.maplink {
 		@apply w-full h-full block border-none border-transparent relative;
 		&:hover {
 			@apply cursor-pointer;
 			img {
-			@apply w-full h-full border-4 border-harvestgold object-cover border-solid transition-all duration-300;
-		}
+				@apply w-full h-full border-4 border-harvestgold object-cover border-solid transition-all duration-300;
+			}
 		}
 		img {
 			@apply w-full h-full border-4 border-transparent object-cover border-solid transition-all duration-300;
 		}
-		
 	}
 	main {
 		padding: 0;
@@ -263,7 +277,6 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 		}
 	}
 
-	
 	#contact-form {
 		input,
 		textarea {
@@ -274,7 +287,6 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 		}
 		input[type="submit"] {
 			@apply border-none text-white;
-
 		}
 	}
 
@@ -297,7 +309,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 			@apply text-white;
 			font-size: 28px !important;
 			transition: 500ms ease all;
-			cursor:pointer;
+			cursor: pointer;
 		}
 		&:before {
 			content: "";

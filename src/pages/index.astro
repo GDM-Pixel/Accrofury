@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroBoxHome from "../components/HeroBoxHome.astro";
 import { Image } from "astro:assets";
-import ParcoursSlider from "../components/ParcoursSlider.astro";
+import ParcoursSlider from "../components/ParcoursSlider.astro"; 
 import OverLayMap from "../assets/img/overlaymap.png";
 import LigneVieContinue from "../assets/img/ligne-vie-continue-1.png";
 import EncadrantsDiplomes from "../assets/img/encadrants-diplomes.png";
@@ -178,7 +178,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 			</div>
 			<GalleriePark />
 			<div class="cta_container mt-12 flex justify-center">
-				<button class="cta wood">Réserver</button>
+				<a class="cta wood" href="/accrobranches-caen-horaires-tarifs/">Réserver</a>
 			</div>
 		</section>
 
@@ -209,7 +209,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 					vive allure !
 				</p>
 				<div class="cta_container mt-12 flex justify-center">
-					<button class="cta wood">Découvrir</button>
+					<a class="cta wood" href="/trotfury-location-trotinette/">Découvrir</a>
 				</div>
 			</div>
 			<div class="overlay"></div>
@@ -251,8 +251,8 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 				loading="lazy"
 			/>
 		</section>
-		<section class="faq">
-			<div class="section-title text-center relative z-10 mb-10">
+		<section class="faq px-6">
+			<div class="section-title text-center relative z-10 mb-10 ">
 				<svg
 					class="mx-auto mb-6"
 					width="44"
@@ -333,7 +333,7 @@ import PlantBottom from "../assets/img/plant-bottom.png";
 		@apply relative pt-36 pb-20 px-6  bg-harvestgold bg-opacity-20 -z-10;
 
 		.container {
-			@apply rounded-xl md:p-24 p-12 relative overflow-clip max-w-[1200px];
+			@apply rounded-xl md:p-24 p-6 relative overflow-clip max-w-[1200px];
 			box-shadow:
 				0px 2px 9px rgba(0, 0, 0, 0.6),
 				0 0 45px #9b7025ae inset;

@@ -1,8 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import AccrofuryLogo from "../assets/img/accrofury-logo.png";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 ---
-
+<script
+	is:inline
+	src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"
+></script>
 <footer class="footer" transition:persist>
 	<div class="mainfooter">
 		<div class="id-contact">
@@ -69,7 +73,8 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 			</div>
 			<div class="row">
 				<h4>Plan d’accès</h4>
-				<p><a href="#">Cliquez ici</a></p>
+				<p><a class="maplink hover:cursor-pointer hover:text-airblue"
+					data-fancybox="" data-src="https://www.google.com/maps/place/Accrofury/@49.1123513,-0.4022765,15z/data=!4m6!3m5!1s0x480a417addb8e763:0x1acce0fcf9a1d772!8m2!3d49.1122108!4d-0.3950667!16s%2Fg%2F11byx7yhmq?entry=ttu">Cliquez ici</a></p>
 			</div>
 		</div>
 		<div class="navigation2">
@@ -162,6 +167,19 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 		</div>
 	</div>
 </footer>
+<script>
+	function initializeFancybox() {
+		//@ts-ignore
+		Fancybox.bind("[data-fancybox]", {
+			Thumbs: {
+				type: "classic",
+			},
+		});
+	}
+	initializeFancybox();
+	document.addEventListener("DOMContentLoaded", initializeFancybox);
+	document.addEventListener("astro:page-load", initializeFancybox);
+</script>
 
 <style lang="scss">
 	.footer {

@@ -30,9 +30,9 @@
 </script>
 <style lang="scss">
 	.heroboxresa {
-		@apply relative flex flex-col w-full text-white xl:aspect-[16/3] lg:aspect-[16/3] md:aspect-[16/3] sm:aspect-[16/3] xs:aspect-[16/3] mt-0 z-0;
+		@apply relative flex flex-col w-full text-white xl:aspect-[16/4] lg:aspect-[16/4] md:aspect-[16/4] sm:aspect-[16/4] xs:aspect-[16/3] mt-0 z-0 min-h-[200px];
 		.herocontainer {
-			@apply relative mx-auto container h-full mt-2 z-10  flex flex-col-reverse justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
+			@apply relative mx-auto max-w-xl h-full mt-2 z-10  flex flex-col-reverse justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
 		}
 		.heroimg {
 			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0;
@@ -41,7 +41,7 @@
 			@apply text-[19px] font-sylfaen font-normal text-white mb-6 -mt-2;
 		}
 		.baseline {
-			@apply font-lemon  xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xxl xs:text-xl  text-white mb-8 max-w-md;
+			@apply font-lemon xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xl text-xl  text-white mb-8 ;
 		}
 
 		.cta_container {

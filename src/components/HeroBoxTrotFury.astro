@@ -13,13 +13,13 @@ import TrotFuryTitle from "../assets/img/trotfury-title.png";
 	/>
 	<div class="herocontainer">
 		
-		<Image src={TrotFuryTitle} alt="Trot Fury" width="545" height="159" />
+		<Image src={TrotFuryTitle} alt="Trot Fury" width="545" height="159" class="logo-trot" />
 		<p class="baseline">
 			L'aventure tout Terrain
 		</p>
 		<h1>Location de Trottinette éléctrique à Caen</h1>
 		<div class="cta_container">
-		<button class="cta wood small">Réserver</button>
+		<a class="cta wood small" href="/accrobranches-caen-horaires-tarifs/">Réserver</a>
 		</div>
 	</div>
 	
@@ -34,10 +34,12 @@ import TrotFuryTitle from "../assets/img/trotfury-title.png";
 </script>
 <style lang="scss">
 	.heroboxtrot {
-		@apply relative flex flex-col w-full text-white xl:aspect-[16/5] lg:aspect-[16/5] md:aspect-[16/6] sm:aspect-[16/6] xs:aspect-[16/6] mt-0 z-0;
+		@apply relative flex flex-col w-full h-full text-white xl:aspect-[16/6] lg:aspect-[16/6] md:aspect-[16/6] sm:aspect-[16/6] min-h-[350px] mt-0 z-0;
 		.herocontainer {
-			@apply relative mx-auto container h-full mt-2 z-10 flex flex-col justify-center items-start text-left px-4 sm:px-8 xs:px-12 drop-shadow-lg;
+			@apply relative flex-auto mx-auto max-w-7xl w-full h-full mt-2 z-10 flex flex-col justify-center md:items-start items-center text-center md:text-left px-8 drop-shadow-lg;
 		}
+		.logo-trot {
+			@apply xl:w-[545px] h-auto lg:w-[400px] w-[300px] lg:h-auto mb-4;}
 		.heroimg {
 			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0;
 		}
@@ -45,7 +47,7 @@ import TrotFuryTitle from "../assets/img/trotfury-title.png";
 			@apply text-[19px] font-sylfaen font-normal text-white mb-6 -mt-2;
 		}
 		.baseline {
-			@apply font-lemon -mt-8 xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xxl xs:text-xl  text-white mb-4;
+			@apply font-lemon -mt-8 xl:text-[40px] md:text-xxl sm:text-xxl text-xl  text-white mb-4;
 		}
 
 		.cta_container {
@@ -75,37 +77,5 @@ import TrotFuryTitle from "../assets/img/trotfury-title.png";
 		}
 	}
 
-	/*ROUGE XS*/
-	@media screen and (min-width: 240px) and (max-width: 639px) {
-		.heroboxhome {
-			/*background-position: 47% 24%;
-			background-size: cover;*/
-		}
-	}
-	/*ORANGE SM*/
-	@media screen and (min-width: 640px) and (max-width: 767px) {
-		.heroboxhome {
-			/*background-position: 39% 24%;
-			background-size: 163%;*/
-		}
-	}
 
-	/*JAUNE MD*/
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-		.heroboxhome {
-			/*background-position: 25% 26%;
-			background-size: 136%;*/
-		}
-	}
-	/*VERT LG*/
-	@media screen and (min-width: 1024px) and (max-width: 1279px) {
-		.heroboxhome {
-			/*background-position: 40% 26%;
-			background-size: 136%;*/
-		}
-	}
-
-	/*BLEU XL*/
-	@media screen and (min-width: 1280px) {
-	}
 </style>

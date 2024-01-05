@@ -55,7 +55,8 @@
 					/>
 					<blockquote>
 						"Super accrobranche ! Pour tout niveau👌 "<span class="name"
-							>SprintBreak SAS</span>
+							>SprintBreak SAS</span
+						>
 					</blockquote>
 				</div>
 			</div>
@@ -114,9 +115,10 @@
 
 	function initializeTestiBandSwiper() {
 		var swiper = new Swiper(".TestiBandContainer", {
+			//autoHeight: true,
 			loop: true,
 			autoplay: {
-				delay: 6000,
+				delay: 4000,
 			},
 			slidesPerView: 1,
 			spaceBetween: 0,
@@ -133,33 +135,31 @@
 	document.addEventListener("astro:page-load", initializeTestiBandSwiper);
 </script>
 
-
-
 <style lang="scss">
 	.swiper {
 		height: 100%;
 		width: 100%;
 	}
 	.swiper-wrapper {
-		@apply mx-auto;
+		@apply mx-auto items-center ; 
 	}
 
 	.testiband-container {
-		@apply relative overflow-hidden z-20 max-w-4xl mx-auto;
+		@apply relative overflow-hidden z-20 max-w-4xl mx-auto ;
 		.swiper-slide {
-			.slidecontent {@apply flex gap-6 justify-center items-center;}
+			.slidecontent {
+				@apply flex md:flex-row flex-col gap-6 justify-center items-center;
+			}
 			img {
 				@apply rounded-full self-center;
 			}
-			
-		
-		
+
 			blockquote {
-				@apply text-xl font-sourcesans font-bold mb-3 text-white sm:text-left text-center;
-			.name {
-				@apply block text-base text-right font-sourcesans font-normal text-white;
-			}}
-			
+				@apply text-xl font-sourcesans font-bold mb-3 text-white md:text-left text-center;
+				.name {
+					@apply block text-base md:text-right text-center mt-6 font-sourcesans font-normal text-white;
+				}
+			}
 		}
 	}
 	.testimonials-customer {

@@ -7,7 +7,7 @@ import HeroBoxResa from "../components/HeroBoxResa.astro";
 import ResaForm from "../components/Resa.jsx";
 import AccordionPricing from "../components/AccordionPricing.astro";
 import VertScroll from "../assets/img/vert-scroll.png";
-import CTABand from "../components/CTABand.astro";
+import CTABandContact from "../components/CTABandContact.astro";
 //import { getXataClient } from "../xata";
 //const xata = getXataClient();
 //const record = await xata.db.Reservations.read("rec_cm87vvsofvchp6jd7pqg");
@@ -313,7 +313,6 @@ import CTABand from "../components/CTABand.astro";
 					quelques minutes !
 				</p>
 				<ResaForm client:visible />
-				<Image src={VertScroll} alt="Décoration" class="vertscroll" />
 			</div>
 		</section>
 		<script>
@@ -327,7 +326,7 @@ import CTABand from "../components/CTABand.astro";
 			document.addEventListener("astro:page-load", initJarallax);
 		</script>
 
-		<CTABand />
+		<CTABandContact />
 	</main>
 </Layout>
 
@@ -335,11 +334,11 @@ import CTABand from "../components/CTABand.astro";
 
 <style lang="scss">
 	main {
-		padding: 0;
+		padding: 0;overflow-x:clip;
 	}
 
 	.intro {
-		@apply rounded-xl relative pt-36 pb-36  bg-harvestgold bg-opacity-20 -z-10 text-center;
+		@apply rounded-xl px-6 relative xl:pt-36 xl:pb-36 md:pt-24 md:pb-24 pt-16 pb-16 bg-harvestgold bg-opacity-20 -z-10 text-center;
 
 		.container {
 			@apply rounded-xl p-12 relative max-w-[1200px];
@@ -361,25 +360,25 @@ import CTABand from "../components/CTABand.astro";
 			.inner {
 				@apply flex flex-col;
 				h2 {
-					@apply text-xxxl  mb-6;
+					@apply text-xl md:text-xxxl mb-6;
 				}
 				h3 {
-					@apply text-xxl mb-6;
+					@apply md:text-xxl text-xl mb-6;
 				}
 				.h4 {
-					@apply text-blackbean font-bold font-lemon text-xl block mb-2;
+					@apply text-blackbean font-bold font-lemon md:text-xl text-md block mb-2;
 				}
 				p {
 					@apply text-xl mb-4;
 				}
 				p.warn {
-					@apply text-black text-lg font-bold font-lemon max-w-xl mx-auto mt-6;
+					@apply text-black md:text-lg text-base font-bold font-lemon max-w-xl mx-auto mt-6;
 				}
 				.contactmed {
-					@apply flex gap-6 mt-6 mx-auto text-xl font-lemon text-blackbean;
+					@apply md:flex md:flex-row flex-col gap-12 md:mt-6 mt-0 mx-auto text-xl font-lemon text-blackbean;
 					.leftc,
 					.rightc {
-						@apply flex gap-2 items-center;
+						@apply flex gap-2 items-center md:my-2 my-6;
 						svg {
 							@apply mr-1;
 						}
@@ -388,60 +387,46 @@ import CTABand from "../components/CTABand.astro";
 			}
 		}
 	}
-	.herobox.medium {
-		@apply bg-cover bg-center flex flex-col justify-center items-center  h-[485px] -mt-10 z-0;
-		h1 {
-			@apply text-base font-bold uppercase text-airblue mb-4;
-		}
-		.baseline {
-			@apply text-xxxxl font-extrabold leading-[66px] uppercase text-white mb-0;
-		}
-		.intro {
-			@apply max-w-md text-md;
-		}
-		.cta_container {
-			@apply mt-6 gap-4 flex;
-			.cta {
-				@apply text-base;
-			}
-		}
-	}
+
 	.pricing {
-		@apply text-center py-20;
+		@apply text-center py-20 px-6;
 		background: url("/img/map-bck.jpg") no-repeat center center;
 		background-size: cover;
 		h2 {
-			@apply text-jumbo mb-10;
+			@apply md:text-jumbo md:mb-10 text-xxl mb-6;
 		}
+
 		.biglabel {
-			@apply font-lemon text-black text-left mx-auto inline-block mt-12 pt-8 pr-8 pb-8 pl-8 w-[715px] h-[187px];
+			@apply font-lemon text-black text-left mx-auto inline-block md:mt-12 md:pt-8 md:pr-8 md:pb-8 md:pl-8 md:w-[715px] md:h-[187px] w-full h-auto mt-12 pt-6 pr-2 pb-6 pl-2 md:bg-cover bg-cover md:rounded-none rounded-xl;
 			background: url("/img/acces-total.png") no-repeat center center;
+			
 			.label {
 				@apply flex gap-4 justify-center items-center;
 				.left {
-					@apply flex flex-col text-left text-[50px];
+					@apply flex flex-col text-left ;
 				}
 				.right {
-					@apply flex flex-col justify-center text-[50px];
+					@apply flex flex-col justify-center md:text-[50px] text-[30px];
 				}
 			}
 			.big {
-				@apply text-[32px] block;
+				@apply md:text-[32px] text-[18px] block;
 			}
 			.small {
-				@apply text-base block font-sourcesans font-bold;
+				@apply md:text-base text-sm block font-sourcesans font-bold;
 			}
 		}
 		.pricing-container {
-			@apply mx-auto container flex gap-6;
+			@apply mx-auto max-w-[1440px] lg:flex block gap-6;
 			.pricing-box {
-				@apply relative w-1/2 py-10 px-12 text-left text-[#F7EBC8] rounded-3xl;
+				@apply relative lg:w-1/2 w-full py-10 sm:px-12 px-6 text-left text-[#F7EBC8] rounded-3xl;
 				background: url("/img/pricing-wood.jpg") no-repeat center center;
 				background-size: cover;
 				h3 {
-					@apply text-xxxxl mb-6 text-white mt-6;
+					@apply md:text-xxxxl sm:text-xxxl text-xxl mb-6 text-white mt-6;
 				}
 				&.box1 {
+					@apply lg:mb-0 mb-12;
 					img.top-left {
 						@apply absolute -top-6 -left-12;
 					}
@@ -456,6 +441,7 @@ import CTABand from "../components/CTABand.astro";
 					}
 				}
 				&.box2 {
+					
 					img.top-left {
 						@apply absolute -top-1 -left-2;
 					}
@@ -469,7 +455,7 @@ import CTABand from "../components/CTABand.astro";
 				}
 			}
 			.subtitle {
-				@apply text-black block mt-8 mb-4 font-sourcesans bg-gradient-to-r from-[#FFC37C] to-[#FF912C] pt-1 pr-7 pb-2 pl-7 font-extrabold text-lg rounded-full;
+				@apply text-black block mt-8 mb-4 font-sourcesans bg-gradient-to-r from-[#FFC37C] to-[#FF912C] pt-1 pr-7 pb-2 pl-7 font-extrabold sm:text-lg text-md rounded-full;
 			}
 		}
 	}
@@ -479,25 +465,27 @@ import CTABand from "../components/CTABand.astro";
 		background-size: cover;*/
 
 		.parcours-board {
-			@apply absolute top-0 left-[50%] z-10 text-center w-full -translate-x-1/2;
+			@apply absolute top-0 left-[50%] z-10 text-center w-full -translate-x-1/2 md:h-[250px] h-[190px];
 			background: url("/img/parcours-board.png") no-repeat center center;
-			height: 250px;
+			background-size:contain;
 			h2 {
-				@apply font-lemon text-white text-center mt-[120px] text-xxxxl;
+				@apply font-lemon text-white text-center md:mt-[120px]  mt-[90px] md:text-xxxxl text-xxl;
 			}
 		}
 
 		.form-container {
-			@apply text-center relative z-10 container max-w-xl mx-auto mt-48 flex flex-col justify-center pt-[125px] pr-20 pb-[160px] pl-20;
+			@apply text-center relative z-10 container max-w-xl mx-auto mt-48 flex flex-col justify-center pt-[125px] pr-20 pb-[160px] pl-20 h-auto;
+			background:url("/img/vert-scroll.webp") no-repeat top center;
+			background-size:cover;
 			h2 {
-				@apply text-xxl mb-2;
+				@apply md:text-xxl text-xl mb-2;
 			}
 			p {
 				@apply text-xl mb-6 text-blackbean;
 			}
-			.vertscroll {
+			/*.vertscroll {
 				@apply absolute top-0 left-0 w-full h-full -z-10 object-contain;
-			}
+			}*/
 		}
 	}
 </style>

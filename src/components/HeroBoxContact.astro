@@ -2,7 +2,7 @@
 
 ---
 
-<section class="heroboxresa jarallaxhero">
+<section class="heroboxcontact jarallaxhero">
 	<img
 		src="/img/herocontact.jpg"
 		alt="TrotFury"
@@ -29,10 +29,10 @@
 	document.addEventListener("astro:page-load", initJarallax);
 </script>
 <style lang="scss">
-	.heroboxresa {
-		@apply relative flex flex-col w-full text-white xl:aspect-[16/3] lg:aspect-[16/3] md:aspect-[16/3] sm:aspect-[16/3] xs:aspect-[16/3] mt-0 z-0;
+	.heroboxcontact {
+		@apply relative flex flex-col w-full text-white xl:aspect-[16/4] lg:aspect-[16/4] md:aspect-[16/4] sm:aspect-[16/4] xs:aspect-[16/3] mt-0 z-0 min-h-[200px];
 		.herocontainer {
-			@apply relative mx-auto container h-full mt-2 z-10  flex flex-col-reverse justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
+			@apply relative mx-auto max-w-xl h-full mt-2 z-10  flex flex-col-reverse justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
 		}
 		.heroimg {
 			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0;
@@ -41,7 +41,7 @@
 			@apply text-[19px] font-sylfaen font-normal text-white mb-6 -mt-2;
 		}
 		.baseline {
-			@apply font-lemon  xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xxl xs:text-xl  text-white mb-8 max-w-md;
+			@apply font-lemon xl:text-[40px] lg:text-xxxxl md:text-xxxl sm:text-xl text-xl  text-white mb-8 ;
 		}
 
 		.cta_container {
@@ -51,57 +51,6 @@
 			@apply absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0;
 		}
 	}
-	.reassurbox {
-		@apply w-[390px] bg-scroll border-2 border-blackbean rounded-lg shadow-lg p-8 text-blackbean;
-		box-shadow:
-			2px 2px 3px rgba(0, 0, 0, 0.2),
-			0 0 15px #9b7025ae inset;
-		@apply flex justify-center items-center gap-4;
-		.right-content {
-			@apply flex-auto;
-		}
-		svg {
-			@apply shrink-0 flex-auto;
-		}
-		.h3 {
-			@apply font-lemon text-lg;
-		}
-		p {
-			@apply font-sylfaen text-lg;
-		}
-	}
+	
 
-	/*ROUGE XS*/
-	@media screen and (min-width: 240px) and (max-width: 639px) {
-		.heroboxhome {
-			/*background-position: 47% 24%;
-			background-size: cover;*/
-		}
-	}
-	/*ORANGE SM*/
-	@media screen and (min-width: 640px) and (max-width: 767px) {
-		.heroboxhome {
-			/*background-position: 39% 24%;
-			background-size: 163%;*/
-		}
-	}
-
-	/*JAUNE MD*/
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-		.heroboxhome {
-			/*background-position: 25% 26%;
-			background-size: 136%;*/
-		}
-	}
-	/*VERT LG*/
-	@media screen and (min-width: 1024px) and (max-width: 1279px) {
-		.heroboxhome {
-			/*background-position: 40% 26%;
-			background-size: 136%;*/
-		}
-	}
-
-	/*BLEU XL*/
-	@media screen and (min-width: 1280px) {
-	}
 </style>

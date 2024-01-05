@@ -107,7 +107,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 </div>
 
 <script>
-	function setup() {
+	function navsetup() {
 		window.addEventListener("scroll", function () {
 			var header = document.querySelector(".header");
 			header?.classList.toggle("stickynav", window.scrollY > 200);
@@ -146,9 +146,9 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 			});
 		});
 	}
-
-	document.addEventListener("DOMContentLoaded", setup);
-	document.addEventListener("astro:page-load", setup);
+	navsetup();
+	document.addEventListener("DOMContentLoaded", navsetup);
+	document.addEventListener("astro:page-load", navsetup);
 
 	function toggleMenu() {
 		const navBlack = document.querySelector(".gdm-nav-1");
