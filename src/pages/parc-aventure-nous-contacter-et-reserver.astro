@@ -4,59 +4,86 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import * as animations from "../components/animations.js";
+import HeroBoxContact from "../components/HeroBoxContact.astro";
+import MapImg from "../assets/img/mapimg.png";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+//
 ---
 
+<script
+	is:inline
+	src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"
+></script>
 <Layout
 	title="Bienvenue à bord, capitaine."
 	description="Ceci est la meta description">
 	<Header />
-	<section class="herobox medium">
-		<div class="container" transition:animate={animations.myFadeSlide}>
-			<h1>Nous contacter</h1>
-			<p class="baseline">Demande de RDV / prise de contact</p>
-			<p class="intro">
-				Laissez-nous un message, posez votre question à notre IA ou prenez un
-				rendez-vous en ligne
-			</p>
-			<div class="cta_container">
-				<a href="#" class="cta red">Demander un RDV en ligne</a>
-				<a href="#" class="cta blue">Poser une question à Nova</a>
-			</div>
-		</div>
-	</section>
+	<HeroBoxContact />
 
-	<main class="-mt-16">
-		<div class="container mx-auto max-w-6xl">
-			<div class="grid grid-cols-12 gap-6 p-12 shadow-2xl bg-white rounded-lg">
-				<div class="col1 col-span-5 flex flex-col justify-center">
-					IMG
+	<main>
+		<div class="contactcontainer">
+				<div class="col1 col-span-6 flex flex-col justify-center">
+					<a
+						class="maplink"
+						data-fancybox=""
+						data-src="https://www.google.com/maps/place/Accrofury/@49.1123513,-0.4022765,15z/data=!4m6!3m5!1s0x480a417addb8e763:0x1acce0fcf9a1d772!8m2!3d49.1122108!4d-0.3950667!16s%2Fg%2F11byx7yhmq?entry=ttu"
+						class="flex items-center h-10 gap-2 px-4 font-semibold leading-normal text-white transition duration-150 bg-brand rounded"
+						><Image src={MapImg} alt="googlemap" /></a
+					>
 				</div>
-				<div class="col2 col-span-7">
+				<div class="col2 col-span-6">
 					<div class="section-header left">
-						<span
-							class="h6 text-harvestgold uppercase font-semibold mb-6 block"
-							>Formulaire de contact</span
-						>
-						<h2 class="section-title">Demande de renseignements</h2>
-					
+
+						<h2 class="section-title">Besoin de plus d’infos ?</h2>
+						<p>Notre équipe est à votre disposition pour répondre à toutes vos questions, vous conseiller, ou établir un devis !</p>
+						<div class="contactmed">
+						<div class="leftc">
+							<svg
+								width="43"
+								height="38"
+								viewBox="0 0 43 38"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M2.6875 9.45937V13.625H8.80996L7.27305 16.3125H2.6875C1.20098 16.3125 0 15.1115 0 13.625V9.36699C0 8.65312 0.285547 7.97285 0.831445 7.51094C3.2082 5.51211 10.5736 0.1875 21.5 0.1875C32.4264 0.1875 39.7918 5.51211 42.1686 7.51094C42.7145 7.97285 43 8.65312 43 9.36699V13.625C43 15.1115 41.799 16.3125 40.3125 16.3125H35.727L34.19 13.625H40.3125V9.45937C38.0449 7.58652 31.343 2.875 21.5 2.875C11.657 2.875 4.95508 7.58652 2.6875 9.45937ZM2.6875 31.1777C2.6875 30.2455 2.93105 29.3217 3.39297 28.507L11.8838 13.6418C12.7656 12.0965 14.3613 11.0887 16.1166 10.9543V8.25C16.1166 7.51094 16.7213 6.90625 17.4604 6.90625C18.1994 6.90625 18.8041 7.51094 18.8041 8.25V10.9375H24.1791V8.25C24.1791 7.51094 24.7838 6.90625 25.5229 6.90625C26.2619 6.90625 26.8666 7.51094 26.8666 8.25V10.9543C28.6303 11.0971 30.2176 12.0965 31.0994 13.6418L39.5902 28.507C40.0521 29.3217 40.2957 30.2371 40.2957 31.1777V33.7812C40.2957 36.0068 38.49 37.8125 36.2645 37.8125H6.71875C4.49316 37.8125 2.6875 36.0068 2.6875 33.7812V31.1777ZM25.5312 13.625H17.4688H16.5533C15.5875 13.625 14.6973 14.1457 14.2186 14.9771L5.72773 29.8424C5.50098 30.2539 5.375 30.7074 5.375 31.1777V33.7812C5.375 34.5203 5.97969 35.125 6.71875 35.125H36.2812C37.0203 35.125 37.625 34.5203 37.625 33.7812V31.1777C37.625 30.7074 37.499 30.2539 37.2723 29.8424L28.7814 14.9771C28.3027 14.1373 27.4125 13.625 26.4467 13.625H25.5312ZM17.4688 24.375C17.4688 25.4442 17.8935 26.4695 18.6495 27.2255C19.4055 27.9815 20.4308 28.4062 21.5 28.4062C22.5692 28.4062 23.5945 27.9815 24.3505 27.2255C25.1065 26.4695 25.5312 25.4442 25.5312 24.375C25.5312 23.3058 25.1065 22.2805 24.3505 21.5245C23.5945 20.7685 22.5692 20.3438 21.5 20.3438C20.4308 20.3438 19.4055 20.7685 18.6495 21.5245C17.8935 22.2805 17.4688 23.3058 17.4688 24.375ZM21.5 31.0938C19.7181 31.0938 18.0091 30.3859 16.7491 29.1259C15.4891 27.8659 14.7812 26.1569 14.7812 24.375C14.7812 22.5931 15.4891 20.8841 16.7491 19.6241C18.0091 18.3641 19.7181 17.6562 21.5 17.6562C23.2819 17.6562 24.9909 18.3641 26.2509 19.6241C27.5109 20.8841 28.2188 22.5931 28.2188 24.375C28.2188 26.1569 27.5109 27.8659 26.2509 29.1259C24.9909 30.3859 23.2819 31.0938 21.5 31.0938Z"
+									fill="#3C1518"></path>
+							</svg> 02 31 74 19 09
+						</div>
+						<div class="rightc">
+							<svg
+								width="29"
+								height="44"
+								viewBox="0 0 29 44"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M20 2.75V4.125C20 5.64609 18.7711 6.875 17.25 6.875H11.75C10.2289 6.875 9 5.64609 9 4.125V2.75H6.25C4.72891 2.75 3.5 3.97891 3.5 5.5V38.5C3.5 40.0211 4.72891 41.25 6.25 41.25H22.75C24.2711 41.25 25.5 40.0211 25.5 38.5V5.5C25.5 3.97891 24.2711 2.75 22.75 2.75H20ZM17.25 2.75H11.75V4.125H17.25V2.75ZM0.75 5.5C0.75 2.46641 3.21641 0 6.25 0H22.75C25.7836 0 28.25 2.46641 28.25 5.5V38.5C28.25 41.5336 25.7836 44 22.75 44H6.25C3.21641 44 0.75 41.5336 0.75 38.5V5.5Z"
+									fill="#3C1518"></path>
+							</svg>
+							06 23 27 50 90
+						</div>
+						<div class="bottomc">
+							<svg width="42" height="31" viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.25 2.58333C3.79805 2.58333 2.625 3.73776 2.625 5.16667V8.38776L18.6703 19.9643C20.0566 20.9654 21.9434 20.9654 23.3297 19.9643L39.375 8.38776V5.16667C39.375 3.73776 38.202 2.58333 36.75 2.58333H5.25ZM2.625 11.5927V25.8333C2.625 27.2622 3.79805 28.4167 5.25 28.4167H36.75C38.202 28.4167 39.375 27.2622 39.375 25.8333V11.5927L24.8801 22.0471C22.5668 23.7102 19.425 23.7102 17.1199 22.0471L2.625 11.5927ZM0 5.16667C0 2.31693 2.3543 0 5.25 0H36.75C39.6457 0 42 2.31693 42 5.16667V25.8333C42 28.6831 39.6457 31 36.75 31H5.25C2.3543 31 0 28.6831 0 25.8333V5.16667Z" fill="#3C1518"/>
+</svg>contact@accrofury.com
+
+						</div>
 					</div>
-					<form id="contact-form" class="grid grid-cols-2 gap-6" method="POST">
+					</div>
+					<form id="contact-form" class="flex flex-col gap-6" method="POST">
 						<input type="hidden" name="contactNumber" />
 						<input type="text" name="userName" placeholder="Nom" />
 						<input type="email" name="userEmail" placeholder="E-mail" />
-						<input type="text" name="userPhone" placeholder="Téléphone" />
-						<input type="text" name="demande" placeholder="Objet" />
 						<textarea
 							name="message"
 							placeholder="Votre message"
 							class="col-span-2"></textarea>
 						<input
 							type="submit"
-							value="Envoyer votre demande"
-							class="col-span-2"
-						/> 
+							value="Envoyer"
+							class="cta wood small mt-4 relative z-10"
+						/>
 						<div class="error-message" style="color: red;"></div>
-
 					</form>
 				</div>
 
@@ -70,110 +97,164 @@ import * as animations from "../components/animations.js";
 						Merci, nous avons reçu votre demande et vous répondrons sous peu.
 					</p>
 				</div>
-			</div>
+		
 		</div>
 	</main>
 	<Footer />
 </Layout>
 <script>
+	function initializeFancybox() {
+		//@ts-ignore
+		Fancybox.bind("[data-fancybox]", {
+			Thumbs: {
+				type: "classic",
+			},
+		});
+	}
+	initializeFancybox();
+	document.addEventListener("DOMContentLoaded", initializeFancybox);
+	document.addEventListener("astro:page-load", initializeFancybox);
+</script>
+<script>
 	import { gsap } from "gsap";
 	//@ts-ignore
 	function validateEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
+		const re =
+			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(String(email).toLowerCase());
+	}
 	function initializeForm() {
-
-
 		//@ts-ignore
-	const form = document.getElementById("contact-form");
-	//@ts-ignore
-    const emailInput = form.querySelector('input[name="userEmail"]');
-	//@ts-ignore
-    const messageTextarea = form.querySelector('textarea[name="message"]');
-    //@ts-ignore
-	let errorDiv = form.querySelector('.error-message'); // Ajout d'une classe pour le div d'erreur
-    if (!errorDiv) {
-      errorDiv = document.createElement('div');
-      errorDiv.className = 'error-message'; // Ajout d'une classe pour le div d'erreur
-      //@ts-ignore
-	  errorDiv.style.color = 'red';
-	  //@ts-ignore
-      form.appendChild(errorDiv);
-    }
-//@ts-ignore
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Empêche l'envoi du formulaire de manière traditionnelle
+		const form = document.getElementById("contact-form");
+		//@ts-ignore
+		const emailInput = form.querySelector('input[name="userEmail"]');
+		//@ts-ignore
+		const messageTextarea = form.querySelector('textarea[name="message"]');
+		//@ts-ignore
+		let errorDiv = form.querySelector(".error-message"); // Ajout d'une classe pour le div d'erreur
+		if (!errorDiv) {
+			errorDiv = document.createElement("div");
+			errorDiv.className = "error-message"; // Ajout d'une classe pour le div d'erreur
+			//@ts-ignore
+			errorDiv.style.color = "red";
+			//@ts-ignore
+			form.appendChild(errorDiv);
+		}
+		//@ts-ignore
+		form.addEventListener("submit", function (event) {
+			event.preventDefault(); // Empêche l'envoi du formulaire de manière traditionnelle
 
-      //@ts-ignore
-      errorDiv.textContent = ''; // Réinitialiser le message d'erreur
-	  //@ts-ignore
-      if (!emailInput.value || !validateEmail(emailInput.value)) {
-	  //@ts-ignore
-        errorDiv.textContent = 'Veuillez fournir un email valide.';
-        return; // Arrête la fonction si l'email n'est pas valide
-      }
-	  //@ts-ignore
-      if (!messageTextarea.value) {
-	  //@ts-ignore
-        errorDiv.textContent = 'Veuillez écrire un message.';
-        return; // Arrête la fonction si le message est vide
-      }
-				const target = event.target as typeof event.target & {
-					userName: { value: string };
-					userEmail: { value: string };
-					userPhone: { value: string };
-					demande: { value: string };
-					message: { value: string };
-				};
+			//@ts-ignore
+			errorDiv.textContent = ""; // Réinitialiser le message d'erreur
+			//@ts-ignore
+			if (!emailInput.value || !validateEmail(emailInput.value)) {
+				//@ts-ignore
+				errorDiv.textContent = "Veuillez fournir un email valide.";
+				return; // Arrête la fonction si l'email n'est pas valide
+			}
+			//@ts-ignore
+			if (!messageTextarea.value) {
+				//@ts-ignore
+				errorDiv.textContent = "Veuillez écrire un message.";
+				return; // Arrête la fonction si le message est vide
+			}
+			const target = event.target as typeof event.target & {
+				userName: { value: string };
+				userEmail: { value: string };
+				//userPhone: { value: string };
+				//demande: { value: string };
+				message: { value: string };
+			};
 
-				const data = {
-					userName: target["userName"].value,
-					userEmail: target["userEmail"].value,
-					userPhone: target["userPhone"].value,
-					demande: target["demande"].value,
-					message: target["message"].value,
-				};
+			const data = {
+				userName: target["userName"].value,
+				userEmail: target["userEmail"].value,
+				//userPhone: target["userPhone"].value,
+				//demande: target["demande"].value,
+				message: target["message"].value,
+			};
 
-				fetch("/.netlify/functions/triggerContactEmail", {
-					method: "POST",
-					body: JSON.stringify({
-						userName: data.userName,
-						userEmail: data.userEmail,
-						AdminEmail: "charles@gdm-pixel.fr",
-						userPhone: data.userPhone,
-						demande: data.demande,
-						message: data.message,
-					}),
-				})
-					.then((response) => response.json())
-					.then((data) => {
-						console.log(data);
+			fetch("/.netlify/functions/triggerContactEmail", {
+				method: "POST",
+				body: JSON.stringify({
+					userName: data.userName,
+					userEmail: data.userEmail,
+					AdminEmail: "charles@gdm-pixel.fr",
+					//userPhone: data.userPhone,
+					//demande: data.demande,
+					message: data.message,
+				}),
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					gsap.to("#success-message", {
+						autoAlpha: 1,
+						y: 200,
+						duration: 0.5,
+					});
+					setTimeout(() => {
 						gsap.to("#success-message", {
-							autoAlpha: 1,
-							y: 200,
+							autoAlpha: 0,
+							y: -30,
 							duration: 0.5,
 						});
-						setTimeout(() => {
-							gsap.to("#success-message", {
-								autoAlpha: 0,
-								y: -30,
-								duration: 0.5,
-							});
-						}, 4000); 
-					})
-					.catch((error) => {
-						console.error("Error:", error);
-						// Gérez les erreurs ici également
-					});
-			});
+					}, 4000);
+				})
+				.catch((error) => {
+					console.error("Error:", error);
+					// Gérez les erreurs ici également
+				});
+		});
 	}
 	initializeForm();
 	document.addEventListener("astro:page-load", initializeForm);
 </script>
 <style lang="scss">
+	.contactcontainer {
+		@apply w-full grid grid-cols-12 gap-6 relative;
+		&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: url("/img/parchemin.jpg") no-repeat center center;
+				background-size: cover;
+				opacity: 0.5;
+				z-index: -1;
+			}
+			.col2 {@apply p-12;}
+			.section-header.left {
+				p {@apply text-lg text-blackbean mt-4;}
+			}
+			.contactmed {
+					@apply flex flex-wrap gap-6 mt-6 mb-8 mx-auto text-xl font-lemon text-blackbean;
+					.leftc,
+					.rightc,.bottomc {
+						@apply flex gap-2 items-center;
+						svg {
+							@apply mr-1;
+						}
+					}
+				}
+	}
+	a.maplink {
+		@apply w-full h-full block border-none border-transparent relative;
+		&:hover {
+			@apply cursor-pointer;
+			img {
+			@apply w-full h-full border-4 border-harvestgold object-cover border-solid transition-all duration-300;
+		}
+		}
+		img {
+			@apply w-full h-full border-4 border-transparent object-cover border-solid transition-all duration-300;
+		}
+		
+	}
 	main {
-		padding: 1rem 1rem 4rem 1rem;
+		padding: 0;
 	}
 	#success-message {
 		@apply fixed bg-blackbean text-center text-white p-8 rounded-md border-solid border-2 border-white flex flex-col items-center w-[300px] mx-auto transform -translate-x-1/2 -translate-y-full left-1/2 -top-28 z-20;
@@ -182,35 +263,75 @@ import * as animations from "../components/animations.js";
 		}
 	}
 
-	.herobox.medium {
-		background: url("/img/contact-hero-bck.webp") no-repeat center center;
-		@apply bg-cover bg-center flex flex-col justify-center items-center text-white h-[485px] -mt-10 z-0;
-		h1 {
-			@apply text-base font-bold uppercase text-airblue mb-4;
-		}
-		.baseline {
-			@apply text-xxxxl font-extrabold leading-[66px] uppercase text-white mb-0;
-		}
-		.intro {
-			@apply max-w-md text-md;
-		}
-		.cta_container {
-			@apply mt-6 gap-4 flex;
-			.cta {
-				@apply text-base;
-			}
-		}
-	}
+	
 	#contact-form {
 		input,
 		textarea {
-			@apply px-4 py-3 rounded-md border border-solid border-blackbean border-opacity-20;
+			@apply px-4 py-3 rounded-md border-2 border-solid border-blackbean border-opacity-80 text-blackbean text-lg;
 		}
 		textarea {
 			@apply min-h-[120px];
 		}
 		input[type="submit"] {
-			@apply bg-harvestgold text-white font-bold text-base px-4 py-3 rounded-md cursor-pointer normal-case hover:bg-airblue transition-all;
+			@apply border-none text-white;
+
+		}
+	}
+
+	.cta.wood {
+		@apply font-lemon text-white;
+		background: url("/img/woody-btn.png") no-repeat;
+		width: 380px;
+		background-size: cover;
+		height: 105px;
+		font-size: 24px;
+		display: flex;
+		flex-direction: column;
+		padding: 0px 0px 0px 0px;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		transition: 500ms ease all;
+		position: relative;
+		&:hover {
+			@apply text-white;
+			font-size: 28px !important;
+			transition: 500ms ease all;
+			cursor:pointer;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: -36px;
+			left: -32px;
+			width: 102px;
+			height: 79px;
+			background: url("/img/bck-leaf-top-left.png") no-repeat;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: -20px;
+			right: 0px;
+			width: 74px;
+			height: 104px;
+			background: url("/img/bck-leaf-top-right.png") no-repeat;
+		}
+		&.small {
+			@apply font-lemon text-white;
+			background: url("/img/woody-btn.png") no-repeat;
+			width: 250px;
+			background-size: contain;
+			height: 68px;
+			font-size: 24px;
+			display: flex;
+			flex-direction: column;
+			padding: 0px 0px 0px 0px;
+			&:hover {
+				@apply text-white;
+				font-size: 28px;
+				transition: 500ms ease all;
+			}
 		}
 	}
 </style>

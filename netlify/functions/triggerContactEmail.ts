@@ -13,8 +13,8 @@ const handler: Handler = async function(event) {
   contactNumber: string; // Correspond à "contact_number" dans le formulaire
   userName: string;      // Correspond à "user_name"
   userEmail: string;     // Correspond à "user_mail"
-  userPhone: string;     // Correspond à "user_phone"
-  demande: string;       // Correspond à "demande"
+  //userPhone: string;     // Correspond à "user_phone"
+  //demande: string;       // Correspond à "demande"
   message: string;       // Correspond à "message"
   };
 
@@ -28,12 +28,12 @@ const handler: Handler = async function(event) {
     body: JSON.stringify({
       from: "charles@gdm-pixel.fr",
       to: "gdmpixel.fr@gmail.com",
-      subject: "Vous avez un nouveau message accrofury : " + requestBody.demande,
+      subject: "Vous avez un nouveau message sur le site",
       parameters: {
         userName: requestBody.userName,
         userEmail: requestBody.userEmail,
-        userPhone: requestBody.userPhone,
-        demande: requestBody.demande,
+       // userPhone: requestBody.userPhone,
+        //demande: requestBody.demande,
         message: requestBody.message
       },
     }),
