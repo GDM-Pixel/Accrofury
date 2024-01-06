@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-import Repere from "../components/Repere.astro";
 ---
 
 <!doctype html>
@@ -47,7 +46,6 @@ import Repere from "../components/Repere.astro";
 	</head>
 	<body>
 		<slot />
-		<Repere />
 	</body>
 </html>
 <script>
@@ -115,7 +113,7 @@ import Repere from "../components/Repere.astro";
 		});
 	}
 </script>
-<script src="/js/gdm-goto.js" is:inline></script>
+
 		<script>
 			//@ts-nocheck
 			function preloadImages() {
@@ -154,6 +152,14 @@ import Repere from "../components/Repere.astro";
 		src:
 			url("/fonts/sylfaen.woff2") format("woff2"),
 			url("/fonts/sylfaen.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Lemon";
+		src:
+			url("/fonts/lemon.woff2") format("woff2"),
+			url("/fonts/lemon.woff") format("woff");
 		font-weight: normal;
 		font-style: normal;
 	}
