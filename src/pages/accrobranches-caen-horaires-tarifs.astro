@@ -341,7 +341,7 @@ import CTABandContact from "../components/CTABandContact.astro";
 		@apply rounded-xl px-6 relative xl:pt-36 xl:pb-36 md:pt-24 md:pb-24 pt-16 pb-16 bg-harvestgold bg-opacity-20 -z-10 text-center;
 
 		.container {
-			@apply rounded-xl p-12 relative max-w-[1200px];
+			@apply rounded-xl md:p-12 px-4 py-12 relative max-w-[1200px];
 			box-shadow:
 				0px 2px 9px rgba(0, 0, 0, 0.6),
 				0 0 45px #9b7025ae inset;
@@ -378,9 +378,9 @@ import CTABandContact from "../components/CTABandContact.astro";
 					@apply md:flex md:flex-row flex-col gap-12 md:mt-6 mt-0 mx-auto text-xl font-lemon text-blackbean;
 					.leftc,
 					.rightc {
-						@apply flex gap-2 items-center md:my-2 my-6;
+						@apply flex gap-2 items-center md:my-2 my-6 sm:text-xl text-lg;
 						svg {
-							@apply mr-1;
+							@apply mr-1 h-[30px] w-auto sm:h-auto;
 						}
 					}
 				}
@@ -401,12 +401,12 @@ import CTABandContact from "../components/CTABandContact.astro";
 			background: url("/img/acces-total.png") no-repeat center center;
 			
 			.label {
-				@apply flex gap-4 justify-center items-center;
+				@apply flex sm:gap-4 gap-1 justify-center items-center;
 				.left {
 					@apply flex flex-col text-left ;
 				}
 				.right {
-					@apply flex flex-col justify-center md:text-[50px] text-[30px];
+					@apply flex flex-col justify-center md:text-[50px] sm:text-[30px] text-[26px] basis-[70px];
 				}
 			}
 			.big {
@@ -419,11 +419,11 @@ import CTABandContact from "../components/CTABandContact.astro";
 		.pricing-container {
 			@apply mx-auto max-w-[1440px] lg:flex block gap-6;
 			.pricing-box {
-				@apply relative lg:w-1/2 w-full py-10 sm:px-12 px-6 text-left text-[#F7EBC8] rounded-3xl;
+				@apply relative lg:w-1/2 w-full py-10 sm:px-12 px-2 text-left text-[#F7EBC8] rounded-3xl;
 				background: url("/img/pricing-wood.jpg") no-repeat center center;
 				background-size: cover;
 				h3 {
-					@apply md:text-xxxxl sm:text-xxxl text-xxl mb-6 text-white mt-6;
+					@apply md:text-xxxxl sm:text-xxxl text-xl mb-6 text-white mt-6 sm:block flex flex-col sm:pl-0 pl-4;
 				}
 				&.box1 {
 					@apply lg:mb-0 mb-12;
@@ -434,7 +434,7 @@ import CTABandContact from "../components/CTABandContact.astro";
 						@apply absolute -bottom-12 -left-6;
 					}
 					img.top-right {
-						@apply absolute -top-2 -right-5;
+						@apply absolute -top-2 -right-5 sm:visible hidden;
 					}
 					img.bottom-right {
 						@apply absolute -bottom-6 -right-6;
@@ -447,7 +447,7 @@ import CTABandContact from "../components/CTABandContact.astro";
 					}
 
 					img.top-right {
-						@apply absolute -top-1 -right-1;
+						@apply absolute -top-1 -right-1 sm:visible hidden;
 					}
 					img.bottom-right {
 						@apply absolute -bottom-8 -right-8;

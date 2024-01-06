@@ -155,14 +155,7 @@ const { title, description } = Astro.props;
 		font-weight: normal;
 		font-style: normal;
 	}
-	@font-face {
-		font-family: "Lemon";
-		src:
-			url("/fonts/lemon.woff2") format("woff2"),
-			url("/fonts/lemon.woff") format("woff");
-		font-weight: normal;
-		font-style: normal;
-	}
+	
 	html {
 		font-family: "Sylfaen", serif;
 		background: #ffffff;
@@ -176,7 +169,7 @@ const { title, description } = Astro.props;
 		font-family: "Lemon";
 	}
 	.cta.wood {
-		@apply font-lemon text-white w-[280px] h-[78px];
+		@apply font-lemon text-white w-[230px] h-[60px] md:w-[280px] md:h-[78px];
 		background: url("/img/woody-btn.png") no-repeat;
 		background-size: cover;
 		font-size: 24px;

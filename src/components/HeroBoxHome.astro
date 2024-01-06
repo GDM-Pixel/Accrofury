@@ -94,7 +94,7 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 	.heroboxhome {
 		@apply relative flex flex-col w-full text-white xl:aspect-[16/6] lg:aspect-[16/7.5] md:aspect-[16/10] sm:aspect-[16/12] xs:aspect-[16/16] mt-0 z-0;
 		.herocontainer {
-			@apply relative mx-auto max-w-4xl h-full -mt-10 z-10 flex flex-col justify-center items-center text-center px-4 sm:px-8 xs:px-12 drop-shadow-lg;
+			@apply relative mx-auto md:max-w-4xl w-full h-full md:-mt-10 mt-0 z-10 flex flex-col justify-center items-center text-center px-4 sm:px-8 xs:px-4 drop-shadow-lg;
 		}
 		.heroimg {
 			@apply absolute top-0 left-0 w-full h-full object-cover object-center z-0;
@@ -133,40 +133,5 @@ import HeroHomeImg from "../assets/img/demo-home.png";
 			@apply font-sylfaen text-lg;
 		}
 	}
-	}
-		
-
-	/*ROUGE XS*/
-	@media screen and (min-width: 240px) and (max-width: 639px) {
-		.heroboxhome {
-			/*background-position: 47% 24%;
-			background-size: cover;*/
-		}
-	}
-	/*ORANGE SM*/
-	@media screen and (min-width: 640px) and (max-width: 767px) {
-		.heroboxhome {
-			/*background-position: 39% 24%;
-			background-size: 163%;*/
-		}
-	}
-
-	/*JAUNE MD*/
-	@media screen and (min-width: 768px) and (max-width: 1023px) {
-		.heroboxhome {
-			/*background-position: 25% 26%;
-			background-size: 136%;*/
-		}
-	}
-	/*VERT LG*/
-	@media screen and (min-width: 1024px) and (max-width: 1279px) {
-		.heroboxhome {
-			/*background-position: 40% 26%;
-			background-size: 136%;*/
-		}
-	}
-
-	/*BLEU XL*/
-	@media screen and (min-width: 1280px) {
 	}
 </style>

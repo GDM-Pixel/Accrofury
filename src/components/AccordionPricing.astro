@@ -11,9 +11,9 @@ const { items, extraClass = "" } = Astro.props;
 			<div key={index}>
 				<button
 					aria-label={item.title}
-					class={`accordiontarifs ${item.isopen ? "active" : ""}`}>
+					class={`accordiontarifs ${item.isopen ? "tarifsactive" : ""}`}>
 					
-						<span class="self-start">{item.title}</span>
+						<span class="parcours-title">{item.title}</span>
 						<div class="pointille" />
 						<span class="price">{item.price}</span>
 					
@@ -93,15 +93,21 @@ const { items, extraClass = "" } = Astro.props;
 		@apply mb-2 flex-auto border-b-2 border-dotted border-[#F7EBC8];
 	}
 	.accordiontarifs {
-		@apply flex gap-3 items-end w-full transition-all duration-300 ease-in-out text-left px-2 py-2 cursor-pointer sm:text-xl text-md font-lemon text-white;
-	}
+		@apply flex md:gap-3 gap-1 items-end w-full transition-all duration-300 ease-in-out text-left px-2 md:px-2 py-2 cursor-pointer sm:text-xl text-md font-lemon text-white;
+	
+	.parcours-title {
+		@apply self-start text-base sm:text-xl;
+	}}
 
 	.accordiontarifs svg {
-		@apply fill-harvestgold transition-all duration-500 ease-in-out rotate-0 flex-shrink-0;
+		@apply fill-harvestgold transition-all duration-500 ease-in-out rotate-0 flex-shrink-0 hidden;
 	}
 
-	.accordiontarifs.tarifsactive svg {
+	.accordiontarifs.tarifsactive {
+@apply text-[#ffce2c];
+		svg {
 		@apply fill-harvestgold transition-all duration-500 ease-in-out rotate-90;
+	}
 	}
 
 	.tarifsactive {

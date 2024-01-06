@@ -237,6 +237,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 		}
 		.col2 {
 			@apply col-span-6 md:p-12 p-6;
+			h2 {@apply md:text-xxxl text-xxl}
 		}
 		.section-header.left {
 			p {
@@ -244,7 +245,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 			}
 		}
 		.contactmed {
-			@apply flex flex-wrap gap-6 mt-6 mb-8 mx-auto text-xl font-lemon text-blackbean;
+			@apply flex flex-wrap gap-6 mt-6 mb-8 mx-auto md:text-xl text-base font-lemon text-blackbean;
 			.leftc,
 			.rightc,
 			.bottomc {
@@ -253,6 +254,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 					@apply mr-1;
 				}
 			}
+			svg {@apply md:max-w-none max-w-[30px] h-auto;}
 		}
 	}
 	a.maplink {

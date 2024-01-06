@@ -76,6 +76,8 @@
       background: url("/img/magic-btn.png") no-repeat center center;
       /* Green background for the submit button */
       color: white;
+      max-width:100%;
+      text-align:center;
       border: none;
       cursor: pointer;
       font-family: 'Lemon';
@@ -85,6 +87,12 @@
       font-size:24px;
       margin-top:15px;
     animation: glowing 2s infinite alternate;
+  }
+  @media screen and (max-width: 400px) {
+    .form-field button {
+      padding: 18px 30px;
+      font-size:18px;
+    }
   }
 
   .form-field button:hover
