@@ -5,7 +5,7 @@ interface Props {
 	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 import Repere from "../components/Repere.astro";
 ---
 
@@ -20,10 +20,29 @@ import Repere from "../components/Repere.astro";
 			rel="stylesheet"
 		/>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:image" content="/img/Opengraph-img.jpg" />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="GDM-Pixel, Agence web à Caen" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="article:publisher" content="https://www.facebook.com/profile.php?id=100010451197610" />
+		<meta name="geo.placename" content="Feuguerolles-Bully" />
+		<meta name="geo.region" content="FR">
+		<meta name="geo.position" content="49.1134679;-0.3990739" />
 		<title>{title}</title>
 	</head>
 	<body>
@@ -31,6 +50,71 @@ import Repere from "../components/Repere.astro";
 		<Repere />
 	</body>
 </html>
+<script>
+	function navsetup() {
+		window.addEventListener("scroll", function () {
+			var header = document.querySelector(".header");
+			header?.classList.toggle("stickynav", window.scrollY > 200);
+		});
+		const navLinks = document.querySelectorAll("nav ul li a");
+
+		// Supprimer la classe 'active' de tous les liens
+		navLinks.forEach((link) => link.classList.remove("active"));
+		navLinks.forEach((link) => {
+			if (link.getAttribute("href") === window.location.pathname) {
+				link.classList.add("active");
+			}
+
+			link.addEventListener("click", () => {
+				navLinks.forEach((link) => link.classList.remove("active"));
+				link.classList.add("active");
+			});
+		});
+
+		const menuButton = document.querySelector("#hambBtn");
+		const closeButton = document.querySelector(".gdm-close-btn");
+		const closeOverlay = document.querySelector(".mobile-menu-overlay");
+		// Écouteur pour les clics en dehors du menu
+
+		//@ts-ignore
+		menuButton.addEventListener("click", toggleMenu);
+		//@ts-ignore
+		closeButton.addEventListener("click", toggleMenu);
+		//@ts-ignore
+		closeOverlay.addEventListener("click", toggleMenu);
+		// Récupérer tous les liens de la navigation mobile
+		const mobileNavLinks = document.querySelectorAll("#mobile-nav a");
+		// Ajouter un écouteur d'événements pour chaque lien
+		mobileNavLinks.forEach((link) => {
+			link.addEventListener("click", () => {
+				// Appeler toggleMenu pour fermer la navigation mobile
+				toggleMenu();
+			});
+		});
+	}
+	navsetup();
+	document.addEventListener("DOMContentLoaded", navsetup);
+	document.addEventListener("astro:page-load", navsetup);
+
+	function toggleMenu() {
+		const navBlack = document.querySelector(".gdm-nav-1");
+		const navRed = document.querySelector(".gdm-nav-2");
+		const navWhite = document.querySelector(".gdm-nav-3");
+		const overlay = document.querySelector(".mobile-menu-overlay");
+		// Cette logique vérifie si l'une des classes est déjà visible
+		// Si oui, cela signifie que le menu est ouvert et nous devons le fermer.
+		//@ts-ignore
+		const isMenuVisible = navBlack.classList.contains("activated");
+
+		// Basculer la classe 'activated' sur chaque élément de navigation
+		[navBlack, navRed, navWhite, overlay].forEach((nav) => {
+			//@ts-ignore
+			nav.classList.toggle("activated", !isMenuVisible);
+			//@ts-ignore
+			overlay.style.opacity = isMenuVisible ? "0" : "1";
+		});
+	}
+</script>
 <script src="/js/gdm-goto.js" is:inline></script>
 		<script>
 			//@ts-nocheck

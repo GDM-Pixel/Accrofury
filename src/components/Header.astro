@@ -106,69 +106,7 @@ import AccrofuryLogo from "../assets/img/accrofury-logo.png";
 	</div>
 </div>
 
-<script>
-	function navsetup() {
-		window.addEventListener("scroll", function () {
-			var header = document.querySelector(".header");
-			header?.classList.toggle("stickynav", window.scrollY > 200);
-		});
-		const navLinks = document.querySelectorAll("nav ul li a");
 
-		navLinks.forEach((link) => {
-			if (link.getAttribute("href") === window.location.pathname) {
-				link.classList.add("active");
-			}
-
-			link.addEventListener("click", () => {
-				navLinks.forEach((link) => link.classList.remove("active"));
-				link.classList.add("active");
-			});
-		});
-
-		const menuButton = document.querySelector("#hambBtn");
-		const closeButton = document.querySelector(".gdm-close-btn");
-		const closeOverlay = document.querySelector(".mobile-menu-overlay");
-		// Écouteur pour les clics en dehors du menu
-
-		//@ts-ignore
-		menuButton.addEventListener("click", toggleMenu);
-		//@ts-ignore
-		closeButton.addEventListener("click", toggleMenu);
-		//@ts-ignore
-		closeOverlay.addEventListener("click", toggleMenu);
-		// Récupérer tous les liens de la navigation mobile
-		const mobileNavLinks = document.querySelectorAll("#mobile-nav a");
-		// Ajouter un écouteur d'événements pour chaque lien
-		mobileNavLinks.forEach((link) => {
-			link.addEventListener("click", () => {
-				// Appeler toggleMenu pour fermer la navigation mobile
-				toggleMenu();
-			});
-		});
-	}
-	navsetup();
-	document.addEventListener("DOMContentLoaded", navsetup);
-	document.addEventListener("astro:page-load", navsetup);
-
-	function toggleMenu() {
-		const navBlack = document.querySelector(".gdm-nav-1");
-		const navRed = document.querySelector(".gdm-nav-2");
-		const navWhite = document.querySelector(".gdm-nav-3");
-		const overlay = document.querySelector(".mobile-menu-overlay");
-		// Cette logique vérifie si l'une des classes est déjà visible
-		// Si oui, cela signifie que le menu est ouvert et nous devons le fermer.
-		//@ts-ignore
-		const isMenuVisible = navBlack.classList.contains("activated");
-
-		// Basculer la classe 'activated' sur chaque élément de navigation
-		[navBlack, navRed, navWhite, overlay].forEach((nav) => {
-			//@ts-ignore
-			nav.classList.toggle("activated", !isMenuVisible);
-			//@ts-ignore
-			overlay.style.opacity = isMenuVisible ? "0" : "1";
-		});
-	}
-</script>
 <style lang="scss" is:global>
 	@keyframes slideDown {
 		0% {

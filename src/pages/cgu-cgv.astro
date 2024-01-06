@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import { Image } from "astro:assets";
+import * as animations from "../components/animations.js";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Conditions générales d'utilisation" description="Retrouvez nos conditions générales d'utilisation sur cette page.">
+	<Header />
+
+	<main>
+		<h1>Conditions générales d'utilisation</h1>
+		
+<h2>L’ENTREPRISE</h2>
+<p>Identification : PAINTBALL FURY, 37 rue de Quebec, 14000 Caen Numéro de Siren : 404954349</p>
+<h2>1. INTEGRALITE</h2>
+<p>Les présentes conditions générales d’utilisation sont applicables à la consultation du site disponible sur https://accrofury.com.</p>
+<h2>2. OBJET</h2>
+<p>ACCROFURY est un centre de loisir basé à Caen. Le site ici présent entend donner des informations quant aux activités ayant lieu dans nos centres.</p>
+<h2>3. TARIFS</h2>
+<p>Les tarifs indiqués sur le site sont susceptibles d’évoluer sans préavis. Ils sont exprimés TTC, et sont également consultables dans nos centres de loisirs.</p>
+<h2>4. EXONÉRATION ET LIMITATION DE RESPONSABILITÉ</h2>
+<p>Le site utilise les techologies HTML, CSS, Javascript. Il est vivement conseillé d’utiliser une version récente des principaux navigateurs du marché pour bénéficier de conditions d’utilisation optimales.</p>
+<p>Il est également recommandé d’avoir un antivirus à jour. Le site est protégé par un plugin de sécurité, et le connexion au serveur est chiffrée.</p>
+<p>La société ne saurait être responsable des dommages liées à une mauvaise utilisation du site, pour autant qu’elle soit possible.</p>
+<h2>5. INFORMATIQUE ET LIBERTES</h2>
+<p>Les données stockées dans nos systèmes informatiques sont exclusivement utilisées dans le cadre de notre activité. Les données, optionnelles ou obligatoires, saisies lors de votre réservation peuvent faire l’objet d’un droit d’accès, de rectification et d’opposition de traitement. Vous pouvez demander à consulter les informations vous concernant <a href="/declaration-de-confidentialite/">ici</a>. Cette fonctionnalité n’est possible que si vous laissez votre adresse E-mail en boutique lors de votre réservation.</p>
+<p>Aucune de vos données n’est revendue ou cédée à des tiers.</p>
+<h2>6. ATTRIBUTION DE JURIDICTION ET DROIT APPLICABLE</h2>
+<p>Les contrats de vente avec les clients sont soumis à la loi française. Tout litige relatif aux ventes intervenues avec les clients, même en cas de recours en garantie ou de pluralité de défendeurs, serait à défaut d’accord amiable de la compétence exclusive du Tribunal de Commerce de Caen.</p>
+<h2>7. FORCE MAJEURE</h2>
+<p>Nos obligations de livraison sont suspendues de plein droit et sans formalité et, de manière générale, notre responsabilité est dégagée en présence d’un cas de force majeure ou d’événements tels que grèves, épidémies, défaillance ou carence d’un fournisseur ou sous-traitant, restriction ou interdiction d’importation, indisponibilité de matière première ou d’énergie, interruption ou retard dans les transports ou toute autre cause introduisant une situation de chômage total ou partiel pour le vendeur ou ses fournisseurs ainsi qu’en cas de survenance de toutes circonstances imprévisibles, irrésistibles et indépendantes de notre volonté et de celle de nos fournisseurs, empêchant l’exécution du contrat. Le vendeur s’engage à informer l’acquéreur, par tous moyens à sa convenance, de la réalisation d’un tel évènement.</p>
+
+	</main>
+	<Footer />
+</Layout>
+
+<style lang="scss">
+	main{
+		@apply m-auto px-4 py-12 max-w-4xl;
+		h2 {
+			@apply text-xxl mb-3 mt-6 text-blackbean;
+		}
+		h3 {
+			@apply text-xl mb-3 mt-6 text-blackbean;
+		}
+		p {
+			@apply text-lg mb-3;
+		}
+		ul,ol {
+			@apply list-disc list-inside mb-3 pl-6 text-lg;
+			li {
+				@apply mb-2;
+			}
+		}
+	}
+</style>
